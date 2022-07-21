@@ -19,6 +19,6 @@ module.exports = function (eleventyConfig) {
       output: "public",
     },
 
-    pathPrefix: "/Museums-events/public/",
+    pathPrefix: "/museums-events/public/",
   };
 };
