@@ -11372,9 +11372,12 @@ header .top-wrapper #main-logo:hover {
 }
 header .top-wrapper #main-logo:focus {
   color: #0b0c0c;
-  background-color: #ffdd00;
   text-decoration: underline;
   outline: none;
+  background-color: transparent;
+}
+header .top-wrapper #main-logo:focus img {
+  outline: solid #ffdd00 2px;
 }
 @media (max-width: 575.98px) {
   header .top-wrapper #main-logo .top {

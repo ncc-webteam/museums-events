@@ -77,9 +77,12 @@ header {
 
       &:focus {
         color: $focus-text-colour;
-        background-color: $focus-colour;
         text-decoration: underline;
         outline: none;
+        background-color: transparent;
+        img {
+          outline: solid $focus-colour 2px;
+        }
       }
 
       @include media-breakpoint-down(sm) {
