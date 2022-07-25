@@ -10966,7 +10966,7 @@ textarea.form-control-lg {
   box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.5);
 }
 .swiper-v2 .card-wrapper .card .card-body {
-  padding: 10px;
+  padding: 5px 10px;
 }
 .swiper-v2 .card-wrapper .card .card-title a {
   font-size: 1.125rem;
@@ -12245,6 +12245,34 @@ p code {
   color: #350c78;
   opacity: 1;
   height: 2px !important;
+}
+
+.bg-gray-100 {
+  background-color: #f8f9fa;
+}
+
+.bg-gray-200 {
+  background-color: #e9ecef;
+}
+
+.bg-gray-300 {
+  background-color: #dee2e6;
+}
+
+.bg-gray-400 {
+  background-color: #ced4da;
+}
+
+.bg-gray-500 {
+  background-color: #adb5bd;
+}
+
+.bg-gray-600 {
+  background-color: #6c757d;
+}
+
+.bg-gray-700 {
+  background-color: #495057;
 }
 
 /*# sourceMappingURL=style.css.map */
