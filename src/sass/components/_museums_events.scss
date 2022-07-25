@@ -70,6 +70,25 @@
   display: flex;
   justify-content: space-between;
 
+  .filter-separator {
+    display: flex;
+    flex-wrap: wrap;
+    .filter-btn {
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+    .filter-btn-all {
+      display: none;
+      @include media-breakpoint-down(lg) {
+        display: inline-flex;
+      }
+    }
+  }
+
   .filter-btn {
     display: inline-flex;
     border-radius: 10px;
@@ -79,7 +98,46 @@
     font-weight: 700;
     text-align: center;
     align-items: center;
-    padding: 10px 10px;
+    padding: 10px 20px;
     max-height: 40px;
+    min-width: 0px;
+  }
+  .filter-btn.date-filter {
+    position: relative;
+    min-width: 200px;
+    padding-right: 50px;
+
+    .icon-space {
+      position: absolute;
+      width: 40px;
+      height: 100%;
+      right: 0;
+      border-radius: 0px 10px 10px 0px;
+      background-color: $gray-200;
+      @include ani;
+
+      svg path {
+        fill: $gray-600;
+      }
+    }
+
+    &:hover {
+      .icon-space {
+        background-color: $gray-700;
+
+        svg path {
+          fill: $gray-200;
+        }
+      }
+    }
+    &:focus {
+      .icon-space {
+        background-color: $focus-text-colour;
+
+        svg path {
+          fill: $focus-colour;
+        }
+      }
+    }
   }
 }
