@@ -1,0 +1,67 @@
+.museums-events-stage {
+  color: white;
+  height: 338px;
+  background: rgba(0, 35, 93, 0.8);
+}
+
+.stage-search {
+  height: 40px;
+
+  @include media-breakpoint-down(md) {
+    width: 100%;
+    margin: 10px 0 10px 0;
+  }
+
+  input {
+    border: none;
+    border-radius: 5px 0px 0px 5px;
+    &:focus {
+      transition: none;
+      border-color: $focus-colour;
+      outline: solid 4px $focus-colour;
+      box-shadow: none;
+    }
+  }
+  button {
+    background-color: #006666;
+    min-width: 130px;
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+    font-size: 1rem;
+    font-weight: 600;
+    align-items: center;
+
+    @include media-breakpoint-down(sm) {
+      height: 40px;
+    }
+
+    &:hover {
+      color: white;
+      background-color: $dark;
+    }
+
+    &:focus {
+      transition: none;
+      border-color: $focus-colour;
+      background-color: $focus-colour;
+      color: $focus-text-colour;
+      outline: none;
+      box-shadow: none;
+      path {
+        fill: $focus-text-colour;
+      }
+    }
+    &:active:focus {
+      box-shadow: none;
+    }
+
+    svg {
+      transform: translateX(-20%);
+      margin-right: 5px;
+    }
+  }
+}
