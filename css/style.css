@@ -11978,6 +11978,26 @@ section.section_stage_theme .lead {
   display: flex;
   justify-content: space-between;
 }
+.filters-wrapper .filter-separator {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (max-width: 991.98px) {
+  .filters-wrapper .filter-separator .filter-btn {
+    display: none;
+  }
+}
+.filters-wrapper .filter-separator .filter-btn:not(:last-child) {
+  margin-right: 10px;
+}
+.filters-wrapper .filter-separator .filter-btn-all {
+  display: none;
+}
+@media (max-width: 991.98px) {
+  .filters-wrapper .filter-separator .filter-btn-all {
+    display: inline-flex;
+  }
+}
 .filters-wrapper .filter-btn {
   display: inline-flex;
   border-radius: 10px;
@@ -11987,8 +12007,44 @@ section.section_stage_theme .lead {
   font-weight: 700;
   text-align: center;
   align-items: center;
-  padding: 10px 10px;
+  padding: 10px 20px;
   max-height: 40px;
+  min-width: 0px;
+}
+.filters-wrapper .filter-btn.date-filter {
+  position: relative;
+  min-width: 200px;
+  padding-right: 50px;
+}
+.filters-wrapper .filter-btn.date-filter .icon-space {
+  position: absolute;
+  width: 40px;
+  height: 100%;
+  right: 0;
+  border-radius: 0px 10px 10px 0px;
+  background-color: #e9ecef;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .filters-wrapper .filter-btn.date-filter .icon-space {
+    animation: none;
+    transition: none;
+  }
+}
+.filters-wrapper .filter-btn.date-filter .icon-space svg path {
+  fill: #6c757d;
+}
+.filters-wrapper .filter-btn.date-filter:hover .icon-space {
+  background-color: #495057;
+}
+.filters-wrapper .filter-btn.date-filter:hover .icon-space svg path {
+  fill: #e9ecef;
+}
+.filters-wrapper .filter-btn.date-filter:focus .icon-space {
+  background-color: #0b0c0c;
+}
+.filters-wrapper .filter-btn.date-filter:focus .icon-space svg path {
+  fill: #ffdd00;
 }
 
 html {
