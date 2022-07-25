@@ -11946,6 +11946,22 @@ section.section_stage_theme .lead {
   font-weight: 600;
   align-items: center;
 }
+.stage-search button .search-text-long {
+  display: inline;
+}
+@media (max-width: 767.98px) {
+  .stage-search button .search-text-long {
+    display: none;
+  }
+}
+.stage-search button .search-text-short {
+  display: none;
+}
+@media (max-width: 767.98px) {
+  .stage-search button .search-text-short {
+    display: inline;
+  }
+}
 @media (max-width: 575.98px) {
   .stage-search button {
     height: 40px;
