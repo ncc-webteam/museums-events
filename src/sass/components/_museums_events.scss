@@ -35,6 +35,19 @@
     font-weight: 600;
     align-items: center;
 
+    .search-text-long {
+      display: inline;
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+    }
+    .search-text-short {
+      display: none;
+      @include media-breakpoint-down(md) {
+        display: inline;
+      }
+    }
+
     @include media-breakpoint-down(sm) {
       height: 40px;
     }
