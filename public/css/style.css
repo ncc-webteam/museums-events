@@ -11974,6 +11974,23 @@ section.section_stage_theme .lead {
   margin-right: 5px;
 }
 
+.filters-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.filters-wrapper .filter-btn {
+  display: inline-flex;
+  border-radius: 10px;
+  background-color: white;
+  color: #00235d;
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-align: center;
+  align-items: center;
+  padding: 10px 10px;
+  max-height: 40px;
+}
+
 html {
   height: 100%;
 }

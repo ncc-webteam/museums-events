@@ -65,3 +65,21 @@
     }
   }
 }
+
+.filters-wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  .filter-btn {
+    display: inline-flex;
+    border-radius: 10px;
+    background-color: white;
+    color: $museums-blue;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-align: center;
+    align-items: center;
+    padding: 10px 10px;
+    max-height: 40px;
+  }
+}
