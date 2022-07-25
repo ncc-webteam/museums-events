@@ -22,7 +22,7 @@
     }
     /* Track */
     &::-webkit-scrollbar-track {
-      background: $dark;
+      background: $gray-200;
     }
     /* Handle */
     &::-webkit-scrollbar-thumb {
@@ -31,7 +31,7 @@
 
     /* Handle on hover */
     &::-webkit-scrollbar-thumb:hover {
-      background: $gray-200;
+      background: $gray-500;
     }
   }
   .card-wrapper {

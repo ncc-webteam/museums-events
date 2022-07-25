@@ -10941,13 +10941,13 @@ textarea.form-control-lg {
   height: 10px;
 }
 .swiper-v2 .swiper-wrapper::-webkit-scrollbar-track {
-  background: #212529;
+  background: #e9ecef;
 }
 .swiper-v2 .swiper-wrapper::-webkit-scrollbar-thumb {
   background: #ced4da;
 }
 .swiper-v2 .swiper-wrapper::-webkit-scrollbar-thumb:hover {
-  background: #e9ecef;
+  background: #adb5bd;
 }
 .swiper-v2 .card-wrapper {
   display: flex;
