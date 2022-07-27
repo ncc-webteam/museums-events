@@ -319,4 +319,9 @@
       }
     }
   }
+
+  @include media-breakpoint-down(md) {
+    padding-bottom: 25px;
+    border-bottom: solid 1px $gray-400;
+  }
 }

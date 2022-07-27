@@ -12223,6 +12223,12 @@ section.section_stage_theme .lead {
   background-color: #ffdd00;
   text-decoration: underline;
 }
+@media (max-width: 767.98px) {
+  .date-card {
+    padding-bottom: 25px;
+    border-bottom: solid 1px #ced4da;
+  }
+}
 
 html {
   height: 100%;
