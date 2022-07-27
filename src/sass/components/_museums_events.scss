@@ -271,3 +271,28 @@
     margin-bottom: 10px;
   }
 }
+
+.date-card {
+  .body {
+    .main-heading {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: $gray-600;
+      margin-bottom: 6px;
+    }
+    .date-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 6px;
+
+      li {
+        font-weight: 600;
+      }
+    }
+    .more-dates-link {
+      color: #006666;
+      font-weight: 600;
+    }
+  }
+}
