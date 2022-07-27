@@ -12181,7 +12181,7 @@ section.section_stage_theme .lead {
 
 .date-card .body .main-heading {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 800;
   color: #6c757d;
   margin-bottom: 6px;
 }
@@ -12192,11 +12192,14 @@ section.section_stage_theme .lead {
   margin-bottom: 6px;
 }
 .date-card .body .date-list li {
-  font-weight: 600;
+  font-weight: 700;
 }
 .date-card .body .more-dates-link {
   color: #006666;
-  font-weight: 600;
+  font-weight: 700;
+}
+.date-card .body .more-dates-link:focus {
+  color: #0b0c0c;
 }
 
 html {

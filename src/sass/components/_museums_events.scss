@@ -276,7 +276,7 @@
   .body {
     .main-heading {
       font-size: 1.25rem;
-      font-weight: 700;
+      font-weight: 800;
       color: $gray-600;
       margin-bottom: 6px;
     }
@@ -287,12 +287,16 @@
       margin-bottom: 6px;
 
       li {
-        font-weight: 600;
+        font-weight: 700;
       }
     }
     .more-dates-link {
       color: #006666;
-      font-weight: 600;
+      font-weight: 700;
+
+      &:focus {
+        color: $focus-text-colour;
+      }
     }
   }
 }
