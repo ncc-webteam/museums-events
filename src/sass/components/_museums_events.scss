@@ -154,3 +154,120 @@
     }
   }
 }
+
+.event-image-section {
+  @include media-breakpoint-down(sm) {
+    padding: 0;
+    margin: 0;
+
+    .container {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
+.event-image {
+  border-radius: 20px;
+  width: 100%;
+  overflow: hidden;
+  height: 400px;
+
+  img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  @include media-breakpoint-down(lg) {
+    height: 350px;
+  }
+  @include media-breakpoint-down(md) {
+    height: 300px;
+  }
+  @include media-breakpoint-down(sm) {
+    height: 200px;
+    border-radius: 0px;
+  }
+}
+
+.event-booking-card {
+  box-shadow: $object-shadow;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .price {
+    margin-bottom: 16px;
+    .detail {
+      color: $gray-600;
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+  }
+
+  .btn {
+    font-weight: 600;
+    font-size: 1.125rem;
+    background-color: #29a258;
+    border: none;
+    max-width: 400px;
+    width: 100%;
+    align-self: center;
+
+    &:hover {
+      color: white;
+      background-color: #198754;
+    }
+
+    &:focus {
+      transition: none;
+      border-color: $focus-colour;
+      background-color: $focus-colour;
+      color: $focus-text-colour;
+      outline: none;
+      box-shadow: none;
+      path {
+        fill: $focus-text-colour;
+      }
+    }
+    &:active:focus {
+      box-shadow: none;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    box-shadow: none;
+    padding: 0px;
+    border-radius: 0px;
+    justify-content: flex-start;
+    align-items: baseline;
+
+    .btn {
+      align-self: auto;
+      max-width: 200px;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  @include media-breakpoint-down(sm) {
+    .btn {
+      width: auto;
+    }
+  }
+}
+
+.event-content {
+  .location-text {
+    margin-bottom: 8px;
+    color: #cf171d;
+  }
+  .event-description {
+    margin-bottom: 10px;
+  }
+}

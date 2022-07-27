@@ -12063,6 +12063,122 @@ section.section_stage_theme .lead {
   fill: #ffdd00;
 }
 
+@media (max-width: 575.98px) {
+  .event-image-section {
+    padding: 0;
+    margin: 0;
+  }
+  .event-image-section .container {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.event-image {
+  border-radius: 20px;
+  width: 100%;
+  overflow: hidden;
+  height: 400px;
+}
+.event-image img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 991.98px) {
+  .event-image {
+    height: 350px;
+  }
+}
+@media (max-width: 767.98px) {
+  .event-image {
+    height: 300px;
+  }
+}
+@media (max-width: 575.98px) {
+  .event-image {
+    height: 200px;
+    border-radius: 0px;
+  }
+}
+
+.event-booking-card {
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.event-booking-card .price {
+  margin-bottom: 16px;
+}
+.event-booking-card .price .detail {
+  color: #6c757d;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+.event-booking-card .btn {
+  font-weight: 600;
+  font-size: 1.125rem;
+  background-color: #29a258;
+  border: none;
+  max-width: 400px;
+  width: 100%;
+  align-self: center;
+}
+.event-booking-card .btn:hover {
+  color: white;
+  background-color: #198754;
+}
+.event-booking-card .btn:focus {
+  transition: none;
+  border-color: #ffdd00;
+  background-color: #ffdd00;
+  color: #0b0c0c;
+  outline: none;
+  box-shadow: none;
+}
+.event-booking-card .btn:focus path {
+  fill: #0b0c0c;
+}
+.event-booking-card .btn:active:focus {
+  box-shadow: none;
+}
+@media (max-width: 991.98px) {
+  .event-booking-card {
+    box-shadow: none;
+    padding: 0px;
+    border-radius: 0px;
+    justify-content: flex-start;
+    align-items: baseline;
+  }
+  .event-booking-card .btn {
+    align-self: auto;
+    max-width: 200px;
+  }
+}
+@media (max-width: 767.98px) {
+  .event-booking-card {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 575.98px) {
+  .event-booking-card .btn {
+    width: auto;
+  }
+}
+
+.event-content .location-text {
+  margin-bottom: 8px;
+  color: #cf171d;
+}
+.event-content .event-description {
+  margin-bottom: 10px;
+}
+
 html {
   height: 100%;
 }

@@ -3,6 +3,41 @@
 {% extends "template.njk" %}
 {% block main %}
 
-<p>work in progress! (づ｡◕‿‿◕｡)づ </p>
+<section class="event-image-section">
+  <div class="container">
+    <div class="event-image">
+      <img src="{{ '/img/museums-events/elizabethan.jpg' | url }}" alt="Lovely image showcasing the event.">
+    </div>
+  </div>
+</section>
+
+<section class="event-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-8">
+        <p class="location-text">Elizabethan House • Great Yarmouth</p>
+        <h1 class="event-title">How to be an Elizabethan Trail</h1>
+        <p class="event-code text-muted">Event code: EY3CN3018Z</p>
+        <h2 class="h3">Event description</h2>
+        <p class="event-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, placeat? Neque quo animi mollitia alias labore quam, in sapiente voluptatum, inventore itaque nihil explicabo dicta iusto facilis. Possimus fugiat voluptates doloremque minima iusto ullam quae sit repudiandae facere officia. Possimus, libero illo! Laborum doloremque dolorem eum distinctio in! Quia temporibus consequuntur mollitia voluptatem sint ratione nulla aut inventore alias aperiam, non unde vitae ea, asperiores animi officiis nihil deserunt? Pariatur esse omnis mollitia quos neque ipsum ut corporis totam enim repellat dolorem nulla voluptate ad, quis soluta nesciunt molestiae quam quaerat tenetur. Quaerat quisquam ut voluptatibus reprehenderit explicabo expedita quia?</p>
+        <a href="#" class="d-inline-block mb-4">Get more information about this event</a>
+        <h3 class="h4">Contact us</h3>
+        <p>If you require this information in large print, audio, Braille, alternative format or in a different language, please contact us and we will do our best to help.</p>
+        <h4 class="h5 mb-0">Telephone</h3>
+        <p class="text-muted">0344 800 8020</p>
+        <h4 class="h5 mb-0">Email</h3>
+        <a href="#">information@norfolk.gov.uk</a>
+        <h3 class="h4 mt-4 mb-0">Accessibility</h3>
+        <a href="#">Get information about accessibility at this venue</a>
+      </div>
+      <div class="col-12 col-lg-4 event-sidebar">
+        <div class="event-booking-card my-5 my-lg-0">
+          <h2 class="h3 price">£20.00 <span class="detail">per person</span></h2>
+          <button class="btn btn-success">Book tickets</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 {% endblock %}
