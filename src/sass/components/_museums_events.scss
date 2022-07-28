@@ -243,18 +243,30 @@
     box-shadow: none;
     padding: 0px;
     border-radius: 0px;
-    justify-content: flex-start;
     align-items: baseline;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    box-shadow: $object-shadow-hover;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    left: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 20px;
+    align-items: baseline;
+
+    .price {
+      margin: 0;
+    }
 
     .btn {
       align-self: auto;
       max-width: 200px;
     }
   }
-  @include media-breakpoint-down(md) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+
   @include media-breakpoint-down(sm) {
     .btn {
       width: auto;
