@@ -11475,13 +11475,14 @@ header .main-search-area {
   }
 }
 header .main-search-area input {
-  border: none;
+  border: solid 2px rgba(255, 255, 255, 0.25);
   border-radius: 5px 0px 0px 5px;
 }
 header .main-search-area input:focus {
   transition: none;
-  border-color: #ffdd00;
+  border: solid 2px #0b0c0c;
   outline: solid 4px #ffdd00;
+  outline-offset: -6px;
   box-shadow: none;
 }
 header .main-search-area button {

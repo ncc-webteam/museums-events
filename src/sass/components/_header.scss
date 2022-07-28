@@ -186,12 +186,13 @@ header {
     }
 
     input {
-      border: none;
+      border: solid 2px rgba(255, 255, 255, 0.25);
       border-radius: 5px 0px 0px 5px;
       &:focus {
         transition: none;
-        border-color: $focus-colour;
+        border: solid 2px $focus-text-colour;
         outline: solid 4px $focus-colour;
+        outline-offset: -6px;
         box-shadow: none;
       }
     }
