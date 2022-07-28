@@ -12151,18 +12151,26 @@ section.section_stage_theme .lead {
     box-shadow: none;
     padding: 0px;
     border-radius: 0px;
-    justify-content: flex-start;
     align-items: baseline;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: auto;
+    margin: 0;
+    left: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 20px;
+    align-items: baseline;
+  }
+  .event-booking-card .price {
+    margin: 0;
   }
   .event-booking-card .btn {
     align-self: auto;
     max-width: 200px;
-  }
-}
-@media (max-width: 767.98px) {
-  .event-booking-card {
-    flex-direction: row;
-    justify-content: space-between;
   }
 }
 @media (max-width: 575.98px) {
