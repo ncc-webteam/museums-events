@@ -65,6 +65,9 @@ footer {
   }
 
   .footer-logo {
+    a {
+      display: inline-block;
+    }
     a:focus {
       outline: solid $focus-colour 2px;
       background-color: transparent;

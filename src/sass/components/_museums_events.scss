@@ -212,7 +212,12 @@
   .btn {
     font-weight: 600;
     font-size: 1.125rem;
-    background-color: #29a258;
+    background: linear-gradient(
+        88.32deg,
+        rgba(144, 243, 154, 0.49) -12.36%,
+        #29a258 106.24%
+      ),
+      #00823b;
     border: none;
     max-width: 400px;
     width: 100%;
@@ -220,13 +225,13 @@
 
     &:hover {
       color: white;
-      background-color: #198754;
+      background: #198754;
     }
 
     &:focus {
       transition: none;
       border-color: $focus-colour;
-      background-color: $focus-colour;
+      background: $focus-colour;
       color: $focus-text-colour;
       outline: none;
       box-shadow: none;
