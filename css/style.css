@@ -12152,22 +12152,17 @@ section.section_stage_theme .lead {
 }
 @media (max-width: 991.98px) {
   .event-booking-card {
-    box-shadow: none;
-    padding: 0px;
-    border-radius: 0px;
-    align-items: baseline;
-    position: fixed;
+    position: -webkit-sticky;
+    position: sticky;
     bottom: 0;
+    padding: 30px 20px;
+    border-radius: 0px;
     background-color: white;
-    box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.5);
-    width: 100%;
-    height: auto;
-    margin: 0;
-    left: 0;
+    box-shadow: 0px -4px 15px rgba(0, 0, 0, 0.2);
     flex-direction: row;
     justify-content: space-between;
-    padding: 30px 20px;
     align-items: baseline;
+    display: none;
   }
   .event-booking-card .price {
     margin: 0;
@@ -12183,12 +12178,27 @@ section.section_stage_theme .lead {
   }
 }
 
+.event-booking-card.sticky {
+  display: none;
+  margin-top: 40px;
+}
+@media (max-width: 991.98px) {
+  .event-booking-card.sticky {
+    display: flex;
+  }
+}
+
 .event-content .location-text {
   margin-bottom: 8px;
   color: #cf171d;
 }
 .event-content .event-description {
   margin-bottom: 10px;
+}
+@media (max-width: 991.98px) {
+  .event-content {
+    padding-bottom: 0;
+  }
 }
 
 .date-card {
