@@ -12252,6 +12252,78 @@ section.section_stage_theme .lead {
   }
 }
 
+.card.event-card {
+  box-shadow: none;
+  background-color: transparent;
+}
+.card.event-card .card-body {
+  background-color: transparent;
+  padding: 20px 0 0 0;
+}
+.card.event-card .card-body .card-title {
+  font-weight: 800;
+}
+.card.event-card .card-body .card-text {
+  color: #6c757d;
+}
+.card.event-card .card-body .card-link {
+  background-color: #006cf4;
+  color: white;
+  border-radius: 6px;
+  display: block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  width: 100%;
+}
+.card.event-card .card-body .card-link:hover {
+  background-color: #1a10f0;
+}
+.card.event-card .card-body .card-link:focus {
+  text-decoration: underline;
+  color: #0b0c0c;
+  background-color: #ffdd00;
+  outline: solid #0b0c0c 2px;
+  outline-offset: -2px;
+}
+.card.event-card:hover .img-wrapper img {
+  transform: none;
+}
+.card.event-card:hover .card-title {
+  text-decoration: none;
+}
+.card.event-card:focus-within {
+  background-color: transparent;
+  outline: solid 4px #ffdd00;
+  transition: none;
+  box-shadow: none;
+}
+.card.event-card:focus-within img {
+  transform: none;
+}
+.card.event-card:focus-within .card-text {
+  color: #0b0c0c;
+}
+.card.event-card:focus-within .card-location {
+  color: #0b0c0c;
+}
+.card.event-card:focus-within .card-date {
+  color: #0b0c0c;
+}
+.card.event-card:focus-within .card-extra-info {
+  color: #0b0c0c;
+}
+.card.event-card:focus-within .flair {
+  color: white;
+  background-color: #0b0c0c;
+}
+.card.event-card:focus-within .card-title a {
+  color: #0b0c0c;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  text-decoration: underline;
+}
+
 html {
   height: 100%;
 }
