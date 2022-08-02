@@ -2,6 +2,13 @@
 
 <div class="card {{options}} h-100 {% if title|length %}{% else %}nohover{% endif %}" data-component="72">
 
+  {% if 'museum-card' in options %}
+    <div class="date-overlay">
+      <div class="month">May</div>
+      <div class="day">17</div>
+    </div>
+  {% endif %}
+
   {% if img|length %}
   <div class="img-wrapper ratio ratio-16x9">
     <img src="/museums-events/public/img/{{img}}" class="card-img-top" alt="image for {{title}}">

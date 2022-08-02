@@ -432,3 +432,81 @@
     }
   }
 }
+
+.card.museum-card {
+  border-radius: 8px;
+
+  .date-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: "Montserrat", sans-serif;
+    box-shadow: $object-shadow;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    .month {
+      padding: 0px 20px;
+      background-color: #d82929;
+      color: $light;
+      font-weight: 700;
+      text-align: center;
+    }
+    .day {
+      padding: 4px 16px;
+      background-color: $light;
+      color: $gray-600;
+      font-weight: 700;
+      font-size: 1.25rem;
+      text-align: center;
+    }
+  }
+
+  .card-body {
+    .card-title a {
+      font-weight: 800;
+    }
+    .card-location {
+      margin: 0;
+      font-weight: 700;
+    }
+    .card-date {
+      margin: 0;
+      font-weight: 600;
+    }
+    .card-text {
+      color: $gray-600;
+      font-weight: 500;
+    }
+    .flair {
+      order: 1;
+      font-size: 1.5rem;
+      color: $dark;
+      background-color: transparent;
+      padding: 0;
+      font-weight: 800;
+    }
+  }
+}
+.card.museum-card.time-and-tide {
+  .card-location {
+    color: #161e69;
+  }
+}
+.card.museum-card.cromer {
+  .card-location {
+    color: #0070a5;
+  }
+}
+.card.museum-card.elizabethan {
+  .card-location {
+    color: #cf171d;
+  }
+}
