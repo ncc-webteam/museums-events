@@ -494,6 +494,43 @@
       font-weight: 800;
     }
   }
+
+  @include media-breakpoint-down(sm) {
+    box-shadow: none;
+
+    &:hover {
+      box-shadow: none;
+    }
+    &:focus-within {
+      box-shadow: none;
+    }
+
+    .img-wrapper {
+      max-height: 84px;
+    }
+
+    .card-body {
+      padding: 5px 10px 10px 10px;
+
+      .card-location {
+        font-size: 0.875rem;
+      }
+      .card-date {
+        font-size: 0.875rem;
+      }
+      .card-text {
+        font-size: 0.875rem;
+      }
+      .card-title {
+        margin-bottom: 0px;
+        font-size: 1.25rem;
+      }
+      .flair {
+        margin: 0px;
+        font-size: 1.25rem;
+      }
+    }
+  }
 }
 .card.museum-card.time-and-tide {
   .card-location {
