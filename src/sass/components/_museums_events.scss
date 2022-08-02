@@ -295,6 +295,25 @@
   }
 }
 
+.location-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+
+  .location-details {
+    margin-left: 20px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    flex-wrap: wrap;
+    .location-map {
+      margin-right: 20px;
+    }
+    .location-details {
+      margin-left: 0px;
+    }
+  }
+}
+
 .date-card {
   position: relative;
   padding: 10px;
