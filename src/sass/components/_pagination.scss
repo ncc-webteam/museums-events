@@ -1,0 +1,44 @@
+.pagination.libraries-pagination {
+  .page-item .page-link {
+    color: black;
+    font-weight: 700;
+    border-color: transparent;
+  }
+  .page-item.disabled .page-link {
+    color: $gray-600;
+    font-weight: 500;
+  }
+  .page-item.active .page-link {
+    border-color: transparent;
+    background-color: #006666;
+    transition: none;
+    color: white;
+  }
+  .page-item .page-link,
+  .page-item.active .page-link {
+    &:focus {
+      box-shadow: none;
+      background-color: $focus-colour;
+      color: $focus-text-colour;
+      transition: none;
+    }
+    &:focus:focus-visible {
+      box-shadow: none;
+      background-color: $focus-colour;
+      color: $focus-text-colour;
+      transition: none;
+    }
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+  }
+}
+
+.pagination.libraries-pagination
+  .page-item
+  .page-link:focus:not(:focus-visible),
+.pagination.libraries-pagination
+  .page-item.active
+  .page-link:focus:not(:focus-visible) {
+  outline: none;
+}
