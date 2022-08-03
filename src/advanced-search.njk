@@ -26,10 +26,60 @@
             <div>
               <h2 class="h5">Refine</h2>
               <div class="filter-separator">
-                <button id="filter-type" class="btn btn-primary filter-btn">Type</button>
-                <button id="filter-location" class="btn btn-primary filter-btn">Location</button>
-                <button id="filter-audience" class="btn btn-primary filter-btn">Audience</button>
-                <button id="filter-all" class="btn btn-primary filter-btn filter-btn-all">Filters</button>
+                <button id="dropdown-filter-type" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Type</button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdown-filter-type">
+                        <div class="dropdown-top-section">
+                          <h3 class="dropdown-heading h4">Event type</h3>
+                          <button type="button" class="btn-close" data-bs-dismiss="dropdown" aria-label="Close"></button>
+                        </div>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="type1check">
+                            <input type="checkbox" class="form-check-input" name="typeOption" value="Roman" id="type1check">
+                            <div class="text-wrapper">
+                              Roman 
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="type2check">
+                            <input type="checkbox" class="form-check-input" name="typeOption" value="Saxons" id="type2check">
+                            <div class="text-wrapper">
+                              Saxons 
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="type3check">
+                            <input type="checkbox" class="form-check-input" name="typeOption" value="Tudor" id="type3check">
+                            <div class="text-wrapper">
+                              Tudor 
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="type4check">
+                            <input type="checkbox" class="form-check-input" name="typeOption" value="Victorian" id="type4check">
+                            <div class="text-wrapper">
+                              Victorian 
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="type5check">
+                            <input type="checkbox" class="form-check-input" name="typeOption" value="Modern" id="type5check">
+                            <div class="text-wrapper">
+                              Modern 
+                            </div>
+                          </label>
+                        </li>
+                        <ul class="dropdown-bottom-section">
+                          <li><button class="filter-control-btn clear-filter" type="button" onclick="clearFiltersType()">Clear filters</button></li>
+                          <li><button class="filter-control-btn apply-filter" type="button" onclick="applyFiltersType(this.form.typeOption)">Apply filters</button></li>
+                        </ul>
+                      </ul>
+                <button id="dropdown-filter-location" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Location</button>
+                <button id="dropdown-filter-audience" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Audience</button>
+                <button id="modal-filter-all" type="button" class="btn btn-primary filter-btn filter-btn-all">Filters</button>
               </div>
             </div>
           </div>
