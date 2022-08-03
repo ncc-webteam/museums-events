@@ -550,19 +550,41 @@
       }
     }
   }
+  &:focus-within {
+    .card-body {
+      .card-text {
+        color: $focus-text-colour;
+      }
+    }
+  }
 }
 .card.museum-card.time-and-tide {
   .card-location {
     color: #161e69;
+  }
+  &:focus-within {
+    .card-location {
+      color: $focus-text-colour;
+    }
   }
 }
 .card.museum-card.cromer {
   .card-location {
     color: #0070a5;
   }
+  &:focus-within {
+    .card-location {
+      color: $focus-text-colour;
+    }
+  }
 }
 .card.museum-card.elizabethan {
   .card-location {
     color: #cf171d;
+  }
+  &:focus-within {
+    .card-location {
+      color: $focus-text-colour;
+    }
   }
 }
