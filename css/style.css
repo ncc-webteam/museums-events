@@ -12473,17 +12473,29 @@ section.section_stage_theme .lead {
     font-size: 1.25rem;
   }
 }
+.card.museum-card:focus-within .card-body .card-text {
+  color: #0b0c0c;
+}
 
 .card.museum-card.time-and-tide .card-location {
   color: #161e69;
+}
+.card.museum-card.time-and-tide:focus-within .card-location {
+  color: #0b0c0c;
 }
 
 .card.museum-card.cromer .card-location {
   color: #0070a5;
 }
+.card.museum-card.cromer:focus-within .card-location {
+  color: #0b0c0c;
+}
 
 .card.museum-card.elizabethan .card-location {
   color: #cf171d;
+}
+.card.museum-card.elizabethan:focus-within .card-location {
+  color: #0b0c0c;
 }
 
 html {
