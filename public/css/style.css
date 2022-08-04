@@ -12070,6 +12070,7 @@ section.section_stage_theme .lead {
   max-height: 40px;
   min-width: 0px;
   border: solid white 2px;
+  justify-content: center;
 }
 .filters-wrapper .filter-btn:hover {
   color: white;
@@ -12087,6 +12088,11 @@ section.section_stage_theme .lead {
 }
 .filters-wrapper .filter-btn:active:focus {
   box-shadow: none;
+}
+@media (max-width: 575.98px) {
+  .filters-wrapper .filter-btn {
+    height: 40px;
+  }
 }
 .filters-wrapper .filter-btn.date-filter {
   position: relative;
