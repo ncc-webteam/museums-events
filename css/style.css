@@ -302,7 +302,7 @@ table {
 caption {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  color: #6c757d;
+  color: #767676;
   text-align: left;
 }
 
@@ -1951,7 +1951,7 @@ progress {
 .form-text {
   margin-top: 0.25rem;
   font-size: 0.875em;
-  color: #6c757d;
+  color: #767676;
 }
 
 .form-control {
@@ -7382,7 +7382,7 @@ textarea.form-control-lg {
 
 .text-muted {
   --bs-text-opacity: 1;
-  color: #6c757d !important;
+  color: #767676 !important;
 }
 
 .text-black-50 {
@@ -11391,10 +11391,12 @@ header .top-wrapper #navbarToggler {
   display: none;
   border: solid white 2px;
   border-radius: 6px;
-  min-height: 50px;
+  min-height: 40px;
   width: 92px;
   color: white;
   transition: none;
+  align-items: center;
+  padding: 0px 10px;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 @media (prefers-reduced-motion: reduce) {
@@ -11404,7 +11406,8 @@ header .top-wrapper #navbarToggler {
   }
 }
 header .top-wrapper #navbarToggler svg {
-  transform: translateY(-10%);
+  transform: translateY(0%);
+  margin-right: 10px;
 }
 header .top-wrapper #navbarToggler:active {
   outline: none;
@@ -11426,7 +11429,7 @@ header .top-wrapper #navbarToggler:focus path {
 }
 @media (max-width: 767.98px) {
   header .top-wrapper #navbarToggler {
-    display: block;
+    display: flex;
   }
 }
 header .navbar {
@@ -11623,6 +11626,11 @@ footer .links-list a:focus {
   background-color: #ffdd00;
   text-decoration: underline;
   outline: none;
+}
+@media (max-width: 991.98px) {
+  footer .links-list {
+    padding-left: 0px;
+  }
 }
 footer .cookie-link {
   color: white;
@@ -11918,7 +11926,7 @@ section.section_stage_theme .lead {
   border-color: transparent;
 }
 .pagination.libraries-pagination .page-item.disabled .page-link {
-  color: #6c757d;
+  color: #767676;
   font-weight: 500;
 }
 .pagination.libraries-pagination .page-item.active .page-link {
@@ -12036,6 +12044,12 @@ section.section_stage_theme .lead {
 .filters-wrapper {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media (max-width: 767.98px) {
+  .filters-wrapper .filters-1 {
+    width: 100%;
+  }
 }
 .filters-wrapper .filter-separator {
   display: flex;
@@ -12070,6 +12084,7 @@ section.section_stage_theme .lead {
   max-height: 40px;
   min-width: 0px;
   border: solid white 2px;
+  justify-content: center;
 }
 .filters-wrapper .filter-btn:hover {
   color: white;
@@ -12088,10 +12103,24 @@ section.section_stage_theme .lead {
 .filters-wrapper .filter-btn:active:focus {
   box-shadow: none;
 }
+@media (max-width: 575.98px) {
+  .filters-wrapper .filter-btn {
+    height: 40px;
+  }
+}
 .filters-wrapper .filter-btn.date-filter {
   position: relative;
   min-width: 200px;
   padding-right: 60px;
+}
+@media (max-width: 575.98px) {
+  .filters-wrapper .filter-btn.date-filter {
+    width: auto;
+    min-width: 0px;
+    padding: 10px;
+    padding-right: 50px;
+    font-size: 1rem;
+  }
 }
 .filters-wrapper .filter-btn.date-filter .icon-space {
   position: absolute;
@@ -12109,7 +12138,7 @@ section.section_stage_theme .lead {
   }
 }
 .filters-wrapper .filter-btn.date-filter .icon-space svg path {
-  fill: #6c757d;
+  fill: #767676;
   transform: translateX(-20%);
   margin-right: 5px;
 }
@@ -12183,7 +12212,7 @@ section.section_stage_theme .lead {
   margin-bottom: 16px;
 }
 .event-booking-card .price .detail {
-  color: #6c757d;
+  color: #767676;
   font-size: 1.125rem;
   font-weight: 600;
 }
@@ -12297,7 +12326,7 @@ section.section_stage_theme .lead {
 .date-card .body .main-heading {
   font-size: 1.25rem;
   font-weight: 800;
-  color: #6c757d;
+  color: #767676;
   margin-bottom: 6px;
 }
 .date-card .body .date-list {
@@ -12347,7 +12376,7 @@ section.section_stage_theme .lead {
   font-weight: 800;
 }
 .card.event-card .card-body .card-text {
-  color: #6c757d;
+  color: #767676;
 }
 .card.event-card .card-body .card-link {
   background-color: #006cf4;
@@ -12436,7 +12465,7 @@ section.section_stage_theme .lead {
 .card.museum-card .date-overlay .day {
   padding: 4px 16px;
   background-color: #f8f9fa;
-  color: #6c757d;
+  color: #767676;
   font-weight: 700;
   font-size: 1.25rem;
   text-align: center;
@@ -12453,7 +12482,7 @@ section.section_stage_theme .lead {
   font-weight: 600;
 }
 .card.museum-card .card-body .card-text {
-  color: #6c757d;
+  color: #767676;
   font-weight: 500;
 }
 .card.museum-card .card-body .flair {
@@ -12525,7 +12554,7 @@ section.section_stage_theme .lead {
 
 .selection-item {
   font-weight: 600;
-  color: #6c757d;
+  color: #767676;
   padding: 10px 20px;
   font-size: 1.125rem;
   margin: 0;
@@ -12542,7 +12571,7 @@ section.section_stage_theme .lead {
 }
 .selection-item .form-check-label .form-check-input {
   background-color: #f8f9fa;
-  border: solid #6c757d 2px;
+  border: solid #767676 2px;
   min-width: 34px;
   min-height: 34px;
   margin: 0;
@@ -12564,7 +12593,7 @@ section.section_stage_theme .lead {
   margin-left: 10px;
 }
 .selection-item .form-check-label .text-wrapper .smaller-text {
-  color: #6c757d;
+  color: #767676;
   margin: 0;
   font-size: 16px;
 }
