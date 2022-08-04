@@ -1,3 +1,7 @@
+///////////// IMPORTANT /////////////
+// changing all #767676 to #767676 //
+/////////////////////////////////////
+
 .museums-events-stage {
   color: white;
   height: 338px;
@@ -155,7 +159,7 @@
       @include ani;
 
       svg path {
-        fill: $gray-600;
+        fill: #767676;
         transform: translateX(-20%);
         margin-right: 5px;
       }
@@ -237,7 +241,7 @@
   .price {
     margin-bottom: 16px;
     .detail {
-      color: $gray-600;
+      color: #767676;
       font-size: 1.125rem;
       font-weight: 600;
     }
@@ -360,7 +364,7 @@
     .main-heading {
       font-size: 1.25rem;
       font-weight: 800;
-      color: $gray-600;
+      color: #767676;
       margin-bottom: 6px;
     }
     .date-list {
@@ -415,7 +419,7 @@
     }
 
     .card-text {
-      color: $gray-600;
+      color: #767676;
     }
 
     .card-link {
@@ -515,7 +519,7 @@
     .day {
       padding: 4px 16px;
       background-color: $light;
-      color: $gray-600;
+      color: #767676;
       font-weight: 700;
       font-size: 1.25rem;
       text-align: center;
@@ -535,7 +539,7 @@
       font-weight: 600;
     }
     .card-text {
-      color: $gray-600;
+      color: #767676;
       font-weight: 500;
     }
     .flair {
@@ -627,7 +631,7 @@
 
 .selection-item {
   font-weight: 600;
-  color: $gray-600;
+  color: #767676;
   padding: 10px 20px;
   font-size: 1.125rem;
   margin: 0;
@@ -646,7 +650,7 @@
 
     .form-check-input {
       background-color: $light;
-      border: solid $gray-600 2px;
+      border: solid #767676 2px;
       min-width: 34px;
       min-height: 34px;
       margin: 0;
@@ -668,7 +672,7 @@
     .text-wrapper {
       margin-left: 10px;
       .smaller-text {
-        color: $gray-600;
+        color: #767676;
         margin: 0;
         font-size: 16px;
       }

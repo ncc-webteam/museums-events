@@ -1,3 +1,7 @@
+///////////// IMPORTANT /////////////
+// changing all #767676 to #767676 //
+/////////////////////////////////////
+
 .pagination.libraries-pagination {
   .page-item .page-link {
     color: black;
@@ -5,7 +9,7 @@
     border-color: transparent;
   }
   .page-item.disabled .page-link {
-    color: $gray-600;
+    color: #767676;
     font-weight: 500;
   }
   .page-item.active .page-link {

@@ -36,6 +36,10 @@ footer {
         outline: none;
       }
     }
+
+    @include media-breakpoint-down(lg) {
+      padding-left: 0px;
+    }
   }
 
   .cookie-link {

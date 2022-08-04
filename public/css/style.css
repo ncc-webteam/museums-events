@@ -11624,6 +11624,11 @@ footer .links-list a:focus {
   text-decoration: underline;
   outline: none;
 }
+@media (max-width: 991.98px) {
+  footer .links-list {
+    padding-left: 0px;
+  }
+}
 footer .cookie-link {
   color: white;
   text-decoration: underline;
@@ -11918,7 +11923,7 @@ section.section_stage_theme .lead {
   border-color: transparent;
 }
 .pagination.libraries-pagination .page-item.disabled .page-link {
-  color: #6c757d;
+  color: #767676;
   font-weight: 500;
 }
 .pagination.libraries-pagination .page-item.active .page-link {
@@ -12115,7 +12120,7 @@ section.section_stage_theme .lead {
   }
 }
 .filters-wrapper .filter-btn.date-filter .icon-space svg path {
-  fill: #6c757d;
+  fill: #767676;
   transform: translateX(-20%);
   margin-right: 5px;
 }
@@ -12189,7 +12194,7 @@ section.section_stage_theme .lead {
   margin-bottom: 16px;
 }
 .event-booking-card .price .detail {
-  color: #6c757d;
+  color: #767676;
   font-size: 1.125rem;
   font-weight: 600;
 }
@@ -12303,7 +12308,7 @@ section.section_stage_theme .lead {
 .date-card .body .main-heading {
   font-size: 1.25rem;
   font-weight: 800;
-  color: #6c757d;
+  color: #767676;
   margin-bottom: 6px;
 }
 .date-card .body .date-list {
@@ -12353,7 +12358,7 @@ section.section_stage_theme .lead {
   font-weight: 800;
 }
 .card.event-card .card-body .card-text {
-  color: #6c757d;
+  color: #767676;
 }
 .card.event-card .card-body .card-link {
   background-color: #006cf4;
@@ -12442,7 +12447,7 @@ section.section_stage_theme .lead {
 .card.museum-card .date-overlay .day {
   padding: 4px 16px;
   background-color: #f8f9fa;
-  color: #6c757d;
+  color: #767676;
   font-weight: 700;
   font-size: 1.25rem;
   text-align: center;
@@ -12459,7 +12464,7 @@ section.section_stage_theme .lead {
   font-weight: 600;
 }
 .card.museum-card .card-body .card-text {
-  color: #6c757d;
+  color: #767676;
   font-weight: 500;
 }
 .card.museum-card .card-body .flair {
@@ -12531,7 +12536,7 @@ section.section_stage_theme .lead {
 
 .selection-item {
   font-weight: 600;
-  color: #6c757d;
+  color: #767676;
   padding: 10px 20px;
   font-size: 1.125rem;
   margin: 0;
@@ -12548,7 +12553,7 @@ section.section_stage_theme .lead {
 }
 .selection-item .form-check-label .form-check-input {
   background-color: #f8f9fa;
-  border: solid #6c757d 2px;
+  border: solid #767676 2px;
   min-width: 34px;
   min-height: 34px;
   margin: 0;
@@ -12570,7 +12575,7 @@ section.section_stage_theme .lead {
   margin-left: 10px;
 }
 .selection-item .form-check-label .text-wrapper .smaller-text {
-  color: #6c757d;
+  color: #767676;
   margin: 0;
   font-size: 16px;
 }
