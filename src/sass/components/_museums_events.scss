@@ -22,7 +22,7 @@
       box-shadow: none;
     }
   }
-  button {
+  .home-search-btn {
     background-color: #006666;
     min-width: 130px;
     text-align: center;
@@ -114,6 +114,27 @@
     padding: 10px 20px;
     max-height: 40px;
     min-width: 0px;
+    border: solid white 2px;
+
+    &:hover {
+      color: white;
+      background-color: $dark;
+    }
+
+    &:focus {
+      color: $focus-text-colour;
+      background-color: $focus-colour;
+      border-color: $focus-text-colour;
+      outline: none;
+      box-shadow: none;
+
+      path {
+        fill: $focus-text-colour;
+      }
+    }
+    &:active:focus {
+      box-shadow: none;
+    }
   }
   .filter-btn.date-filter {
     position: relative;
@@ -125,12 +146,14 @@
       width: 40px;
       height: 100%;
       right: 0;
-      border-radius: 0px 10px 10px 0px;
+      border-radius: 0px 8px 8px 0px;
       background-color: $gray-200;
       @include ani;
 
       svg path {
         fill: $gray-600;
+        transform: translateX(-20%);
+        margin-right: 5px;
       }
     }
 
@@ -153,6 +176,13 @@
       }
     }
   }
+}
+
+// Filter modal /////////////////////
+
+.filter-list {
+  padding-left: 0;
+  list-style: none;
 }
 
 .event-image-section {
@@ -651,7 +681,7 @@
   background-color: white;
   border: solid $gray-700 1px;
   border-radius: 6px;
-  max-height: 400px;
+  max-height: 360px;
   min-width: 400px;
   overflow-y: scroll;
   position: relative;
@@ -674,7 +704,7 @@
       font-weight: 700;
       margin: 0;
     }
-    .btn-close {
+    .close {
       background-color: gray;
       max-width: 50px !important;
     }

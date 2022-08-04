@@ -10,7 +10,7 @@
         <h1 class="text-center mt-sm-4 mb-sm-5">Museums event search</h1>
         <form class="form-inline d-flex stage-search" action="/search.html">
           <input class="form-control mr-sm-2" type="search" placeholder="For example &quot;Roman&quot;" aria-label="Search">
-          <button id="home-search-button" class="btn btn-outline-light d-inline-flex" type="submit"><span class="search-text-long">Search events</span><span class="search-text-short">Find</span></button>
+          <button id="home-search-button" class="btn btn-outline-light home-search-btn d-inline-flex" type="submit"><span class="search-text-long">Search events</span><span class="search-text-short">Find</span></button>
         </form>
         <div class="filters-wrapper my-3">
           <div class="filters-1 d-flex flex-sm-row flex-column">
@@ -30,7 +30,7 @@
                       <ul class="dropdown-menu" aria-labelledby="dropdown-filter-type">
                         <div class="dropdown-top-section">
                           <h3 class="dropdown-heading h4">Event type</h3>
-                          <button type="button" class="btn-close" data-bs-dismiss="dropdown" aria-label="Close"></button>
+                          {# <button type="button" class="btn-close" data-bs-toggle="dropdown" aria-label="Close"></button> #}
                         </div>
                         <li class="selection-item">
                           <label class="form-check-label" for="type1check">
@@ -78,7 +78,131 @@
                         </ul>
                       </ul>
                 <button id="dropdown-filter-location" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Location</button>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-filter-location">
+                        <div class="dropdown-top-section">
+                          <h3 class="dropdown-heading h4">Location</h3>
+                          {# <button type="button" class="btn-close" data-bs-toggle="dropdown" aria-label="Close"></button> #}
+                        </div>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="location1check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Norwich Castle" id="location1check">
+                            <div class="text-wrapper">
+                              Norwich Castle • Norwich 
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="location2check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Strangers Hall" id="location2check">
+                            <div class="text-wrapper">
+                              Strangers Hall • Norwich
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="location3check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Time and Tide" id="location3check">
+                            <div class="text-wrapper">
+                              Time & Tide • Great Yarmouth 
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="location4check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Gressenhall" id="location4check">
+                            <div class="text-wrapper">
+                              Gressenhall Farm & Workhouse
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="location5check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Norwich" id="location5check">
+                            <div class="text-wrapper">
+                              Museum of Norwich • Norwich
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="location6check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Elizabethan House" id="location6check">
+                            <div class="text-wrapper">
+                              Elizabethan House • Great Yarmouth
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="location7check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Lynn" id="location7check">
+                            <div class="text-wrapper">
+                              Lynn Museum • King's Lynn
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="location8check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Cromer" id="location8check">
+                            <div class="text-wrapper">
+                              Cromer Museum • Cromer
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="location9check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Tolhouse Gaol" id="location9check">
+                            <div class="text-wrapper">
+                              Tolhouse Gaol • Great Yarmouth
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="location10check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Ancient House" id="location10check">
+                            <div class="text-wrapper">
+                              Ancient House • Thetford
+                            </div>
+                          </label>
+                        </li>
+                        <ul class="dropdown-bottom-section">
+                          <li><button class="filter-control-btn clear-filter" type="button" onclick="clearFiltersType()">Clear filters</button></li>
+                          <li><button class="filter-control-btn apply-filter" type="button" onclick="applyFiltersType(this.form.typeOption)">Apply filters</button></li>
+                        </ul>
+                      </ul>
                 <button id="dropdown-filter-audience" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Audience</button>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-filter-type">
+                        <div class="dropdown-top-section">
+                          <h3 class="dropdown-heading h4">Audience</h3>
+                          {# <button type="button" class="btn-close" data-bs-toggle="dropdown" aria-label="Close"></button> #}
+                        </div>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="audience1check">
+                            <input type="checkbox" class="form-check-input" name="audienceOption" value="Roman" id="audience1check">
+                            <div class="text-wrapper">
+                              All audiences 
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="audience2check">
+                            <input type="checkbox" class="form-check-input" name="audienceOption" value="Saxons" id="audience2check">
+                            <div class="text-wrapper">
+                              Adults focused 
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="audience3check">
+                            <input type="checkbox" class="form-check-input" name="audienceOption" value="Tudor" id="audience3check">
+                            <div class="text-wrapper">
+                              Children focused 
+                            </div>
+                          </label>
+                        </li>
+                        <ul class="dropdown-bottom-section">
+                          <li><button class="filter-control-btn clear-filter" type="button" onclick="clearFiltersType()">Clear filters</button></li>
+                          <li><button class="filter-control-btn apply-filter" type="button" onclick="applyFiltersType(this.form.typeOption)">Apply filters</button></li>
+                        </ul>
+                      </ul>
                 <button id="modal-filter-all" type="button" class="btn btn-primary filter-btn filter-btn-all">Filters</button>
               </div>
             </div>
@@ -98,26 +222,26 @@
           {{ generalcard.generalcard('A Fish Tail Trail', 'Cromer Museum • Cromer', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', "It's not Nemo that needs to be found this time, but our local fishy friends. Help them find their tails (and claws) which have been scattered around the museum and learn some fin-tastic facts.", 'museums-events/event2.jpg', '/example-event/', 'card-light museum-card cromer') }}
         </div>
         <div class="col-12 col-sm-6 col-lg-4">
-          {{ generalcard.generalcard('How to be an Elizabethan Trail', 'Acle • Acle Library', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', 'A Beginners guide to the “Golden Age” Ever wanted to know how to fit into Elizabethan society? Well this is your perfect starter guide! Follow the trail to find out some fantastic facts.', 'museums-events/event3.jpg', '/example-event/', 'card-light museum-card elizabethan') }}
+          {{ generalcard.generalcard('How to be an Elizabethan Trail', 'Elizabethan House • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', 'A Beginners guide to the “Golden Age” Ever wanted to know how to fit into Elizabethan society? Well this is your perfect starter guide! Follow the trail to find out some fantastic facts.', 'museums-events/event3.jpg', '/example-event/', 'card-light museum-card elizabethan') }}
         </div>
       </div>
       <div class="row {{rowDefaults}}" id="page-2" style="display: none;">
         <div class="col-12 col-sm-6 col-lg-4">
-          {{ generalcard.generalcard("Where's Wookie?", 'Acle • Acle Library', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', "The Wookies have gone into hiding as they spotted Storm Troopers in our exhibition. Can you help us find them amongst our collections?", 'museums-events/event1.jpg', '/example-event/', 'card-light museum-card time-and-tide') }}
+          {{ generalcard.generalcard("Where's Wookie?", 'Time & Tide • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', "The Wookies have gone into hiding as they spotted Storm Troopers in our exhibition. Can you help us find them amongst our collections?", 'museums-events/event1.jpg', '/example-event/', 'card-light museum-card time-and-tide') }}
         </div>
         <div class="col-12 col-sm-6 col-lg-4">
-          {{ generalcard.generalcard('How to be an Elizabethan Trail', 'Acle • Acle Library', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', 'A Beginners guide to the “Golden Age” Ever wanted to know how to fit into Elizabethan society? Well this is your perfect starter guide! Follow the trail to find out some fantastic facts.', 'museums-events/event3.jpg', '/example-event/', 'card-light museum-card elizabethan') }}
+          {{ generalcard.generalcard('How to be an Elizabethan Trail', 'Elizabethan House • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', 'A Beginners guide to the “Golden Age” Ever wanted to know how to fit into Elizabethan society? Well this is your perfect starter guide! Follow the trail to find out some fantastic facts.', 'museums-events/event3.jpg', '/example-event/', 'card-light museum-card elizabethan') }}
         </div>
         <div class="col-12 col-sm-6 col-lg-4">
-          {{ generalcard.generalcard('A Fish Tail Trail', 'Acle • Acle Library', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', "It's not Nemo that needs to be found this time, but our local fishy friends. Help them find their tails (and claws) which have been scattered around the museum and learn some fin-tastic facts.", 'museums-events/event2.jpg', '/example-event/', 'card-light museum-card cromer') }}
+          {{ generalcard.generalcard('A Fish Tail Trail', 'Cromer Museum • Cromer', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', "It's not Nemo that needs to be found this time, but our local fishy friends. Help them find their tails (and claws) which have been scattered around the museum and learn some fin-tastic facts.", 'museums-events/event2.jpg', '/example-event/', 'card-light museum-card cromer') }}
         </div>
       </div>
       <div class="row {{rowDefaults}}" id="page-3" style="display: none;">
         <div class="col-12 col-sm-6 col-lg-4">
-          {{ generalcard.generalcard('A Fish Tail Trail', 'Acle • Acle Library', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', "It's not Nemo that needs to be found this time, but our local fishy friends. Help them find their tails (and claws) which have been scattered around the museum and learn some fin-tastic facts.", 'museums-events/event2.jpg', '/example-event/', 'card-light museum-card cromer') }}
+          {{ generalcard.generalcard('A Fish Tail Trail', 'Cromer Museum • Cromer', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', "It's not Nemo that needs to be found this time, but our local fishy friends. Help them find their tails (and claws) which have been scattered around the museum and learn some fin-tastic facts.", 'museums-events/event2.jpg', '/example-event/', 'card-light museum-card cromer') }}
         </div>
         <div class="col-12 col-sm-6 col-lg-4">
-          {{ generalcard.generalcard("Where's Wookie?", 'Acle • Acle Library', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', "The Wookies have gone into hiding as they spotted Storm Troopers in our exhibition. Can you help us find them amongst our collections?", 'museums-events/event1.jpg', '/example-event/', 'card-light museum-card time-and-tide') }}
+          {{ generalcard.generalcard("Where's Wookie?", 'Time & Tide • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', "The Wookies have gone into hiding as they spotted Storm Troopers in our exhibition. Can you help us find them amongst our collections?", 'museums-events/event1.jpg', '/example-event/', 'card-light museum-card time-and-tide') }}
         </div>
       </div>
 
