@@ -12046,6 +12046,10 @@ section.section_stage_theme .lead {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+.filters-wrapper .filters-1 {
+  display: flex;
+  justify-content: space-between;
+}
 @media (max-width: 767.98px) {
   .filters-wrapper .filters-1 {
     width: 100%;
