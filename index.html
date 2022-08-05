@@ -11,7 +11,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
     
     <link rel="apple-touch-icon" sizes="180x180" href="/museums-events/public/img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/museums-events/public/img/favicons/favicon-32x32.png">
@@ -113,17 +115,17 @@ Search</button>
   <section class="museums-events-stage" style="background: linear-gradient(to right, rgba(0, 35, 93, 0.8), rgba(0, 35, 93, 0.8)), url('/museums-events/public/img/stage-img-1.jpg');">
     <div class="container">
       <div class="stage-search">
-        <h1 class="text-center mt-sm-4 mb-sm-5">Museums event search</h1>
+        <h1 class="text-center mt-md-4 mb-md-5">Museums event search</h1>
         <form class="form-inline d-flex stage-search" action="/search.html">
           <input class="form-control mr-sm-2" type="search" placeholder="For example &quot;Roman&quot;" aria-label="Search">
           <button id="home-search-button" class="btn btn-outline-light home-search-btn d-inline-flex" type="submit"><span class="search-text-long">Search events</span><span class="search-text-short">Search</span></button>
         </form>
         <div class="filters-wrapper my-3">
-          <div class="filters-1 d-flex flex-sm-row flex-column">
-            <div style="margin-right: 10px">
+          <div class="filters-1 mb-3 mb-md-0">
+            <div class="me-md-2">
               <h2 class="h5">Date to</h2>
               <button class="btn btn-primary filter-btn date-filter">YYYY-MM-DD<div class="icon-space"><svg xmlns="http://www.w3.org/2000/svg" height="36" width="40" viewBox="-30 -3 78 50"><path d="M9 44q-1.2 0-2.1-.9Q6 42.2 6 41V10q0-1.2.9-2.1Q7.8 7 9 7h3.25V4h3.25v3h17V4h3.25v3H39q1.2 0 2.1.9.9.9.9 2.1v31q0 1.2-.9 2.1-.9.9-2.1.9Zm0-3h30V19.5H9V41Zm0-24.5h30V10H9Zm0 0V10v6.5ZM24 28q-.85 0-1.425-.575Q22 26.85 22 26q0-.85.575-1.425Q23.15 24 24 24q.85 0 1.425.575Q26 25.15 26 26q0 .85-.575 1.425Q24.85 28 24 28Zm-8 0q-.85 0-1.425-.575Q14 26.85 14 26q0-.85.575-1.425Q15.15 24 16 24q.85 0 1.425.575Q18 25.15 18 26q0 .85-.575 1.425Q16.85 28 16 28Zm16 0q-.85 0-1.425-.575Q30 26.85 30 26q0-.85.575-1.425Q31.15 24 32 24q.85 0 1.425.575Q34 25.15 34 26q0 .85-.575 1.425Q32.85 28 32 28Zm-8 8q-.85 0-1.425-.575Q22 34.85 22 34q0-.85.575-1.425Q23.15 32 24 32q.85 0 1.425.575Q26 33.15 26 34q0 .85-.575 1.425Q24.85 36 24 36Zm-8 0q-.85 0-1.425-.575Q14 34.85 14 34q0-.85.575-1.425Q15.15 32 16 32q.85 0 1.425.575Q18 33.15 18 34q0 .85-.575 1.425Q16.85 36 16 36Zm16 0q-.85 0-1.425-.575Q30 34.85 30 34q0-.85.575-1.425Q31.15 32 32 32q.85 0 1.425.575Q34 33.15 34 34q0 .85-.575 1.425Q32.85 36 32 36Z"/></svg></div></button></div>
-            <div class="my-sm-0 my-3">
+            <div>
               <h2 class="h5">Date from</h2>
               <button class="btn btn-primary filter-btn date-filter">YYYY-MM-DD<div class="icon-space"><svg xmlns="http://www.w3.org/2000/svg" height="36" width="40" viewBox="-30 -3 78 50"><path d="M9 44q-1.2 0-2.1-.9Q6 42.2 6 41V10q0-1.2.9-2.1Q7.8 7 9 7h3.25V4h3.25v3h17V4h3.25v3H39q1.2 0 2.1.9.9.9.9 2.1v31q0 1.2-.9 2.1-.9.9-2.1.9Zm0-3h30V19.5H9V41Zm0-24.5h30V10H9Zm0 0V10v6.5ZM24 28q-.85 0-1.425-.575Q22 26.85 22 26q0-.85.575-1.425Q23.15 24 24 24q.85 0 1.425.575Q26 25.15 26 26q0 .85-.575 1.425Q24.85 28 24 28Zm-8 0q-.85 0-1.425-.575Q14 26.85 14 26q0-.85.575-1.425Q15.15 24 16 24q.85 0 1.425.575Q18 25.15 18 26q0 .85-.575 1.425Q16.85 28 16 28Zm16 0q-.85 0-1.425-.575Q30 26.85 30 26q0-.85.575-1.425Q31.15 24 32 24q.85 0 1.425.575Q34 25.15 34 26q0 .85-.575 1.425Q32.85 28 32 28Zm-8 8q-.85 0-1.425-.575Q22 34.85 22 34q0-.85.575-1.425Q23.15 32 24 32q.85 0 1.425.575Q26 33.15 26 34q0 .85-.575 1.425Q24.85 36 24 36Zm-8 0q-.85 0-1.425-.575Q14 34.85 14 34q0-.85.575-1.425Q15.15 32 16 32q.85 0 1.425.575Q18 33.15 18 34q0 .85-.575 1.425Q16.85 36 16 36Zm16 0q-.85 0-1.425-.575Q30 34.85 30 34q0-.85.575-1.425Q31.15 32 32 32q.85 0 1.425.575Q34 33.15 34 34q0 .85-.575 1.425Q32.85 36 32 36Z"/></svg></div></button>
             </div>
@@ -388,9 +390,7 @@ Search</button>
   <section class="bg-gray-200">
     <div class="container py-5">
       <h2 class="h3" style="margin-bottom: 0px;">Browse by type</h2>
-      <div class="swiper-v2">
-        <div class="swiper-wrapper">
-          <div class="card-wrapper">
+        <div class="card-wrapper-slick">
             <div class="card card-light">
               <div class="img-wrapper ratio ratio-1x1">
                 <img src="img/museums-events/workshops.jpg" class="card-img-top" alt="image for Family activities"> 
@@ -440,12 +440,8 @@ Search</button>
               </div>
             </div>
           </div>
-        </div>
-      </div>
       <h2 class="h3 mt-5" style="margin-bottom: 0px;">Browse by location</h2>
-      <div class="swiper-v2">
-        <div class="swiper-wrapper">
-          <div class="card-wrapper">
+      <div class="card-wrapper-slick">
             <div class="card card-light">
               <div class="img-wrapper ratio ratio-1x1">
                 <img src="img/museums-events/norwich-castle.jpg" class="card-img-top" alt="image for Norwich Castle">
@@ -495,8 +491,6 @@ Search</button>
               </div>
             </div>
           </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -588,7 +582,64 @@ Search</button>
 </footer>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
   
+  <script
+		src="https://code.jquery.com/jquery-3.6.0.js"
+		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+		crossorigin="anonymous">
+  </script>
+
+  <script
+    type="text/javascript"
+    src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js">
+  </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.card-wrapper-slick').slick({
+        infinite: false,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        speed: 300,
+        variableWidth: true,
+        responsive: [
+          {
+            breakpoint: 1400,
+            settings: {
+              slidesToShow: 5
+            }
+          },
+          {
+            breakpoint: 1200,
+            settings: {
+              slidesToShow: 4
+            }
+          },
+          {
+            breakpoint: 992,
+            settings: {
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 2
+            }
+          },
+          {
+            breakpoint: 576,
+            settings: {
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
+    });
+  </script>
+
 </body>
 </html>
