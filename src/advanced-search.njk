@@ -452,35 +452,31 @@
 
 
 
-    // PAGINATION ///////////////////////////////////////////////////
+    // PAGINATION /////////////////////////////////////////////////// 
 
     const RESULTS_WRAPPER = document.getElementById('page-content');
 
-    function showResults(n) {
+    const LINK1 = document.getElementById("page1-link");
+    const LINK2 = document.getElementById("page2-link");
+    const LINK3 = document.getElementById("page3-link");
+
+    const LINK_PREV = document.getElementById("page-prev-link");
+    const LINK_NEXT = document.getElementById("page-next-link");
+
+    function showResults(start, end) {
       let results = RESULTS_WRAPPER.children;
       console.log(`number of resuts= ${results.length}`);
 
-      for (i = n; i < results.length; i++) {
-        results[i].style.display = 'none';
+      for (i = 0; i < results.length; i++) {
+        if (i >= start && i < end) {
+          results[i].style.display = 'block'; 
+        } else {
+          results[i].style.display = 'none';
+        }
       }
     }
 
-    /*
-
     let currentPage = 1;
-
-    const link1 = document.getElementById("page1-link");
-    const link2 = document.getElementById("page2-link");
-    const link3 = document.getElementById("page3-link");
-
-    const linkPrev = document.getElementById("page-prev-link");
-    const linkNext = document.getElementById("page-next-link");
-
-    window.onload = function() {
-      let currentPage = 1;
-      page2.style.display = "none";
-      page3.style.display = "none";
-    }
 
     function nextPage() {
       if (currentPage >= 3) return;
@@ -494,63 +490,51 @@
 
     function showPage(pageNum) {
       if (pageNum == 1) {
-        page1.style.display = "flex";
-        page2.style.display = "none";
-        page3.style.display = "none";
+        LINK1.classList.add("active");
+        LINK2.classList.remove("active");
+        LINK3.classList.remove("active");
 
-        link1.classList.add("active");
-        link2.classList.remove("active");
-        link3.classList.remove("active");
-
-        linkPrev.classList.add("disabled");
-        linkPrev.firstElementChild.tabIndex="-1";
-        linkNext.classList.remove("disabled");
-        linkNext.firstElementChild.tabIndex="0";
+        LINK_PREV.classList.add("disabled");
+        LINK_PREV.firstElementChild.tabIndex="-1";
+        LINK_NEXT.classList.remove("disabled");
+        LINK_NEXT.firstElementChild.tabIndex="0";
+        
         currentPage = 1;
-
+        showResults(0,3);
+        RESULTS_WRAPPER.scrollIntoView();
         //page1.getElementsByTagName('a')[0].focus();
-
-        page1.scrollIntoView();
       } else if (pageNum == 2) {
-        page1.style.display = "none";
-        page2.style.display = "flex";
-        page3.style.display = "none";
+        LINK1.classList.remove("active");
+        LINK2.classList.add("active");
+        LINK3.classList.remove("active");
 
-        link1.classList.remove("active");
-        link2.classList.add("active");
-        link3.classList.remove("active");
-
-        linkPrev.classList.remove("disabled");
-        linkPrev.firstElementChild.tabIndex="0";
-        linkNext.classList.remove("disabled");
-        linkNext.firstElementChild.tabIndex="0";
+        LINK_PREV.classList.remove("disabled");
+        LINK_PREV.firstElementChild.tabIndex="0";
+        LINK_NEXT.classList.remove("disabled");
+        LINK_NEXT.firstElementChild.tabIndex="0";
+        
         currentPage = 2;
-
+        showResults(3,6);
+        RESULTS_WRAPPER.scrollIntoView();
         //page2.getElementsByTagName('a')[0].focus();
-
-        page2.scrollIntoView();
       } else if (pageNum == 3) {
-        page1.style.display = "none";
-        page2.style.display = "none";
-        page3.style.display = "flex";
+        LINK1.classList.remove("active");
+        LINK2.classList.remove("active");
+        LINK3.classList.add("active");
 
-        link1.classList.remove("active");
-        link2.classList.remove("active");
-        link3.classList.add("active");
+        LINK_PREV.classList.remove("disabled");
+        LINK_PREV.firstElementChild.tabIndex="0";
+        LINK_NEXT.classList.add("disabled");
+        LINK_NEXT.firstElementChild.tabIndex="-1";
 
-        linkPrev.classList.remove("disabled");
-        linkPrev.firstElementChild.tabIndex="0";
-        linkNext.classList.add("disabled");
-        linkNext.firstElementChild.tabIndex="-1";
         currentPage = 3;
-
+        showResults(6,8)
+        RESULTS_WRAPPER.scrollIntoView();
         //page3.getElementsByTagName('a')[0].focus();
-
-        page3.scrollIntoView();
       } else {
         console.log("pagination error");
       }
-    } */
+    }
 
     // COOKIES //////////////////////////////////
 
