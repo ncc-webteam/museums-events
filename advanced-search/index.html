@@ -175,8 +175,8 @@ Search</button>
                           </label>
                         </li>
                         <div class="dropdown-bottom-section">
-                          <button class="filter-control-btn clear-filter" type="button" onclick="clearFiltersType()">Clear filters</button>
-                          <button class="filter-control-btn apply-filter" type="button" onclick="applyFiltersType(this.form.typeOption)">Apply filters</button>
+                          <button class="filter-control-btn clear-filter" type="button" onclick="clearFiltersDropdown('typeOption')" data-bs-dismiss="dropdown">Clear filters</button>
+                          <button class="filter-control-btn apply-filter" type="button" onclick="applyfiltersDropdown('typeOption', document.getElementsByName('typeOption'))" data-bs-dismiss="dropdown">Apply filters</button>
                         </div>
                       </ul>
                 <button id="dropdown-filter-location" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Location</button>
@@ -266,8 +266,8 @@ Search</button>
                           </label>
                         </li>
                         <div class="dropdown-bottom-section">
-                          <button class="filter-control-btn clear-filter" type="button" onclick="clearFiltersType()">Clear filters</button>
-                          <button class="filter-control-btn apply-filter" type="button" onclick="applyFiltersType(this.form.typeOption)">Apply filters</button>
+                          <button class="filter-control-btn clear-filter" type="button" onclick="clearFiltersDropdown('locationOption')" data-bs-dismiss="dropdown">Clear filters</button>
+                          <button class="filter-control-btn apply-filter" type="button" onclick="applyfiltersDropdown('locationOption', document.getElementsByName('locationOption'))" data-bs-dismiss="dropdown">Apply filters</button>
                         </div>
                       </ul>
                 <button id="dropdown-filter-audience" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Audience</button>
@@ -278,7 +278,7 @@ Search</button>
                         </div>
                         <li class="selection-item">
                           <label class="form-check-label" for="audience1check">
-                            <input type="checkbox" class="form-check-input" name="audienceOption" value="Roman" id="audience1check">
+                            <input type="checkbox" class="form-check-input" name="audienceOption" value="All" id="audience1check">
                             <div class="text-wrapper">
                               All audiences 
                             </div>
@@ -286,7 +286,7 @@ Search</button>
                         </li>
                         <li class="selection-item">
                           <label class="form-check-label" for="audience2check">
-                            <input type="checkbox" class="form-check-input" name="audienceOption" value="Saxons" id="audience2check">
+                            <input type="checkbox" class="form-check-input" name="audienceOption" value="Adults" id="audience2check">
                             <div class="text-wrapper">
                               Adults focused 
                             </div>
@@ -294,15 +294,15 @@ Search</button>
                         </li>
                         <li class="selection-item">
                           <label class="form-check-label" for="audience3check">
-                            <input type="checkbox" class="form-check-input" name="audienceOption" value="Tudor" id="audience3check">
+                            <input type="checkbox" class="form-check-input" name="audienceOption" value="Children" id="audience3check">
                             <div class="text-wrapper">
                               Children focused 
                             </div>
                           </label>
                         </li>
                         <div class="dropdown-bottom-section">
-                          <button class="filter-control-btn clear-filter" type="button" onclick="clearFiltersType()">Clear filters</button>
-                          <button class="filter-control-btn apply-filter" type="button" onclick="applyFiltersType(this.form.typeOption)">Apply filters</button>
+                          <button class="filter-control-btn clear-filter" type="button" onclick="clearFiltersDropdown('audienceOption')" data-bs-dismiss="dropdown">Clear filters</button>
+                          <button class="filter-control-btn apply-filter" type="button" onclick="applyfiltersDropdown('audienceOption', document.getElementsByName('audienceOption'))" data-bs-dismiss="dropdown">Apply filters</button>
                         </div>
                       </ul>
                 <button id="modal-filter-all" type="button" class="btn btn-primary filter-btn filter-btn-all" data-bs-toggle="modal" data-bs-target="#filtersModal">Filters</button>
@@ -1117,7 +1117,16 @@ Search</button>
     // Filters and cookie functions
 
     const SEARCH_INPUT = document.getElementById('home-search-input');
+
     const FILTERS_BTN = document.getElementById('modal-filter-all');
+    const TYPE_BTN = document.getElementById('dropdown-filter-type');
+    const LOCATION_BTN = document.getElementById('dropdown-filter-location');
+    const AUDIENCE_BTN = document.getElementById('dropdown-filter-audience');
+
+    const TYPE_LIST = document.getElementsByName('typeOption');
+    const LOCATION_LIST = document.getElementsByName('locationOption');
+    const AUDIENCE_LIST = document.getElementsByName('audienceOption');
+
     const TYPE_LIST_MODAL = document.getElementsByName('typeOptionModal');
     const LOCATION_LIST_MODAL = document.getElementsByName('locationOptionModal');
     const AUDIENCE_LIST_MODAL = document.getElementsByName('audienceOptionModal');
@@ -1132,12 +1141,21 @@ Search</button>
       let locations = getCookie('locationSelections');
       let audiences = getCookie('audienceSelections');
 
-      let nFitlers = 0;
+      let nType = 0;
+      let nLocation = 0;
+      let nAudience = 0;
 
       TYPE_LIST_MODAL.forEach(function (type) {
         if (types.includes(type.value)) {
           type.checked = true;
-          nFitlers++;
+          nType++;
+        } else {
+          type.checked = false;
+        }
+      });
+      TYPE_LIST.forEach(function (type) {
+        if (types.includes(type.value)) {
+          type.checked = true;
         } else {
           type.checked = false;
         }
@@ -1145,7 +1163,14 @@ Search</button>
       LOCATION_LIST_MODAL.forEach(function (location) {
         if (locations.includes(location.value)) {
           location.checked = true;
-          nFitlers++;
+          nLocation++;
+        } else {
+          location.checked = false;
+        }
+      });
+      LOCATION_LIST.forEach(function (location) {
+        if (locations.includes(location.value)) {
+          location.checked = true;
         } else {
           location.checked = false;
         }
@@ -1153,12 +1178,22 @@ Search</button>
       AUDIENCE_LIST_MODAL.forEach(function (audience) {
         if (audiences.includes(audience.value)) {
           audience.checked = true;
-          nFitlers++;
+          nAudience++;
         } else {
           audience.checked = false;
         }
       });
-      updateFiltersButton(nFitlers);
+      AUDIENCE_LIST.forEach(function (audience) {
+        if (audiences.includes(audience.value)) {
+          audience.checked = true;
+        } else {
+          audience.checked = false;
+        }
+      });
+      updateFiltersButton(nType + nLocation + nAudience);
+      updateTypeButton(nType);
+      updateLocationButton(nLocation);
+      updateAudienceButton(nAudience);
     }
 
     function updateFiltersButton(n) {
@@ -1166,6 +1201,27 @@ Search</button>
         FILTERS_BTN.textContent = 'Filters';
       } else {
         FILTERS_BTN.textContent = `Filters • ${n}`;
+      }
+    }
+    function updateTypeButton(n) {
+      if (n === 0) {
+        TYPE_BTN.textContent = 'Type';
+      } else {
+        TYPE_BTN.textContent = `Type • ${n}`;
+      }
+    }
+    function updateLocationButton(n) {
+      if (n === 0) {
+        LOCATION_BTN.textContent = 'Location';
+      } else {
+        LOCATION_BTN.textContent = `Location • ${n}`;
+      }
+    }
+    function updateAudienceButton(n) {
+      if (n === 0) {
+        AUDIENCE_BTN.textContent = 'Audience';
+      } else {
+        AUDIENCE_BTN.textContent = `Audience • ${n}`;
       }
     }
 
@@ -1212,6 +1268,55 @@ Search</button>
       setCookie('locationSelections', null, 1);
       setCookie('audienceSelections', null, 1);
 
+      updateSelections();
+    }
+
+    // used by dropdowns
+    function applyfiltersDropdown(name, items) {
+      if (name === 'typeOption') {
+        let types = items;
+        let typeSelections = [];
+        types.forEach(function (type) {
+          if (type.checked) {
+            typeSelections.push(type.value);
+          }
+        });
+        setCookie('typeSelections', typeSelections, 1);
+      }
+      if (name === 'locationOption') {
+        let locations = items;
+        let locationSelections = [];
+        locations.forEach(function (loc) {
+          if (loc.checked) {
+            locationSelections.push(loc.value);
+          }
+        });
+        setCookie('locationSelections', locationSelections, 1);
+      }
+      if (name === 'audienceOption') {
+        let audiences = items;
+        let audienceSelections = [];
+        audiences.forEach(function (audience) {
+          if (audience.checked) {
+            audienceSelections.push(audience.value);
+          }
+        });
+        setCookie('audienceSelections', audienceSelections, 1); 
+      }
+      
+      updateSelections();
+    }
+
+    function clearFiltersDropdown(name) {
+      if (name === 'typeOption') {
+        setCookie('typeSelections', null, 1);
+      }
+      if (name === 'locationOption') {
+        setCookie('locationSelections', null, 1);
+      }
+      if (name === 'audienceOption') {
+        setCookie('audienceSelections', null, 1);
+      }
       updateSelections();
     }
 
