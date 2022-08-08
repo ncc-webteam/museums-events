@@ -12153,7 +12153,10 @@ section.section_stage_theme .lead {
   fill: #e9ecef;
 }
 .filters-wrapper .filter-btn.date-filter:focus .icon-space {
+  transition: none;
   background-color: #0b0c0c;
+  outline: solid 2px #0b0c0c;
+  outline-offset: -2px;
 }
 .filters-wrapper .filter-btn.date-filter:focus .icon-space svg path {
   fill: #ffdd00;
