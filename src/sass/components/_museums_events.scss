@@ -194,7 +194,10 @@
     }
     &:focus {
       .icon-space {
+        transition: none;
         background-color: $focus-text-colour;
+        outline: solid 2px $focus-text-colour;
+        outline-offset: -2px;
 
         svg path {
           fill: $focus-colour;
