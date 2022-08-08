@@ -385,7 +385,7 @@
       </div>
       <div class="modal-footer">
         <div class="dropdown-bottom-section modal-bottom-section">
-          <button class="filter-control-btn clear-filter" type="button" onclick="clearFilters()">Clear filters</button>
+          <button class="filter-control-btn clear-filter" type="button" onclick="clearFilters(document.getElementsByName('typeOptionModal'), document.getElementsByName('locationOptionModal'), document.getElementsByName('audienceOptionModal'))" data-bs-dismiss="modal">Clear filters</button>
           <button class="filter-control-btn apply-filter" type="button" onclick="applyFilters(document.getElementsByName('typeOptionModal'), document.getElementsByName('locationOptionModal'), document.getElementsByName('audienceOptionModal'))" data-bs-dismiss="modal">Apply filters</button>
         </div>
       </div>

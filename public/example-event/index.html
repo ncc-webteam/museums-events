@@ -388,6 +388,14 @@ Search</button>
       updateSelections();
     }
 
+    function clearFilters(types, locations, audiences) {
+      setCookie('typeSelections', null, 1);
+      setCookie('locationSelections', null, 1);
+      setCookie('audienceSelections', null, 1);
+
+      updateSelections();
+    }
+
     function setCookie(cname, cvalue, exdays) {
       const d = new Date();
       d.setTime(d.getTime() + (exdays*24*60*60*1000));

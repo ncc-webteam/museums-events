@@ -487,7 +487,7 @@ Search</button>
       </div>
       <div class="modal-footer">
         <div class="dropdown-bottom-section modal-bottom-section">
-          <button class="filter-control-btn clear-filter" type="button" onclick="clearFilters()">Clear filters</button>
+          <button class="filter-control-btn clear-filter" type="button" onclick="clearFilters(document.getElementsByName('typeOptionModal'), document.getElementsByName('locationOptionModal'), document.getElementsByName('audienceOptionModal'))" data-bs-dismiss="modal">Clear filters</button>
           <button class="filter-control-btn apply-filter" type="button" onclick="applyFilters(document.getElementsByName('typeOptionModal'), document.getElementsByName('locationOptionModal'), document.getElementsByName('audienceOptionModal'))" data-bs-dismiss="modal">Apply filters</button>
         </div>
       </div>
@@ -839,6 +839,14 @@ Search</button>
       setCookie('typeSelections', typeSelections, 1);
       setCookie('locationSelections', locationSelections, 1);
       setCookie('audienceSelections', audienceSelections, 1);
+
+      updateSelections();
+    }
+
+    function clearFilters(types, locations, audiences) {
+      setCookie('typeSelections', null, 1);
+      setCookie('locationSelections', null, 1);
+      setCookie('audienceSelections', null, 1);
 
       updateSelections();
     }
