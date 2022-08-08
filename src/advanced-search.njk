@@ -395,35 +395,31 @@
 
   <section>
     <div class="container">
-      <div class="row {{rowDefaults}}" id="page-1">
-        <div class="col-12 col-sm-6 col-lg-4">
-          {{ generalcard.generalcard("Where's Wookie?", 'Time & Tide • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', 'The Wookies have gone into hiding as they spotted Storm Troopers in our exhibition. Can you help us find them amongst our collections?', 'museums-events/event1.jpg', '/example-event/', 'card-light museum-card time-and-tide') }}
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          {{ generalcard.generalcard('A Fish Tail Trail', 'Cromer Museum • Cromer', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', "It's not Nemo that needs to be found this time, but our local fishy friends. Help them find their tails (and claws) which have been scattered around the museum and learn some fin-tastic facts.", 'museums-events/event2.jpg', '/example-event/', 'card-light museum-card cromer') }}
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          {{ generalcard.generalcard('How to be an Elizabethan Trail', 'Elizabethan House • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', 'A Beginners guide to the “Golden Age” Ever wanted to know how to fit into Elizabethan society? Well this is your perfect starter guide! Follow the trail to find out some fantastic facts.', 'museums-events/event3.jpg', '/example-event/', 'card-light museum-card elizabethan') }}
-        </div>
-      </div>
-      <div class="row {{rowDefaults}}" id="page-2" style="display: none;">
-        <div class="col-12 col-sm-6 col-lg-4">
-          {{ generalcard.generalcard("Where's Wookie?", 'Time & Tide • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', "The Wookies have gone into hiding as they spotted Storm Troopers in our exhibition. Can you help us find them amongst our collections?", 'museums-events/event1.jpg', '/example-event/', 'card-light museum-card time-and-tide') }}
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          {{ generalcard.generalcard('How to be an Elizabethan Trail', 'Elizabethan House • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', 'A Beginners guide to the “Golden Age” Ever wanted to know how to fit into Elizabethan society? Well this is your perfect starter guide! Follow the trail to find out some fantastic facts.', 'museums-events/event3.jpg', '/example-event/', 'card-light museum-card elizabethan') }}
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          {{ generalcard.generalcard('A Fish Tail Trail', 'Cromer Museum • Cromer', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', "It's not Nemo that needs to be found this time, but our local fishy friends. Help them find their tails (and claws) which have been scattered around the museum and learn some fin-tastic facts.", 'museums-events/event2.jpg', '/example-event/', 'card-light museum-card cromer') }}
-        </div>
-      </div>
-      <div class="row {{rowDefaults}}" id="page-3" style="display: none;">
-        <div class="col-12 col-sm-6 col-lg-4">
-          {{ generalcard.generalcard('A Fish Tail Trail', 'Cromer Museum • Cromer', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', "It's not Nemo that needs to be found this time, but our local fishy friends. Help them find their tails (and claws) which have been scattered around the museum and learn some fin-tastic facts.", 'museums-events/event2.jpg', '/example-event/', 'card-light museum-card cromer') }}
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          {{ generalcard.generalcard("Where's Wookie?", 'Time & Tide • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', "The Wookies have gone into hiding as they spotted Storm Troopers in our exhibition. Can you help us find them amongst our collections?", 'museums-events/event1.jpg', '/example-event/', 'card-light museum-card time-and-tide') }}
-        </div>
+      <div class="row {{rowDefaults}}" id="page-content">
+          <div class="col-12 col-sm-6 col-lg-4" id="result-1-wrapper">
+            {{ generalcard.generalcard("Where's Wookie?", 'Time & Tide • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', 'The Wookies have gone into hiding as they spotted Storm Troopers in our exhibition. Can you help us find them amongst our collections?', 'museums-events/event1.jpg', '/example-event/', 'card-light museum-card time-and-tide', '1') }}
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4" id="result-2-wrapper">
+            {{ generalcard.generalcard('A Fish Tail Trail', 'Cromer Museum • Cromer', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', "It's not Nemo that needs to be found this time, but our local fishy friends. Help them find their tails (and claws) which have been scattered around the museum and learn some fin-tastic facts.", 'museums-events/event2.jpg', '/example-event/', 'card-light museum-card cromer', '2') }}
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4">
+            {{ generalcard.generalcard('How to be an Elizabethan Trail', 'Elizabethan House • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', 'A Beginners guide to the “Golden Age” Ever wanted to know how to fit into Elizabethan society? Well this is your perfect starter guide! Follow the trail to find out some fantastic facts.', 'museums-events/event3.jpg', '/example-event/', 'card-light museum-card elizabethan', '3') }}
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4">
+            {{ generalcard.generalcard("Where's Wookie?", 'Time & Tide • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', "The Wookies have gone into hiding as they spotted Storm Troopers in our exhibition. Can you help us find them amongst our collections?", 'museums-events/event1.jpg', '/example-event/', 'card-light museum-card time-and-tide', '4') }}
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4">
+            {{ generalcard.generalcard('How to be an Elizabethan Trail', 'Elizabethan House • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', 'A Beginners guide to the “Golden Age” Ever wanted to know how to fit into Elizabethan society? Well this is your perfect starter guide! Follow the trail to find out some fantastic facts.', 'museums-events/event3.jpg', '/example-event/', 'card-light museum-card elizabethan', '5') }}
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4">
+            {{ generalcard.generalcard('A Fish Tail Trail', 'Cromer Museum • Cromer', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', "It's not Nemo that needs to be found this time, but our local fishy friends. Help them find their tails (and claws) which have been scattered around the museum and learn some fin-tastic facts.", 'museums-events/event2.jpg', '/example-event/', 'card-light museum-card cromer', '6') }}
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4">
+            {{ generalcard.generalcard('A Fish Tail Trail', 'Cromer Museum • Cromer', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', "It's not Nemo that needs to be found this time, but our local fishy friends. Help them find their tails (and claws) which have been scattered around the museum and learn some fin-tastic facts.", 'museums-events/event2.jpg', '/example-event/', 'card-light museum-card cromer', '7') }}
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4">
+            {{ generalcard.generalcard("Where's Wookie?", 'Time & Tide • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', "The Wookies have gone into hiding as they spotted Storm Troopers in our exhibition. Can you help us find them amongst our collections?", 'museums-events/event1.jpg', '/example-event/', 'card-light museum-card time-and-tide', '8') }}
+          </div>
       </div>
 
       <div class="d-flex justify-content-center">
@@ -451,24 +447,36 @@
   </section>
 
   <script>
-    let currentPage = 1;
 
-    const page1 = document.getElementById("page-1");
-    const page2 = document.getElementById("page-2");
-    const page3 = document.getElementById("page-3");
+    // FILTERS //////////////////////////////////////////////////////
 
-    const link1 = document.getElementById("page1-link");
-    const link2 = document.getElementById("page2-link");
-    const link3 = document.getElementById("page3-link");
 
-    const linkPrev = document.getElementById("page-prev-link");
-    const linkNext = document.getElementById("page-next-link");
 
-    window.onload = function() {
-      let currentPage = 1;
-      page2.style.display = "none";
-      page3.style.display = "none";
+    // PAGINATION /////////////////////////////////////////////////// 
+
+    const RESULTS_WRAPPER = document.getElementById('page-content');
+
+    const LINK1 = document.getElementById("page1-link");
+    const LINK2 = document.getElementById("page2-link");
+    const LINK3 = document.getElementById("page3-link");
+
+    const LINK_PREV = document.getElementById("page-prev-link");
+    const LINK_NEXT = document.getElementById("page-next-link");
+
+    function showResults(start, end) {
+      let results = RESULTS_WRAPPER.children;
+      console.log(`number of resuts= ${results.length}`);
+
+      for (i = 0; i < results.length; i++) {
+        if (i >= start && i < end) {
+          results[i].style.display = 'block'; 
+        } else {
+          results[i].style.display = 'none';
+        }
+      }
     }
+
+    let currentPage = 1;
 
     function nextPage() {
       if (currentPage >= 3) return;
@@ -482,59 +490,47 @@
 
     function showPage(pageNum) {
       if (pageNum == 1) {
-        page1.style.display = "flex";
-        page2.style.display = "none";
-        page3.style.display = "none";
+        LINK1.classList.add("active");
+        LINK2.classList.remove("active");
+        LINK3.classList.remove("active");
 
-        link1.classList.add("active");
-        link2.classList.remove("active");
-        link3.classList.remove("active");
-
-        linkPrev.classList.add("disabled");
-        linkPrev.firstElementChild.tabIndex="-1";
-        linkNext.classList.remove("disabled");
-        linkNext.firstElementChild.tabIndex="0";
+        LINK_PREV.classList.add("disabled");
+        LINK_PREV.firstElementChild.tabIndex="-1";
+        LINK_NEXT.classList.remove("disabled");
+        LINK_NEXT.firstElementChild.tabIndex="0";
+        
         currentPage = 1;
-
+        showResults(0,3);
+        RESULTS_WRAPPER.scrollIntoView();
         //page1.getElementsByTagName('a')[0].focus();
-
-        page1.scrollIntoView();
       } else if (pageNum == 2) {
-        page1.style.display = "none";
-        page2.style.display = "flex";
-        page3.style.display = "none";
+        LINK1.classList.remove("active");
+        LINK2.classList.add("active");
+        LINK3.classList.remove("active");
 
-        link1.classList.remove("active");
-        link2.classList.add("active");
-        link3.classList.remove("active");
-
-        linkPrev.classList.remove("disabled");
-        linkPrev.firstElementChild.tabIndex="0";
-        linkNext.classList.remove("disabled");
-        linkNext.firstElementChild.tabIndex="0";
+        LINK_PREV.classList.remove("disabled");
+        LINK_PREV.firstElementChild.tabIndex="0";
+        LINK_NEXT.classList.remove("disabled");
+        LINK_NEXT.firstElementChild.tabIndex="0";
+        
         currentPage = 2;
-
+        showResults(3,6);
+        RESULTS_WRAPPER.scrollIntoView();
         //page2.getElementsByTagName('a')[0].focus();
-
-        page2.scrollIntoView();
       } else if (pageNum == 3) {
-        page1.style.display = "none";
-        page2.style.display = "none";
-        page3.style.display = "flex";
+        LINK1.classList.remove("active");
+        LINK2.classList.remove("active");
+        LINK3.classList.add("active");
 
-        link1.classList.remove("active");
-        link2.classList.remove("active");
-        link3.classList.add("active");
+        LINK_PREV.classList.remove("disabled");
+        LINK_PREV.firstElementChild.tabIndex="0";
+        LINK_NEXT.classList.add("disabled");
+        LINK_NEXT.firstElementChild.tabIndex="-1";
 
-        linkPrev.classList.remove("disabled");
-        linkPrev.firstElementChild.tabIndex="0";
-        linkNext.classList.add("disabled");
-        linkNext.firstElementChild.tabIndex="-1";
         currentPage = 3;
-
+        showResults(6,8)
+        RESULTS_WRAPPER.scrollIntoView();
         //page3.getElementsByTagName('a')[0].focus();
-
-        page3.scrollIntoView();
       } else {
         console.log("pagination error");
       }
