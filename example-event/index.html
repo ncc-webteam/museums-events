@@ -15,13 +15,7 @@
 
 
     
-    <link rel="apple-touch-icon" sizes="180x180" href="/museums-events/public/img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/museums-events/public/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/museums-events/public/img/favicons/favicon-16x16.png">
-    <link rel="manifest" href="/museums-events/public/img/favicons/site.webmanifest">
-    <link rel="mask-icon" href="/museums-events/public/img/favicons/safari-pinned-tab.svg" color="#350c78">
-    <meta name="msapplication-TileColor" content="#350c78">
-    <meta name="theme-color" content="#ffffff">
+    
     
     
   <title>Example event - Museums Events</title>
@@ -298,6 +292,124 @@ Search</button>
         ]
       });
     });
+  </script>
+
+  <script>
+    // Filters and cookie functions
+
+    const SEARCH_INPUT = document.getElementById('home-search-input');
+    const FILTERS_BTN = document.getElementById('modal-filter-all');
+    const TYPE_LIST_MODAL = document.getElementsByName('typeOptionModal');
+    const LOCATION_LIST_MODAL = document.getElementsByName('locationOptionModal');
+    const AUDIENCE_LIST_MODAL = document.getElementsByName('audienceOptionModal');
+
+
+    window.onload = function() {
+      updateSelections();
+    }
+
+    function updateSelections() {
+      let types = getCookie('typeSelections');
+      let locations = getCookie('locationSelections');
+      let audiences = getCookie('audienceSelections');
+
+      let nFitlers = 0;
+
+      TYPE_LIST_MODAL.forEach(function (type) {
+        if (types.includes(type.value)) {
+          type.checked = true;
+          nFitlers++;
+        } else {
+          type.checked = false;
+        }
+      });
+      LOCATION_LIST_MODAL.forEach(function (location) {
+        if (locations.includes(location.value)) {
+          location.checked = true;
+          nFitlers++;
+        } else {
+          location.checked = false;
+        }
+      });
+      AUDIENCE_LIST_MODAL.forEach(function (audience) {
+        if (audiences.includes(audience.value)) {
+          audience.checked = true;
+          nFitlers++;
+        } else {
+          audience.checked = false;
+        }
+      });
+      updateFiltersButton(nFitlers);
+    }
+
+    function updateFiltersButton(n) {
+      if (n === 0) {
+        FILTERS_BTN.textContent = 'Filters';
+      } else {
+        FILTERS_BTN.textContent = `Filters • ${n}`;
+      }
+    }
+
+    function advancedSearchLink() {
+      // set search query, if any
+      const query = SEARCH_INPUT.value;
+      if (query) setCookie('searchQuery', query, 1);
+      window.location.href = "/museums-events/public/advanced-search/";
+      // set filters
+      //const filterType;
+      //const filterLocation;
+      //const filterAudience;
+    }
+
+    // used by modal
+    function applyFilters(types, locations, audiences) {
+      let typeSelections = [];
+      let locationSelections = [];
+      let audienceSelections = [];
+      types.forEach(function (type) {
+        if (type.checked) {
+          typeSelections.push(type.value);
+        }
+      });
+      locations.forEach(function (location) {
+        if (location.checked) {
+          locationSelections.push(location.value);
+        }
+      });
+      audiences.forEach(function (audience) {
+        if (audience.checked) {
+          audienceSelections.push(audience.value);
+        }
+      });
+      setCookie('typeSelections', typeSelections, 1);
+      setCookie('locationSelections', locationSelections, 1);
+      setCookie('audienceSelections', audienceSelections, 1);
+
+      updateSelections();
+    }
+
+    function setCookie(cname, cvalue, exdays) {
+      const d = new Date();
+      d.setTime(d.getTime() + (exdays*24*60*60*1000));
+      let expires = "expires="+ d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    function getCookie(cname) {
+      let name = cname + "=";
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let ca = decodedCookie.split(';');
+      for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
   </script>
 
 </body>
