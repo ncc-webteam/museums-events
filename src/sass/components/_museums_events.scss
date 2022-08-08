@@ -787,6 +787,12 @@
   flex-direction: column;
 }
 
+.filters-modal {
+  .modal-content {
+    border-radius: 15px;
+  }
+}
+
 .dropdown-bottom-section {
   display: flex;
   justify-content: space-between;
@@ -841,4 +847,7 @@
     background-color: #006666;
     border: none;
   }
+}
+.dropdown-bottom-section.modal-bottom-section {
+  border-top: none;
 }

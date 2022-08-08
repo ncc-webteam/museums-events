@@ -72,10 +72,10 @@
                             </div>
                           </label>
                         </li>
-                        <ul class="dropdown-bottom-section">
-                          <li><button class="filter-control-btn clear-filter" type="button" onclick="clearFiltersType()">Clear filters</button></li>
-                          <li><button class="filter-control-btn apply-filter" type="button" onclick="applyFiltersType(this.form.typeOption)">Apply filters</button></li>
-                        </ul>
+                        <div class="dropdown-bottom-section">
+                          <button class="filter-control-btn clear-filter" type="button" onclick="clearFiltersType()">Clear filters</button>
+                          <button class="filter-control-btn apply-filter" type="button" onclick="applyFiltersType(this.form.typeOption)">Apply filters</button>
+                        </div>
                       </ul>
                 <button id="dropdown-filter-location" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Location</button>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-filter-location">
@@ -163,10 +163,10 @@
                             </div>
                           </label>
                         </li>
-                        <ul class="dropdown-bottom-section">
-                          <li><button class="filter-control-btn clear-filter" type="button" onclick="clearFiltersType()">Clear filters</button></li>
-                          <li><button class="filter-control-btn apply-filter" type="button" onclick="applyFiltersType(this.form.typeOption)">Apply filters</button></li>
-                        </ul>
+                        <div class="dropdown-bottom-section">
+                          <button class="filter-control-btn clear-filter" type="button" onclick="clearFiltersType()">Clear filters</button>
+                          <button class="filter-control-btn apply-filter" type="button" onclick="applyFiltersType(this.form.typeOption)">Apply filters</button>
+                        </div>
                       </ul>
                 <button id="dropdown-filter-audience" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Audience</button>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-filter-type">
@@ -198,12 +198,12 @@
                             </div>
                           </label>
                         </li>
-                        <ul class="dropdown-bottom-section">
-                          <li><button class="filter-control-btn clear-filter" type="button" onclick="clearFiltersType()">Clear filters</button></li>
-                          <li><button class="filter-control-btn apply-filter" type="button" onclick="applyFiltersType(this.form.typeOption)">Apply filters</button></li>
-                        </ul>
+                        <div class="dropdown-bottom-section">
+                          <button class="filter-control-btn clear-filter" type="button" onclick="clearFiltersType()">Clear filters</button>
+                          <button class="filter-control-btn apply-filter" type="button" onclick="applyFiltersType(this.form.typeOption)">Apply filters</button>
+                        </div>
                       </ul>
-                <button id="modal-filter-all" type="button" class="btn btn-primary filter-btn filter-btn-all">Filters</button>
+                <button id="modal-filter-all" type="button" class="btn btn-primary filter-btn filter-btn-all" data-bs-toggle="modal" data-bs-target="#filtersModal">Filters</button>
               </div>
             </div>
           </div>
@@ -211,6 +211,187 @@
       </div>
     </div>
   </section>
+
+    <!-- Filters Modal -->
+<div class="modal fade filters-modal" id="filtersModal" tabindex="-1" aria-labelledby="filtersModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="filtersModalLabel">Filters</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <ul class="filter-list">
+                        <div class="dropdown-top-section">
+                          <h3 class="dropdown-heading h4">Event type</h3>
+                        </div>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="type1check">
+                            <input type="checkbox" class="form-check-input" name="typeOption" value="Roman" id="type1check">
+                            <div class="text-wrapper">
+                              Roman 
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="type2check">
+                            <input type="checkbox" class="form-check-input" name="typeOption" value="Saxons" id="type2check">
+                            <div class="text-wrapper">
+                              Saxons 
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="type3check">
+                            <input type="checkbox" class="form-check-input" name="typeOption" value="Tudor" id="type3check">
+                            <div class="text-wrapper">
+                              Tudor 
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="type4check">
+                            <input type="checkbox" class="form-check-input" name="typeOption" value="Victorian" id="type4check">
+                            <div class="text-wrapper">
+                              Victorian 
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="type5check">
+                            <input type="checkbox" class="form-check-input" name="typeOption" value="Modern" id="type5check">
+                            <div class="text-wrapper">
+                              Modern 
+                            </div>
+                          </label>
+                        </li>
+                      </ul>
+                      <ul class="filter-list">
+                        <div class="dropdown-top-section">
+                          <h3 class="dropdown-heading h4">Location</h3>
+                        </div>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="location1check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Norwich Castle" id="location1check">
+                            <div class="text-wrapper">
+                              Norwich Castle • Norwich 
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="location2check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Strangers Hall" id="location2check">
+                            <div class="text-wrapper">
+                              Strangers Hall • Norwich
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="location3check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Time and Tide" id="location3check">
+                            <div class="text-wrapper">
+                              Time & Tide • Great Yarmouth 
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="location4check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Gressenhall" id="location4check">
+                            <div class="text-wrapper">
+                              Gressenhall Farm & Workhouse
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="location5check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Norwich" id="location5check">
+                            <div class="text-wrapper">
+                              Museum of Norwich • Norwich
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="location6check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Elizabethan House" id="location6check">
+                            <div class="text-wrapper">
+                              Elizabethan House • Great Yarmouth
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="location7check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Lynn" id="location7check">
+                            <div class="text-wrapper">
+                              Lynn Museum • King's Lynn
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="location8check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Cromer" id="location8check">
+                            <div class="text-wrapper">
+                              Cromer Museum • Cromer
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="location9check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Tolhouse Gaol" id="location9check">
+                            <div class="text-wrapper">
+                              Tolhouse Gaol • Great Yarmouth
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="location10check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Ancient House" id="location10check">
+                            <div class="text-wrapper">
+                              Ancient House • Thetford
+                            </div>
+                          </label>
+                        </li>
+                      </ul>
+                      <ul class="filter-list">
+                        <div class="dropdown-top-section">
+                          <h3 class="dropdown-heading h4">Audience</h3>
+                          {# <button type="button" class="btn-close" data-bs-toggle="dropdown" aria-label="Close"></button> #}
+                        </div>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="audience1check">
+                            <input type="checkbox" class="form-check-input" name="audienceOption" value="Roman" id="audience1check">
+                            <div class="text-wrapper">
+                              All audiences 
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="audience2check">
+                            <input type="checkbox" class="form-check-input" name="audienceOption" value="Saxons" id="audience2check">
+                            <div class="text-wrapper">
+                              Adults focused 
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
+                          <label class="form-check-label" for="audience3check">
+                            <input type="checkbox" class="form-check-input" name="audienceOption" value="Tudor" id="audience3check">
+                            <div class="text-wrapper">
+                              Children focused 
+                            </div>
+                          </label>
+                        </li>
+                      </ul>
+      
+      </div>
+      <div class="modal-footer">
+        <div class="dropdown-bottom-section modal-bottom-section">
+          <button class="filter-control-btn clear-filter" type="button" onclick="clearFiltersType()">Clear filters</button>
+          <button class="filter-control-btn apply-filter" type="button" onclick="applyFiltersType(this.form.typeOption)">Apply filters</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
   <section>
     <div class="container">
