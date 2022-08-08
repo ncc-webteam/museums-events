@@ -73,8 +73,8 @@
                           </label>
                         </li>
                         <div class="dropdown-bottom-section">
-                          <button class="filter-control-btn clear-filter" type="button" onclick="clearFiltersType()">Clear filters</button>
-                          <button class="filter-control-btn apply-filter" type="button" onclick="applyFiltersType(this.form.typeOption)">Apply filters</button>
+                          <button class="filter-control-btn clear-filter" type="button" onclick="clearFiltersDropdown('typeOption')" data-bs-dismiss="dropdown">Clear filters</button>
+                          <button class="filter-control-btn apply-filter" type="button" onclick="applyfiltersDropdown('typeOption', document.getElementsByName('typeOption'))" data-bs-dismiss="dropdown">Apply filters</button>
                         </div>
                       </ul>
                 <button id="dropdown-filter-location" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Location</button>
@@ -164,8 +164,8 @@
                           </label>
                         </li>
                         <div class="dropdown-bottom-section">
-                          <button class="filter-control-btn clear-filter" type="button" onclick="clearFiltersType()">Clear filters</button>
-                          <button class="filter-control-btn apply-filter" type="button" onclick="applyFiltersType(this.form.typeOption)">Apply filters</button>
+                          <button class="filter-control-btn clear-filter" type="button" onclick="clearFiltersDropdown('locationOption')" data-bs-dismiss="dropdown">Clear filters</button>
+                          <button class="filter-control-btn apply-filter" type="button" onclick="applyfiltersDropdown('locationOption', document.getElementsByName('locationOption'))" data-bs-dismiss="dropdown">Apply filters</button>
                         </div>
                       </ul>
                 <button id="dropdown-filter-audience" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Audience</button>
@@ -176,7 +176,7 @@
                         </div>
                         <li class="selection-item">
                           <label class="form-check-label" for="audience1check">
-                            <input type="checkbox" class="form-check-input" name="audienceOption" value="Roman" id="audience1check">
+                            <input type="checkbox" class="form-check-input" name="audienceOption" value="All" id="audience1check">
                             <div class="text-wrapper">
                               All audiences 
                             </div>
@@ -184,7 +184,7 @@
                         </li>
                         <li class="selection-item">
                           <label class="form-check-label" for="audience2check">
-                            <input type="checkbox" class="form-check-input" name="audienceOption" value="Saxons" id="audience2check">
+                            <input type="checkbox" class="form-check-input" name="audienceOption" value="Adults" id="audience2check">
                             <div class="text-wrapper">
                               Adults focused 
                             </div>
@@ -192,15 +192,15 @@
                         </li>
                         <li class="selection-item">
                           <label class="form-check-label" for="audience3check">
-                            <input type="checkbox" class="form-check-input" name="audienceOption" value="Tudor" id="audience3check">
+                            <input type="checkbox" class="form-check-input" name="audienceOption" value="Children" id="audience3check">
                             <div class="text-wrapper">
                               Children focused 
                             </div>
                           </label>
                         </li>
                         <div class="dropdown-bottom-section">
-                          <button class="filter-control-btn clear-filter" type="button" onclick="clearFiltersType()">Clear filters</button>
-                          <button class="filter-control-btn apply-filter" type="button" onclick="applyFiltersType(this.form.typeOption)">Apply filters</button>
+                          <button class="filter-control-btn clear-filter" type="button" onclick="clearFiltersDropdown('audienceOption')" data-bs-dismiss="dropdown">Clear filters</button>
+                          <button class="filter-control-btn apply-filter" type="button" onclick="applyfiltersDropdown('audienceOption', document.getElementsByName('audienceOption'))" data-bs-dismiss="dropdown">Apply filters</button>
                         </div>
                       </ul>
                 <button id="modal-filter-all" type="button" class="btn btn-primary filter-btn filter-btn-all" data-bs-toggle="modal" data-bs-target="#filtersModal">Filters</button>
