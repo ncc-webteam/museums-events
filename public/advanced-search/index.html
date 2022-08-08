@@ -497,9 +497,9 @@ Search</button>
 
   <section>
     <div class="container">
-      <div class="row mt-0 mb-5 g-md-4 g-2" id="page-1">
-        <div class="col-12 col-sm-6 col-lg-4">
-          
+      <div class="row mt-0 mb-5 g-md-4 g-2" id="page-content">
+          <div class="col-12 col-sm-6 col-lg-4" id="result-1-wrapper">
+            
 
 <div class="card card-light museum-card time-and-tide h-100 " data-component="72">
 
@@ -519,7 +519,7 @@ Search</button>
   <div class="card-body">
 
     
-    <p class="card-location">Time &amp; Tide • Great Yarmouth</p>
+    <p id="result-1-location" class="card-location">Time &amp; Tide • Great Yarmouth</p>
     
 
     
@@ -544,9 +544,9 @@ Search</button>
 </div>
 
 
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4" id="result-2-wrapper">
+            
 
 <div class="card card-light museum-card cromer h-100 " data-component="72">
 
@@ -566,7 +566,7 @@ Search</button>
   <div class="card-body">
 
     
-    <p class="card-location">Cromer Museum • Cromer</p>
+    <p id="result-2-location" class="card-location">Cromer Museum • Cromer</p>
     
 
     
@@ -591,9 +591,9 @@ Search</button>
 </div>
 
 
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4">
+            
 
 <div class="card card-light museum-card elizabethan h-100 " data-component="72">
 
@@ -613,7 +613,7 @@ Search</button>
   <div class="card-body">
 
     
-    <p class="card-location">Elizabethan House • Great Yarmouth</p>
+    <p id="result-3-location" class="card-location">Elizabethan House • Great Yarmouth</p>
     
 
     
@@ -638,11 +638,9 @@ Search</button>
 </div>
 
 
-        </div>
-      </div>
-      <div class="row mt-0 mb-5 g-md-4 g-2" id="page-2" style="display: none;">
-        <div class="col-12 col-sm-6 col-lg-4">
-          
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4">
+            
 
 <div class="card card-light museum-card time-and-tide h-100 " data-component="72">
 
@@ -662,7 +660,7 @@ Search</button>
   <div class="card-body">
 
     
-    <p class="card-location">Time &amp; Tide • Great Yarmouth</p>
+    <p id="result-4-location" class="card-location">Time &amp; Tide • Great Yarmouth</p>
     
 
     
@@ -687,9 +685,9 @@ Search</button>
 </div>
 
 
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4">
+            
 
 <div class="card card-light museum-card elizabethan h-100 " data-component="72">
 
@@ -709,7 +707,7 @@ Search</button>
   <div class="card-body">
 
     
-    <p class="card-location">Elizabethan House • Great Yarmouth</p>
+    <p id="result-5-location" class="card-location">Elizabethan House • Great Yarmouth</p>
     
 
     
@@ -734,9 +732,9 @@ Search</button>
 </div>
 
 
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4">
+            
 
 <div class="card card-light museum-card cromer h-100 " data-component="72">
 
@@ -756,7 +754,7 @@ Search</button>
   <div class="card-body">
 
     
-    <p class="card-location">Cromer Museum • Cromer</p>
+    <p id="result-6-location" class="card-location">Cromer Museum • Cromer</p>
     
 
     
@@ -781,11 +779,9 @@ Search</button>
 </div>
 
 
-        </div>
-      </div>
-      <div class="row mt-0 mb-5 g-md-4 g-2" id="page-3" style="display: none;">
-        <div class="col-12 col-sm-6 col-lg-4">
-          
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4">
+            
 
 <div class="card card-light museum-card cromer h-100 " data-component="72">
 
@@ -805,7 +801,7 @@ Search</button>
   <div class="card-body">
 
     
-    <p class="card-location">Cromer Museum • Cromer</p>
+    <p id="result-7-location" class="card-location">Cromer Museum • Cromer</p>
     
 
     
@@ -830,9 +826,9 @@ Search</button>
 </div>
 
 
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4">
+            
 
 <div class="card card-light museum-card time-and-tide h-100 " data-component="72">
 
@@ -852,7 +848,7 @@ Search</button>
   <div class="card-body">
 
     
-    <p class="card-location">Time &amp; Tide • Great Yarmouth</p>
+    <p id="result-8-location" class="card-location">Time &amp; Tide • Great Yarmouth</p>
     
 
     
@@ -877,7 +873,7 @@ Search</button>
 </div>
 
 
-        </div>
+          </div>
       </div>
 
       <div class="d-flex justify-content-center">
@@ -905,11 +901,27 @@ Search</button>
   </section>
 
   <script>
-    let currentPage = 1;
 
-    const page1 = document.getElementById("page-1");
-    const page2 = document.getElementById("page-2");
-    const page3 = document.getElementById("page-3");
+    // FILTERS //////////////////////////////////////////////////////
+
+
+
+    // PAGINATION ///////////////////////////////////////////////////
+
+    const RESULTS_WRAPPER = document.getElementById('page-content');
+
+    function showResults(n) {
+      let results = RESULTS_WRAPPER.children;
+      console.log(`number of resuts= ${results.length}`);
+
+      for (i = n; i < results.length; i++) {
+        results[i].style.display = 'none';
+      }
+    }
+
+    /*
+
+    let currentPage = 1;
 
     const link1 = document.getElementById("page1-link");
     const link2 = document.getElementById("page2-link");
@@ -992,7 +1004,7 @@ Search</button>
       } else {
         console.log("pagination error");
       }
-    }
+    } */
 
     // COOKIES //////////////////////////////////
 
@@ -1134,6 +1146,8 @@ Search</button>
 
     window.onload = function() {
       updateSelections();
+
+      showResults(3);
     }
 
     function updateSelections() {
