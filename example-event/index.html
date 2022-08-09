@@ -447,9 +447,9 @@ Search</button>
     }
 
     function clearFilters(types, locations, audiences) {
-      setCookie('typeSelections', null, 1);
-      setCookie('locationSelections', null, 1);
-      setCookie('audienceSelections', null, 1);
+      setCookie('typeSelections', '', 1);
+      setCookie('locationSelections', '', 1);
+      setCookie('audienceSelections', '', 1);
 
       updateSelections();
     }
@@ -492,13 +492,13 @@ Search</button>
 
     function clearFiltersDropdown(name) {
       if (name === 'typeOption') {
-        setCookie('typeSelections', null, 1);
+        setCookie('typeSelections', '', 1);
       }
       if (name === 'locationOption') {
-        setCookie('locationSelections', null, 1);
+        setCookie('locationSelections', '', 1);
       }
       if (name === 'audienceOption') {
-        setCookie('audienceSelections', null, 1);
+        setCookie('audienceSelections', '', 1);
       }
       updateSelections();
     }
