@@ -93,7 +93,6 @@
 
     window.onload = function() {
       updateSelections();
-
       showResults(0,3);
     }
 
@@ -155,6 +154,7 @@
       updateTypeButton(nType);
       updateLocationButton(nLocation);
       updateAudienceButton(nAudience);
+      filterResults();
     }
 
     function updateFiltersButton(n) {

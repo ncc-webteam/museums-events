@@ -101,7 +101,7 @@
                         </li>
                         <li class="selection-item">
                           <label class="form-check-label" for="location3check">
-                            <input type="checkbox" class="form-check-input" name="locationOption" value="Time and Tide" id="location3check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Time & Tide" id="location3check">
                             <div class="text-wrapper">
                               Time & Tide • Great Yarmouth 
                             </div>
@@ -117,7 +117,7 @@
                         </li>
                         <li class="selection-item">
                           <label class="form-check-label" for="location5check">
-                            <input type="checkbox" class="form-check-input" name="locationOption" value="Norwich" id="location5check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Museum of Norwich" id="location5check">
                             <div class="text-wrapper">
                               Museum of Norwich • Norwich
                             </div>
@@ -288,7 +288,7 @@
                         </li>
                         <li class="selection-item">
                           <label class="form-check-label" for="location3check">
-                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Time and Tide" id="location3check">
+                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Time & Tide" id="location3check">
                             <div class="text-wrapper">
                               Time & Tide • Great Yarmouth 
                             </div>
@@ -304,7 +304,7 @@
                         </li>
                         <li class="selection-item">
                           <label class="form-check-label" for="location5check">
-                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Norwich" id="location5check">
+                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Museum of Norwich" id="location5check">
                             <div class="text-wrapper">
                               Museum of Norwich • Norwich
                             </div>
@@ -402,22 +402,22 @@
           <div class="col-12 col-sm-6 col-lg-4" id="result-2-wrapper">
             {{ generalcard.generalcard('A Fish Tail Trail', 'Cromer Museum • Cromer', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', "It's not Nemo that needs to be found this time, but our local fishy friends. Help them find their tails (and claws) which have been scattered around the museum and learn some fin-tastic facts.", 'museums-events/event2.jpg', '/example-event/', 'card-light museum-card cromer', '2') }}
           </div>
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4" id="result-3-wrapper">
             {{ generalcard.generalcard('How to be an Elizabethan Trail', 'Elizabethan House • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', 'A Beginners guide to the “Golden Age” Ever wanted to know how to fit into Elizabethan society? Well this is your perfect starter guide! Follow the trail to find out some fantastic facts.', 'museums-events/event3.jpg', '/example-event/', 'card-light museum-card elizabethan', '3') }}
           </div>
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4" id="result-4-wrapper">
             {{ generalcard.generalcard("Where's Wookie?", 'Time & Tide • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', "The Wookies have gone into hiding as they spotted Storm Troopers in our exhibition. Can you help us find them amongst our collections?", 'museums-events/event1.jpg', '/example-event/', 'card-light museum-card time-and-tide', '4') }}
           </div>
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4" id="result-5-wrapper">
             {{ generalcard.generalcard('How to be an Elizabethan Trail', 'Elizabethan House • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', 'A Beginners guide to the “Golden Age” Ever wanted to know how to fit into Elizabethan society? Well this is your perfect starter guide! Follow the trail to find out some fantastic facts.', 'museums-events/event3.jpg', '/example-event/', 'card-light museum-card elizabethan', '5') }}
           </div>
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4" id="result-6-wrapper">
             {{ generalcard.generalcard('A Fish Tail Trail', 'Cromer Museum • Cromer', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', "It's not Nemo that needs to be found this time, but our local fishy friends. Help them find their tails (and claws) which have been scattered around the museum and learn some fin-tastic facts.", 'museums-events/event2.jpg', '/example-event/', 'card-light museum-card cromer', '6') }}
           </div>
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4" id="result-7-wrapper">
             {{ generalcard.generalcard('A Fish Tail Trail', 'Cromer Museum • Cromer', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', "It's not Nemo that needs to be found this time, but our local fishy friends. Help them find their tails (and claws) which have been scattered around the museum and learn some fin-tastic facts.", 'museums-events/event2.jpg', '/example-event/', 'card-light museum-card cromer', '7') }}
           </div>
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4" id="result-8-wrapper">
             {{ generalcard.generalcard("Where's Wookie?", 'Time & Tide • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', '', "The Wookies have gone into hiding as they spotted Storm Troopers in our exhibition. Can you help us find them amongst our collections?", 'museums-events/event1.jpg', '/example-event/', 'card-light museum-card time-and-tide', '8') }}
           </div>
       </div>
@@ -448,10 +448,6 @@
 
   <script>
 
-    // FILTERS //////////////////////////////////////////////////////
-
-
-
     // PAGINATION /////////////////////////////////////////////////// 
 
     const RESULTS_WRAPPER = document.getElementById('page-content');
@@ -474,6 +470,7 @@
           results[i].style.display = 'none';
         }
       }
+      filterResults();
     }
 
     let currentPage = 1;
@@ -533,6 +530,38 @@
         //page3.getElementsByTagName('a')[0].focus();
       } else {
         console.log("pagination error");
+      }
+    }
+
+    // FILTERS //////////////////////////////////
+
+    function filterResults() {
+      // location
+      const locationCookie = getCookie('locationSelections');
+      if (locationCookie == '') {
+        console.log('no locations specified');
+        const results = RESULTS_WRAPPER.children;
+        Array.from(results).forEach(function (r) {
+          r.style.display = 'block';
+        });
+      } else {
+        const locations = locationCookie.split(","); // [Time & Tide, Cromer]
+        const results = RESULTS_WRAPPER.children;
+        // for each result, extract location text content ( #result-X-location )
+        // see if text content includes any of the locations
+
+        Array.from(results).forEach(function (r) {
+          r.style.display = 'none';
+          const idString = r.id.split("-");
+          const num = idString[1];
+          const locationEl = document.getElementById(`result-${num}-location`);
+          locations.forEach(function (loc) {
+            if (locationEl.textContent.includes(loc)) {
+              r.style.display = 'block';
+              return;
+            }
+          });
+        });
       }
     }
 
