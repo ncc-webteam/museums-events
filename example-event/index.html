@@ -315,7 +315,6 @@ Search</button>
 
     window.onload = function() {
       updateSelections();
-
       showResults(0,3);
     }
 
@@ -377,6 +376,7 @@ Search</button>
       updateTypeButton(nType);
       updateLocationButton(nLocation);
       updateAudienceButton(nAudience);
+      filterResults();
     }
 
     function updateFiltersButton(n) {

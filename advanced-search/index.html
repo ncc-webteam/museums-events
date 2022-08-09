@@ -203,7 +203,7 @@ Search</button>
                         </li>
                         <li class="selection-item">
                           <label class="form-check-label" for="location3check">
-                            <input type="checkbox" class="form-check-input" name="locationOption" value="Time and Tide" id="location3check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Time & Tide" id="location3check">
                             <div class="text-wrapper">
                               Time & Tide • Great Yarmouth 
                             </div>
@@ -219,7 +219,7 @@ Search</button>
                         </li>
                         <li class="selection-item">
                           <label class="form-check-label" for="location5check">
-                            <input type="checkbox" class="form-check-input" name="locationOption" value="Norwich" id="location5check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Museum of Norwich" id="location5check">
                             <div class="text-wrapper">
                               Museum of Norwich • Norwich
                             </div>
@@ -390,7 +390,7 @@ Search</button>
                         </li>
                         <li class="selection-item">
                           <label class="form-check-label" for="location3check">
-                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Time and Tide" id="location3check">
+                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Time & Tide" id="location3check">
                             <div class="text-wrapper">
                               Time & Tide • Great Yarmouth 
                             </div>
@@ -406,7 +406,7 @@ Search</button>
                         </li>
                         <li class="selection-item">
                           <label class="form-check-label" for="location5check">
-                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Norwich" id="location5check">
+                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Museum of Norwich" id="location5check">
                             <div class="text-wrapper">
                               Museum of Norwich • Norwich
                             </div>
@@ -592,7 +592,7 @@ Search</button>
 
 
           </div>
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4" id="result-3-wrapper">
             
 
 <div class="card card-light museum-card elizabethan h-100 " data-component="72">
@@ -639,7 +639,7 @@ Search</button>
 
 
           </div>
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4" id="result-4-wrapper">
             
 
 <div class="card card-light museum-card time-and-tide h-100 " data-component="72">
@@ -686,7 +686,7 @@ Search</button>
 
 
           </div>
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4" id="result-5-wrapper">
             
 
 <div class="card card-light museum-card elizabethan h-100 " data-component="72">
@@ -733,7 +733,7 @@ Search</button>
 
 
           </div>
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4" id="result-6-wrapper">
             
 
 <div class="card card-light museum-card cromer h-100 " data-component="72">
@@ -780,7 +780,7 @@ Search</button>
 
 
           </div>
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4" id="result-7-wrapper">
             
 
 <div class="card card-light museum-card cromer h-100 " data-component="72">
@@ -827,7 +827,7 @@ Search</button>
 
 
           </div>
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4" id="result-8-wrapper">
             
 
 <div class="card card-light museum-card time-and-tide h-100 " data-component="72">
@@ -902,10 +902,6 @@ Search</button>
 
   <script>
 
-    // FILTERS //////////////////////////////////////////////////////
-
-
-
     // PAGINATION /////////////////////////////////////////////////// 
 
     const RESULTS_WRAPPER = document.getElementById('page-content');
@@ -928,6 +924,7 @@ Search</button>
           results[i].style.display = 'none';
         }
       }
+      filterResults();
     }
 
     let currentPage = 1;
@@ -987,6 +984,38 @@ Search</button>
         //page3.getElementsByTagName('a')[0].focus();
       } else {
         console.log("pagination error");
+      }
+    }
+
+    // FILTERS //////////////////////////////////
+
+    function filterResults() {
+      // location
+      const locationCookie = getCookie('locationSelections');
+      if (locationCookie == '') {
+        console.log('no locations specified');
+        const results = RESULTS_WRAPPER.children;
+        Array.from(results).forEach(function (r) {
+          r.style.display = 'block';
+        });
+      } else {
+        const locations = locationCookie.split(","); // [Time & Tide, Cromer]
+        const results = RESULTS_WRAPPER.children;
+        // for each result, extract location text content ( #result-X-location )
+        // see if text content includes any of the locations
+
+        Array.from(results).forEach(function (r) {
+          r.style.display = 'none';
+          const idString = r.id.split("-");
+          const num = idString[1];
+          const locationEl = document.getElementById(`result-${num}-location`);
+          locations.forEach(function (loc) {
+            if (locationEl.textContent.includes(loc)) {
+              r.style.display = 'block';
+              return;
+            }
+          });
+        });
       }
     }
 
@@ -1130,7 +1159,6 @@ Search</button>
 
     window.onload = function() {
       updateSelections();
-
       showResults(0,3);
     }
 
@@ -1192,6 +1220,7 @@ Search</button>
       updateTypeButton(nType);
       updateLocationButton(nLocation);
       updateAudienceButton(nAudience);
+      filterResults();
     }
 
     function updateFiltersButton(n) {

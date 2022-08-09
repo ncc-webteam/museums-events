@@ -203,7 +203,7 @@ Search</button>
                         </li>
                         <li class="selection-item">
                           <label class="form-check-label" for="location3check">
-                            <input type="checkbox" class="form-check-input" name="locationOption" value="Time and Tide" id="location3check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Time & Tide" id="location3check">
                             <div class="text-wrapper">
                               Time & Tide • Great Yarmouth 
                             </div>
@@ -219,7 +219,7 @@ Search</button>
                         </li>
                         <li class="selection-item">
                           <label class="form-check-label" for="location5check">
-                            <input type="checkbox" class="form-check-input" name="locationOption" value="Norwich" id="location5check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Museum of Norwich" id="location5check">
                             <div class="text-wrapper">
                               Museum of Norwich • Norwich
                             </div>
@@ -390,7 +390,7 @@ Search</button>
                         </li>
                         <li class="selection-item">
                           <label class="form-check-label" for="location3check">
-                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Time and Tide" id="location3check">
+                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Time & Tide" id="location3check">
                             <div class="text-wrapper">
                               Time & Tide • Great Yarmouth 
                             </div>
@@ -406,7 +406,7 @@ Search</button>
                         </li>
                         <li class="selection-item">
                           <label class="form-check-label" for="location5check">
-                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Norwich" id="location5check">
+                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Museum of Norwich" id="location5check">
                             <div class="text-wrapper">
                               Museum of Norwich • Norwich
                             </div>
@@ -770,7 +770,6 @@ Search</button>
 
     window.onload = function() {
       updateSelections();
-
       showResults(0,3);
     }
 
@@ -832,6 +831,7 @@ Search</button>
       updateTypeButton(nType);
       updateLocationButton(nLocation);
       updateAudienceButton(nAudience);
+      filterResults();
     }
 
     function updateFiltersButton(n) {
