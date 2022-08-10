@@ -13066,6 +13066,26 @@ section.section_stage_theme .lead {
   font-size: 1.125rem;
 }
 
+.duet-date__input-wrapper input {
+  border-radius: 10px;
+}
+
+.duet-date__input {
+  padding: 10px 50px 10px 10px;
+  height: 40px;
+}
+
+.duet-date__toggle {
+  border-radius: 0px 10px 10px 0px;
+}
+.duet-date__toggle:focus {
+  outline: solid #ffdd00 2px;
+  box-shadow: none;
+}
+.duet-date__toggle:focus:not(:focus-visible) {
+  outline: solid #ffdd00 2px;
+}
+
 html {
   height: 100%;
 }
