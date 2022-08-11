@@ -320,6 +320,31 @@
       }
       window.location.href = "{{ '/advanced-search/' | url}}";
     }
+    function browseType(type) {
+      switch(type) {
+        case 'Talks':
+          setCookie('typeSelections', 'Talks', 1);
+          break;
+        case 'Tours':
+          setCookie('typeSelections', 'Tours', 1);
+          break;
+        case 'Family activities':
+          setCookie('typeSelections', 'Family activities', 1);
+          break;
+        case 'Exhibitions':
+          setCookie('typeSelections', 'Exhibitions', 1);
+          break;
+        case 'Parties':
+          setCookie('typeSelections', 'Parties', 1);
+          break;
+        case 'Workshops':
+          setCookie('typeSelections', 'Workshops', 1);
+          break;
+        default:
+          console.error(`no match for "browse by type"`);
+      }
+      window.location.href = "{{ '/advanced-search/' | url}}";
+    }
 
 
     /////////////////////////////////////////////
