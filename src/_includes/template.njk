@@ -281,6 +281,49 @@
       updateSelections();
     }
 
+    // 'Browse by' links & filters //////////////
+
+    function browseLocation(loc) {
+      switch(loc) {
+        case 'Norwich Castle':
+          setCookie('locationSelections', 'Norwich Castle', 1);
+          break;
+        case 'Strangers Hall':
+          setCookie('locationSelections', 'Strangers Hall', 1);
+          break;
+        case 'Time & Tide':
+          setCookie('locationSelections', 'Time & Tide', 1);
+          break;
+        case 'Gressenhall':
+          setCookie('locationSelections', 'Gressenhall', 1);
+          break;
+        case 'Museum of Norwich':
+          setCookie('locationSelections', 'Museum of Norwich', 1);
+          break;
+        case 'Elizabethan House':
+          setCookie('locationSelections', 'Elizabethan House', 1);
+          break;
+        case 'Lynn':
+          setCookie('locationSelections', 'Lynn', 1);
+          break;
+        case 'Cromer':
+          setCookie('locationSelections', 'Cromer', 1);
+          break;
+        case 'Tolhouse Gaol':
+          setCookie('locationSelections', 'Tolhouse Gaol', 1);
+          break;
+        case 'Ancient House':
+          setCookie('locationSelections', 'Ancient House', 1);
+          break;
+        default:
+          console.error(`no match for "browse by location"`);
+      }
+      window.location.href = "{{ '/advanced-search/' | url}}";
+    }
+
+
+    /////////////////////////////////////////////
+
     function setCookie(cname, cvalue, exdays) {
       const d = new Date();
       d.setTime(d.getTime() + (exdays*24*60*60*1000));
