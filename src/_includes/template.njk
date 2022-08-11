@@ -285,6 +285,9 @@
 
     function browseLocation(loc) {
       switch(loc) {
+        case 'Online':
+          setCookie('locationSelections', 'Online', 1);
+          break;
         case 'Norwich Castle':
           setCookie('locationSelections', 'Norwich Castle', 1);
           break;
