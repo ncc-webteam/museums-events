@@ -1,12 +1,13 @@
-{% macro generalcard(title, location, date, flair, extra, text, img, link, options, id) %}
+{% macro generalcard(title, location, date, flair, extra, text, img, link, options, id, month, day, type) %}
 
 <div class="card {{options}} h-100 {% if title|length %}{% else %}nohover{% endif %}" data-component="72">
 
   {% if 'museum-card' in options %}
     <div class="date-overlay">
-      <div class="month">May</div>
-      <div class="day">17</div>
+      <div id="result-{{id}}-month" class="month">{{month}}</div>
+      <div id="result-{{id}}-day" class="day">{{day}}</div>
     </div>
+    <div id="result-{{id}}-type" class="type">{{type}}</div>
   {% endif %}
 
   {% if img|length %}
@@ -26,7 +27,7 @@
     {% else %}{% endif %}
 
     {% if title|length %}
-    <h3 class="card-title h3"><a class="stretched-link" href="/museums-events/public/{{link}}">{{ title }}</a></h3>
+    <h3 class="card-title h3"><a id="result-{{id}}-title" class="stretched-link" href="/museums-events/public/{{link}}">{{ title }}</a></h3>
     {% else %}{% endif %}
 
     {% if flair|length %}
@@ -34,7 +35,7 @@
     {% else %}{% endif %}
 
     {% if extra|length %}
-    <p class="card-extra-info">{{ extra }}</p>
+    <p id="result-{{id}}-audience" class="card-extra-info">{{ extra }}</p>
     {% else %}{% endif %}
 
     {% if text|length %}

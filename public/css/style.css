@@ -11961,7 +11961,7 @@ section.section_stage_theme .lead {
 
 .museums-events-stage {
   color: white;
-  height: 338px;
+  height: 348px;
   background: rgba(0, 35, 93, 0.8);
 }
 
@@ -12487,6 +12487,9 @@ section.section_stage_theme .lead {
 .card.museum-card {
   border-radius: 8px;
 }
+.card.museum-card .type {
+  display: none;
+}
 .card.museum-card .date-overlay {
   position: absolute;
   top: 10px;
@@ -12540,6 +12543,9 @@ section.section_stage_theme .lead {
   background-color: transparent;
   padding: 0;
   font-weight: 800;
+}
+.card.museum-card .card-body .card-extra-info {
+  display: none;
 }
 @media (max-width: 575.98px) {
   .card.museum-card {

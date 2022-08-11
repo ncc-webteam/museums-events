@@ -4,7 +4,7 @@
 
 .museums-events-stage {
   color: white;
-  height: 338px;
+  height: 348px;
   background: rgba(0, 35, 93, 0.8);
 }
 
@@ -558,6 +558,10 @@
 .card.museum-card {
   border-radius: 8px;
 
+  .type {
+    display: none;
+  }
+
   .date-overlay {
     position: absolute;
     top: 10px;
@@ -614,6 +618,9 @@
       background-color: transparent;
       padding: 0;
       font-weight: 800;
+    }
+    .card-extra-info {
+      display: none;
     }
   }
 
