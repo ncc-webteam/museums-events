@@ -8,9 +8,9 @@
     <div class="container">
       <div class="stage-search">
         <h1 class="text-center mt-md-4 mb-md-5">Museums event search</h1>
-        <form class="form-inline d-flex stage-search" action="/search.html">
-          <input class="form-control mr-sm-2" type="search" placeholder="For example &quot;Roman&quot;" aria-label="Search">
-          <button id="home-search-button" class="btn btn-outline-light home-search-btn d-inline-flex" type="submit"><span class="search-text-long">Search events</span><span class="search-text-short">Search</span></button>
+        <form class="form-inline d-flex stage-search" onsubmit="advancedSearchLink()">
+          <input id="home-search-input" class="form-control mr-sm-2" type="text" placeholder="For example &quot;Roman&quot;" aria-label="Search">
+          <button id="home-search-button" class="btn btn-outline-light home-search-btn d-inline-flex" type="button" onclick="advancedSearchLink()"><span class="search-text-long">Search events</span><span class="search-text-short">Search</span></button>
         </form>
         <div class="filters-wrapper my-3">
           <div class="filters-1 mb-3 mb-md-0">
@@ -428,6 +428,7 @@
 
   <section>
     <div class="container">
+      <h3 id="search-indicator" class="m0"></h3>
       <div class="row {{rowDefaults}}" id="page-content">
           <div class="col-12 col-sm-6 col-lg-4" id="result-1-wrapper">
             {{ generalcard.generalcard("St Nicholas and the Wishing Tree", 'Strangers’ Hall • Norwich', 'Monday 5 December 2022 • 13:15 - 14:00', '£7', 'Children', 'Take a seat and immerse yourself in the magic of Christmas in our beautifully decorated Great Hall. Be entertained by Fool’s Puppet Theatre Company and their delightful tale of St Nicholas and the Wishing Tree, with hurdy-gurdy musical accompaniment.', 'museums-events/event1.jpg', '/example-event/', 'card-light museum-card time-and-tide', '1', 'Dec', '5', 'Exhibitions') }}
@@ -482,9 +483,16 @@
 
   <script>
 
+    window.onload = function() {
+      updateSelections();
+      showResults(0,3);
+    }
+
     // PAGINATION /////////////////////////////////////////////////// 
 
     const RESULTS_WRAPPER = document.getElementById('page-content');
+
+    const SEARCH_INDICATOR = document.getElementById('search-indicator');
 
     const LINK1 = document.getElementById("page1-link");
     const LINK2 = document.getElementById("page2-link");
@@ -570,13 +578,14 @@
     // FILTERS //////////////////////////////////
 
     function filterResults() {
+      const searchCookie = getCookie('searchQuery');
       const typeCookie = getCookie('typeSelections');
       const locationCookie = getCookie('locationSelections');
       const audienceCookie = getCookie('audienceSelections');
 
       const results = RESULTS_WRAPPER.children;
 
-      if (typeCookie == '' && locationCookie == '' && audienceCookie == '') {
+      if (typeCookie == '' && locationCookie == '' && audienceCookie == '' && searchCookie == '') {
         console.log('no filters specified');
         Array.from(results).forEach(function (r) {
           r.style.display = 'block';
@@ -589,8 +598,33 @@
           if (checkType(num, typeCookie) && checkLocation(num, locationCookie) && checkAudience(num, audienceCookie)) {
             r.style.display = 'block';
           }
+          if (searchCookie != '') {
+            console.log("search field not empty, refining...");
+            SEARCH_INDICATOR.textContent = `Searching by "${searchCookie}":`;
+            if (!checkSearch(num, searchCookie)) {
+              console.log("search field match FAIL");
+              r.style.display = 'none';
+            }
+          }
         });
       }
+    }
+
+    function checkSearch(n, cookie) {
+      console.log(`search= ${cookie}`); // 'puppet show'
+      if (cookie == '')
+        return true;
+      const typeEl = document.getElementById(`result-${n}-type`);
+      const locationEl = document.getElementById(`result-${n}-location`);
+      const titleEl = document.getElementById(`result-${n}-title`);
+      let match = false;
+      if (typeEl.textContent.toLowerCase().includes(cookie.toLowerCase())
+          || locationEl.textContent.toLowerCase().includes(cookie.toLowerCase()) 
+          || titleEl.textContent.toLowerCase().includes(cookie.toLowerCase()) ) {
+        console.log(`${titleEl.textContent} matches ${cookie}`);
+        return true;
+      }
+       
     }
 
     function checkType(n, cookie) {

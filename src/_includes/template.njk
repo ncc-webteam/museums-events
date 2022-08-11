@@ -90,12 +90,6 @@
     const LOCATION_LIST_MODAL = document.getElementsByName('locationOptionModal');
     const AUDIENCE_LIST_MODAL = document.getElementsByName('audienceOptionModal');
 
-
-    window.onload = function() {
-      updateSelections();
-      showResults(0,3);
-    }
-
     function updateSelections() {
       let types = getCookie('typeSelections');
       let locations = getCookie('locationSelections');
@@ -189,12 +183,11 @@
     function advancedSearchLink() {
       // set search query, if any
       const query = SEARCH_INPUT.value;
-      if (query) setCookie('searchQuery', query, 1);
+      if (query)
+        setCookie('searchQuery', query, 1);
+      else
+        setCookie('searchQuery', '', 1);
       window.location.href = "{{ '/advanced-search/' | url}}";
-      // set filters
-      //const filterType;
-      //const filterLocation;
-      //const filterAudience;
     }
 
     // used by modal
