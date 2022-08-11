@@ -202,6 +202,14 @@ Search</button>
                           
                         </div>
                         <li class="selection-item">
+                          <label class="form-check-label" for="location0check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Online" id="location0check">
+                            <div class="text-wrapper">
+                              Online
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
                           <label class="form-check-label" for="location1check">
                             <input type="checkbox" class="form-check-input" name="locationOption" value="Norwich Castle" id="location1check">
                             <div class="text-wrapper">
@@ -211,9 +219,9 @@ Search</button>
                         </li>
                         <li class="selection-item">
                           <label class="form-check-label" for="location2check">
-                            <input type="checkbox" class="form-check-input" name="locationOption" value="Strangers Hall" id="location2check">
+                            <input type="checkbox" class="form-check-input" name="locationOption" value="Strangers’ Hall" id="location2check">
                             <div class="text-wrapper">
-                              Strangers Hall • Norwich
+                              Strangers’ Hall • Norwich
                             </div>
                           </label>
                         </li>
@@ -397,6 +405,14 @@ Search</button>
                           <h3 class="dropdown-heading h4">Location</h3>
                         </div>
                         <li class="selection-item">
+                          <label class="form-check-label" for="location0check">
+                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Online" id="location0check">
+                            <div class="text-wrapper">
+                              Online
+                            </div>
+                          </label>
+                        </li>
+                        <li class="selection-item">
                           <label class="form-check-label" for="location1check">
                             <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Norwich Castle" id="location1check">
                             <div class="text-wrapper">
@@ -406,9 +422,9 @@ Search</button>
                         </li>
                         <li class="selection-item">
                           <label class="form-check-label" for="location2check">
-                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Strangers Hall" id="location2check">
+                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Strangers’ Hall" id="location2check">
                             <div class="text-wrapper">
-                              Strangers Hall • Norwich
+                              Strangers’ Hall • Norwich
                             </div>
                           </label>
                         </li>
@@ -529,39 +545,42 @@ Search</button>
 
   
     <div class="date-overlay">
-      <div class="month">May</div>
-      <div class="day">17</div>
+      <div id="result-1-month" class="month">Dec</div>
+      <div id="result-1-day" class="day">5</div>
     </div>
+    <div id="result-1-type" class="type">Exhibitions</div>
   
 
   
   <div class="img-wrapper ratio ratio-16x9">
-    <img src="/museums-events/public/img/museums-events/event1.jpg" class="card-img-top" alt="image for Where&#39;s Wookie?">
+    <img src="/museums-events/public/img/museums-events/event1.jpg" class="card-img-top" alt="image for St Nicholas and the Wishing Tree">
   </div>
   
 
   <div class="card-body">
 
     
-    <p id="result-1-location" class="card-location">Time &amp; Tide • Great Yarmouth</p>
+    <p id="result-1-location" class="card-location">Strangers’ Hall • Norwich</p>
     
 
     
-    <p class="card-date">Monday 17 May 2021 • 10:00 - 16:00</p>
+    <p class="card-date">Monday 5 December 2022 • 13:15 - 14:00</p>
     
 
     
-    <h3 class="card-title h3"><a class="stretched-link" href="/museums-events/public//example-event/">Where&#39;s Wookie?</a></h3>
+    <h3 class="card-title h3"><a id="result-1-title" class="stretched-link" href="/museums-events/public//example-event/">St Nicholas and the Wishing Tree</a></h3>
     
 
     
-    <span class="flair flair-full">Free</span>
+    <span class="flair flair-full">£7</span>
     
 
     
+    <p id="result-1-audience" class="card-extra-info">Children</p>
+    
 
     
-    <p class="card-text">The Wookies have gone into hiding as they spotted Storm Troopers in our exhibition. Can you help us find them amongst our collections?</p>
+    <p class="card-text">Take a seat and immerse yourself in the magic of Christmas in our beautifully decorated Great Hall. Be entertained by Fool’s Puppet Theatre Company and their delightful tale of St Nicholas and the Wishing Tree, with hurdy-gurdy musical accompaniment.</p>
     
 
   </div>
@@ -576,9 +595,10 @@ Search</button>
 
   
     <div class="date-overlay">
-      <div class="month">May</div>
-      <div class="day">17</div>
+      <div id="result-2-month" class="month">May</div>
+      <div id="result-2-day" class="day">17</div>
     </div>
+    <div id="result-2-type" class="type"></div>
   
 
   
@@ -598,13 +618,15 @@ Search</button>
     
 
     
-    <h3 class="card-title h3"><a class="stretched-link" href="/museums-events/public//example-event/">A Fish Tail Trail</a></h3>
+    <h3 class="card-title h3"><a id="result-2-title" class="stretched-link" href="/museums-events/public//example-event/">A Fish Tail Trail</a></h3>
     
 
     
     <span class="flair flair-full">Free</span>
     
 
+    
+    <p id="result-2-audience" class="card-extra-info">All</p>
     
 
     
@@ -623,9 +645,10 @@ Search</button>
 
   
     <div class="date-overlay">
-      <div class="month">May</div>
-      <div class="day">17</div>
+      <div id="result-3-month" class="month">May</div>
+      <div id="result-3-day" class="day">17</div>
     </div>
+    <div id="result-3-type" class="type"></div>
   
 
   
@@ -645,13 +668,15 @@ Search</button>
     
 
     
-    <h3 class="card-title h3"><a class="stretched-link" href="/museums-events/public//example-event/">How to be an Elizabethan Trail</a></h3>
+    <h3 class="card-title h3"><a id="result-3-title" class="stretched-link" href="/museums-events/public//example-event/">How to be an Elizabethan Trail</a></h3>
     
 
     
     <span class="flair flair-full">Free</span>
     
 
+    
+    <p id="result-3-audience" class="card-extra-info">All</p>
     
 
     
@@ -670,9 +695,10 @@ Search</button>
 
   
     <div class="date-overlay">
-      <div class="month">May</div>
-      <div class="day">17</div>
+      <div id="result-4-month" class="month">May</div>
+      <div id="result-4-day" class="day">17</div>
     </div>
+    <div id="result-4-type" class="type"></div>
   
 
   
@@ -692,13 +718,15 @@ Search</button>
     
 
     
-    <h3 class="card-title h3"><a class="stretched-link" href="/museums-events/public//example-event/">Where&#39;s Wookie?</a></h3>
+    <h3 class="card-title h3"><a id="result-4-title" class="stretched-link" href="/museums-events/public//example-event/">Where&#39;s Wookie?</a></h3>
     
 
     
     <span class="flair flair-full">Free</span>
     
 
+    
+    <p id="result-4-audience" class="card-extra-info">All</p>
     
 
     
@@ -717,9 +745,10 @@ Search</button>
 
   
     <div class="date-overlay">
-      <div class="month">May</div>
-      <div class="day">17</div>
+      <div id="result-5-month" class="month">May</div>
+      <div id="result-5-day" class="day">17</div>
     </div>
+    <div id="result-5-type" class="type"></div>
   
 
   
@@ -739,13 +768,15 @@ Search</button>
     
 
     
-    <h3 class="card-title h3"><a class="stretched-link" href="/museums-events/public//example-event/">How to be an Elizabethan Trail</a></h3>
+    <h3 class="card-title h3"><a id="result-5-title" class="stretched-link" href="/museums-events/public//example-event/">How to be an Elizabethan Trail</a></h3>
     
 
     
     <span class="flair flair-full">Free</span>
     
 
+    
+    <p id="result-5-audience" class="card-extra-info">All</p>
     
 
     
@@ -764,9 +795,10 @@ Search</button>
 
   
     <div class="date-overlay">
-      <div class="month">May</div>
-      <div class="day">17</div>
+      <div id="result-6-month" class="month">May</div>
+      <div id="result-6-day" class="day">17</div>
     </div>
+    <div id="result-6-type" class="type"></div>
   
 
   
@@ -786,13 +818,15 @@ Search</button>
     
 
     
-    <h3 class="card-title h3"><a class="stretched-link" href="/museums-events/public//example-event/">A Fish Tail Trail</a></h3>
+    <h3 class="card-title h3"><a id="result-6-title" class="stretched-link" href="/museums-events/public//example-event/">A Fish Tail Trail</a></h3>
     
 
     
     <span class="flair flair-full">Free</span>
     
 
+    
+    <p id="result-6-audience" class="card-extra-info">All</p>
     
 
     
@@ -811,9 +845,10 @@ Search</button>
 
   
     <div class="date-overlay">
-      <div class="month">May</div>
-      <div class="day">17</div>
+      <div id="result-7-month" class="month">May</div>
+      <div id="result-7-day" class="day">17</div>
     </div>
+    <div id="result-7-type" class="type"></div>
   
 
   
@@ -833,13 +868,15 @@ Search</button>
     
 
     
-    <h3 class="card-title h3"><a class="stretched-link" href="/museums-events/public//example-event/">A Fish Tail Trail</a></h3>
+    <h3 class="card-title h3"><a id="result-7-title" class="stretched-link" href="/museums-events/public//example-event/">A Fish Tail Trail</a></h3>
     
 
     
     <span class="flair flair-full">Free</span>
     
 
+    
+    <p id="result-7-audience" class="card-extra-info">All</p>
     
 
     
@@ -858,9 +895,10 @@ Search</button>
 
   
     <div class="date-overlay">
-      <div class="month">May</div>
-      <div class="day">17</div>
+      <div id="result-8-month" class="month">May</div>
+      <div id="result-8-day" class="day">17</div>
     </div>
+    <div id="result-8-type" class="type"></div>
   
 
   
@@ -880,13 +918,15 @@ Search</button>
     
 
     
-    <h3 class="card-title h3"><a class="stretched-link" href="/museums-events/public//example-event/">Where&#39;s Wookie?</a></h3>
+    <h3 class="card-title h3"><a id="result-8-title" class="stretched-link" href="/museums-events/public//example-event/">Where&#39;s Wookie?</a></h3>
     
 
     
     <span class="flair flair-full">Free</span>
     
 
+    
+    <p id="result-8-audience" class="card-extra-info">All</p>
     
 
     
@@ -900,27 +940,8 @@ Search</button>
           </div>
       </div>
 
-      <div class="d-flex justify-content-center">
-        <nav aria-label="Acle library events pagination"> 
-          <ul class="pagination libraries-pagination">
-            <li id="page-prev-link" class="page-item disabled">
-              <button class="page-link" onclick="prevPage()" tabindex="-1">Previous</button>
-            </li>
-            <li id="page1-link" class="page-item active">
-              <button class="page-link" onclick="showPage(1)">1</button>
-            </li>
-            <li id="page2-link" class="page-item">
-              <button class="page-link" onclick="showPage(2)">2</button>
-            </li>
-            <li id="page3-link" class="page-item">
-              <button class="page-link" onclick="showPage(3)">3</button>
-            </li>
-            <li id="page-next-link" class="page-item">
-              <button class="page-link" onclick="nextPage()">Next</button>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      
+
     </div>
   </section>
 
@@ -1014,33 +1035,75 @@ Search</button>
     // FILTERS //////////////////////////////////
 
     function filterResults() {
-      // location
+      const typeCookie = getCookie('typeSelections');
       const locationCookie = getCookie('locationSelections');
-      if (locationCookie == '') {
-        console.log('no locations specified');
-        const results = RESULTS_WRAPPER.children;
+      const audienceCookie = getCookie('audienceSelections');
+
+      const results = RESULTS_WRAPPER.children;
+
+      if (typeCookie == '' && locationCookie == '' && audienceCookie == '') {
+        console.log('no filters specified');
         Array.from(results).forEach(function (r) {
           r.style.display = 'block';
         });
       } else {
-        const locations = locationCookie.split(","); // [Time & Tide, Cromer]
-        const results = RESULTS_WRAPPER.children;
-        // for each result, extract location text content ( #result-X-location )
-        // see if text content includes any of the locations
-
         Array.from(results).forEach(function (r) {
           r.style.display = 'none';
           const idString = r.id.split("-");
           const num = idString[1];
-          const locationEl = document.getElementById(`result-${num}-location`);
-          locations.forEach(function (loc) {
-            if (locationEl.textContent.includes(loc)) {
-              r.style.display = 'block';
-              return;
-            }
-          });
+          if (checkType(num, typeCookie) && checkLocation(num, locationCookie) && checkAudience(num, audienceCookie)) {
+            r.style.display = 'block';
+          }
         });
       }
+    }
+
+    function checkType(n, cookie) {
+      const types = cookie.split(","); // [Talks, Exhibitions]
+      if (types == '')
+        return true;
+      const typeEl = document.getElementById(`result-${n}-type`);
+      let match = false;
+      types.forEach(function (type) {
+        if (typeEl.textContent.includes(type)) {
+          console.log("TYPE MATCH");
+          match = true;
+        }
+      });
+      return match;
+    }
+
+    function checkLocation(n, cookie) {
+      const locations = cookie.split(","); // [Time & Tide, Cromer]
+      if (locations == '')
+        return true;
+      const locationEl = document.getElementById(`result-${n}-location`);
+      let match = false;
+      locations.forEach(function (loc) {
+        if (locationEl.textContent.includes(loc)) {
+          console.log("LOCATION MATCH");
+          match = true;
+        }
+      });
+      return match;
+    }
+
+    function checkAudience(n, cookie) {
+      const audiences = cookie.split(","); // [Children]
+      if (audiences == '' || audiences.includes('All'))
+        return true;
+      const audienceEl = document.getElementById(`result-${n}-audience`);
+      let match = false;
+      audiences.forEach(function (aud) {
+        if (audienceEl.textContent.includes(aud)) {
+          console.log("AUDIENCE MATCH");
+          match = true;
+        } else if (audienceEl.textContent.includes('All')) {
+          match = true;
+        }
+
+      });
+      return match;
     }
 
     // COOKIES //////////////////////////////////
@@ -1375,6 +1438,9 @@ Search</button>
 
     function browseLocation(loc) {
       switch(loc) {
+        case 'Online':
+          setCookie('locationSelections', 'Online', 1);
+          break;
         case 'Norwich Castle':
           setCookie('locationSelections', 'Norwich Castle', 1);
           break;
