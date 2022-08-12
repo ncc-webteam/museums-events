@@ -125,11 +125,11 @@ Search</button>
           <div class="filters-1 mb-3 mb-md-0">
             <div class="duet-wrapper me-1">
               <label class="h5" for="date">Date to</label>
-              <duet-date-picker identifier="date"></duet-date-picker>
+              <duet-date-picker id="date-to" identifier="date"></duet-date-picker>
             </div>
             <div class="duet-wrapper">
               <label class="h5" for="date">Date from</label>
-              <duet-date-picker identifier="date"></duet-date-picker>
+              <duet-date-picker id="date-from" identifier="date"></duet-date-picker>
             </div>
           </div>
           <div class="filters-2">
@@ -949,6 +949,7 @@ Search</button>
   <script>
 
     window.onload = function() {
+      fillDateField();
       updateSelections();
       showResults(0,3);
     }
@@ -965,6 +966,11 @@ Search</button>
 
     const LINK_PREV = document.getElementById("page-prev-link");
     const LINK_NEXT = document.getElementById("page-next-link");
+
+    function fillDateField() {
+      const dateFromCookie = getCookie('dateFrom');
+      const dateToCookie = getCookie('dateTo');
+    }
 
     function showResults(start, end) {
       let results = RESULTS_WRAPPER.children;
@@ -1047,10 +1053,12 @@ Search</button>
       const typeCookie = getCookie('typeSelections');
       const locationCookie = getCookie('locationSelections');
       const audienceCookie = getCookie('audienceSelections');
+      const dateFromCookie = getCookie('dateFrom');
+      const dateToCookie = getCookie('dateTo');
 
       const results = RESULTS_WRAPPER.children;
 
-      if (typeCookie == '' && locationCookie == '' && audienceCookie == '' && searchCookie == '') {
+      if (typeCookie == '' && locationCookie == '' && audienceCookie == '' && searchCookie == '' && dateFromCookie == '' && dateToCookie == '') {
         console.log('no filters specified');
         Array.from(results).forEach(function (r) {
           r.style.display = 'block';
@@ -1071,8 +1079,84 @@ Search</button>
               r.style.display = 'none';
             }
           }
+          if (!checkDate(num, dateFromCookie, dateToCookie)) {
+            console.log("date match FAIL");
+            r.style.display = 'none';
+          }
         });
       }
+    }
+
+    function checkDate(n, cFrom, cTo) {
+      if (cFrom == '' && cTo == '') {
+        console.log("both date fields blank");
+        return true;
+      }
+
+      // YYYY-MM-DD
+      const f = cFrom.split("-");
+      const t = cTo.split("-");
+
+      const fM = Number(f[1]);
+      const fD = Number(f[2]);
+      const tM = Number(t[1]);
+      const tD = Number(t[2]);
+
+      const monthEl = document.getElementById(`result-${n}-month`);
+      const dayEl = document.getElementById(`result-${n}-day`);
+      let month = 0;
+      let day = dayEl.textContent;
+
+      switch (monthEl.textContent) {
+        case 'Jan': month = 1; break;
+        case 'Feb': month = 2; break;
+        case 'Mar': month = 3; break;
+        case 'Apr': month = 4; break;
+        case 'May': month = 5; break;
+        case 'Jun': month = 6; break;
+        case 'Jul': month = 7; break;
+        case 'Aug': month = 8; break;
+        case 'Sep': month = 9; break;
+        case 'Oct': month = 10; break;
+        case 'Nov': month = 11; break;
+        case 'Dec': month = 12; break;
+        default: console.error(`invalid month`);
+      }
+
+      let fromCheck = false;
+      if (fM > month) {
+        console.log(`fM ${fM} is a higher month than ${month}`);
+        fromCheck = true;
+      } else if (fM === month && fD >= day)  {
+        console.log(`fM ${fM} is the same as month ${month}`);
+        console.log(`fD ${fD} is the same or higher day than ${day}`);
+        fromCheck = true;
+      }
+
+      let toCheck = false;
+      if (tM < month) {
+        console.log(`tM ${tM} is a lower month than ${month}`);
+        toCheck = true;
+      } else if (tM === month && tD <= day)  {
+        console.log(`tM ${tM} is the same as month ${month}`);
+        console.log(`tD ${tD} is the same or lower day than ${day}`);
+        toCheck = true;
+      }
+
+      if (fromCheck && cTo == '') {
+        console.log("searching only date from")
+        return true;
+      }
+      if (toCheck && cFrom == '') {
+        console.log("searching only date to")
+        return true;
+      }
+
+      if (fromCheck && toCheck) {
+        console.log(`date match for ${document.getElementById(`result-${n}-title`).textContent}`);
+        return true;
+      }
+      return false;
     }
 
     function checkSearch(n, cookie) {
@@ -1232,12 +1316,27 @@ Search</button>
         setCookie('searchQuery', query, 1);
       else
         setCookie('searchQuery', '', 1);
+
+      const dateFrom = DATE_FROM.value;
+      const dateTo = DATE_TO.value;
+      if (dateFrom != '')
+        setCookie('dateFrom', dateFrom, 1);
+      else
+        setCookie('dateFrom', '', 1);
+      if (dateTo != '')
+        setCookie('dateTo', dateTo, 1);
+      else
+        setCookie('dateTo', '', 1);
+
       window.location.href = "/museums-events/public/advanced-search/";
     }
 
     // Filters and cookie functions
 
     const SEARCH_INPUT = document.getElementById('home-search-input');
+
+    const DATE_FROM = document.getElementById('date-from');
+    const DATE_TO = document.getElementById('date-to');
 
     const FILTERS_BTN = document.getElementById('modal-filter-all');
     const TYPE_BTN = document.getElementById('dropdown-filter-type');

@@ -45,12 +45,27 @@
         setCookie('searchQuery', query, 1);
       else
         setCookie('searchQuery', '', 1);
+
+      const dateFrom = DATE_FROM.value;
+      const dateTo = DATE_TO.value;
+      if (dateFrom != '')
+        setCookie('dateFrom', dateFrom, 1);
+      else
+        setCookie('dateFrom', '', 1);
+      if (dateTo != '')
+        setCookie('dateTo', dateTo, 1);
+      else
+        setCookie('dateTo', '', 1);
+
       window.location.href = "{{ '/advanced-search/' | url}}";
     }
 
     // Filters and cookie functions
 
     const SEARCH_INPUT = document.getElementById('home-search-input');
+
+    const DATE_FROM = document.getElementById('date-from');
+    const DATE_TO = document.getElementById('date-to');
 
     const FILTERS_BTN = document.getElementById('modal-filter-all');
     const TYPE_BTN = document.getElementById('dropdown-filter-type');
