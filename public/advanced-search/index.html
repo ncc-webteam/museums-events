@@ -975,6 +975,8 @@ Search</button>
       const searchCookie = getCookie('searchQuery');
 
       SEARCH_INPUT.value = searchCookie;
+      DATE_FROM.value = dateFromCookie;
+      DATE_TO.value = dateToCookie;
     }
 
     function showResults(start, end) {
