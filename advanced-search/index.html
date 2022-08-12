@@ -951,7 +951,7 @@ Search</button>
   <script>
 
     window.onload = function() {
-      fillDateField();
+      fillFields();
       updateSelections();
       showResults(0,3);
     }
@@ -969,9 +969,14 @@ Search</button>
     const LINK_PREV = document.getElementById("page-prev-link");
     const LINK_NEXT = document.getElementById("page-next-link");
 
-    function fillDateField() {
+    function fillFields() {
       const dateFromCookie = getCookie('dateFrom');
       const dateToCookie = getCookie('dateTo');
+      const searchCookie = getCookie('searchQuery');
+
+      SEARCH_INPUT.value = searchCookie;
+      DATE_FROM.value = dateFromCookie;
+      DATE_TO.value = dateToCookie;
     }
 
     function showResults(start, end) {
