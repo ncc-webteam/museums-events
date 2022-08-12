@@ -9,7 +9,7 @@
       <div class="stage-search">
         <h1 class="text-center mt-md-4 mb-md-5">Museums event search</h1>
         <form id="main-search-form" class="form-inline d-flex stage-search" onsubmit="advancedSearchLink()">
-          <input id="home-search-input" class="form-control mr-sm-2" type="text" placeholder="For example &quot;Roman&quot;" aria-label="Search">
+          <input id="home-search-input" class="form-control mr-sm-2" type="text" placeholder="For example &quot;Tours&quot;" aria-label="Search">
           <button id="home-search-button" class="btn btn-outline-light home-search-btn d-inline-flex" type="button" onclick="advancedSearchLink()"><span class="search-text-long">Search events</span><span class="search-text-short">Search</span></button>
         </form>
         <div class="filters-wrapper my-3">
@@ -432,30 +432,162 @@
     <div class="container">
       <h3 id="search-indicator" class="m0"></h3>
       <div class="row {{rowDefaults}}" id="page-content">
-          <div class="col-12 col-sm-6 col-lg-4" id="result-1-wrapper">
-            {{ generalcard.generalcard("St Nicholas and the Wishing Tree", 'Strangers’ Hall • Norwich', 'Monday 5 December 2022 • 13:15 - 14:00', '£7', 'Children', 'Take a seat and immerse yourself in the magic of Christmas in our beautifully decorated Great Hall. Be entertained by Fool’s Puppet Theatre Company and their delightful tale of St Nicholas and the Wishing Tree, with hurdy-gurdy musical accompaniment.', 'museums-events/event1.jpg', '/example-event/', 'card-light museum-card time-and-tide', '1', 'Dec', '5', 'Exhibitions') }}
-          </div>
-          <div class="col-12 col-sm-6 col-lg-4" id="result-2-wrapper">
-            {{ generalcard.generalcard('A Fish Tail Trail', 'Cromer Museum • Cromer', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', 'All', "It's not Nemo that needs to be found this time, but our local fishy friends. Help them find their tails (and claws) which have been scattered around the museum and learn some fin-tastic facts.", 'museums-events/event2.jpg', '/example-event/', 'card-light museum-card cromer', '2', 'May', '17', '') }}
-          </div>
-          <div class="col-12 col-sm-6 col-lg-4" id="result-3-wrapper">
-            {{ generalcard.generalcard('How to be an Elizabethan Trail', 'Elizabethan House • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', 'All', 'A Beginners guide to the “Golden Age” Ever wanted to know how to fit into Elizabethan society? Well this is your perfect starter guide! Follow the trail to find out some fantastic facts.', 'museums-events/event3.jpg', '/example-event/', 'card-light museum-card elizabethan', '3', 'May', '17', '') }}
-          </div>
-          <div class="col-12 col-sm-6 col-lg-4" id="result-4-wrapper">
-            {{ generalcard.generalcard("Where's Wookie?", 'Time & Tide • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', 'All', "The Wookies have gone into hiding as they spotted Storm Troopers in our exhibition. Can you help us find them amongst our collections?", 'museums-events/event1.jpg', '/example-event/', 'card-light museum-card time-and-tide', '4', 'May', '17', '') }}
-          </div>
-          <div class="col-12 col-sm-6 col-lg-4" id="result-5-wrapper">
-            {{ generalcard.generalcard('How to be an Elizabethan Trail', 'Elizabethan House • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', 'All', 'A Beginners guide to the “Golden Age” Ever wanted to know how to fit into Elizabethan society? Well this is your perfect starter guide! Follow the trail to find out some fantastic facts.', 'museums-events/event3.jpg', '/example-event/', 'card-light museum-card elizabethan', '5', 'May', '17', '') }}
-          </div>
-          <div class="col-12 col-sm-6 col-lg-4" id="result-6-wrapper">
-            {{ generalcard.generalcard('A Fish Tail Trail', 'Cromer Museum • Cromer', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', 'All', "It's not Nemo that needs to be found this time, but our local fishy friends. Help them find their tails (and claws) which have been scattered around the museum and learn some fin-tastic facts.", 'museums-events/event2.jpg', '/example-event/', 'card-light museum-card cromer', '6', 'May', '17', '') }}
-          </div>
-          <div class="col-12 col-sm-6 col-lg-4" id="result-7-wrapper">
-            {{ generalcard.generalcard('A Fish Tail Trail', 'Cromer Museum • Cromer', 'Monday 25 June 2021 • 10:00 - 16:00', 'Free', 'All', "It's not Nemo that needs to be found this time, but our local fishy friends. Help them find their tails (and claws) which have been scattered around the museum and learn some fin-tastic facts.", 'museums-events/event2.jpg', '/example-event/', 'card-light museum-card cromer', '7', 'Jun', '25', '') }}
-          </div>
-          <div class="col-12 col-sm-6 col-lg-4" id="result-8-wrapper">
-            {{ generalcard.generalcard("Where's Wookie?", 'Time & Tide • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', 'All', "The Wookies have gone into hiding as they spotted Storm Troopers in our exhibition. Can you help us find them amongst our collections?", 'museums-events/event1.jpg', '/example-event/', 'card-light museum-card time-and-tide', '8', 'May', '17', '') }}
-          </div>
+
+        <div class="col-12 col-sm-6 col-lg-4" id="result-10-wrapper">
+          {{ generalcard.generalcard("Fighting Gallery Tour", 'Norwich Castle • Norwich', 'Friday 1 April 2022 • 13:00 - 13:30', 'from £2.80', 'All', 'Join our costumed Knight for a journey through the castle’s defensive past. Check out the medieval graffiti and stonemason’s remarks, learn how the castle survived under siege, and get behind the scenes as we take you into the mysterious fighting gallery.', 'museums-events/norwich-castle.jpg', '/example-event/', 'card-light museum-card norwich-castle', '10', 'Apr', '1', 'Tours') }}
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4" id="result-11-wrapper">
+          {{ generalcard.generalcard("The Many roles of", 'Norwich Castle • Norwich', 'Tuesday 3 May 2022 • 12:30 - 13:00', 'Free', 'Adult', 'With author Frank Meeres of the Norfolk Record Office. Norwich Castle, Town Close Auditorium.', 'museums-events/norwich-castle.jpg', '/example-event/', 'card-light museum-card norwich-castle', '11', 'May', '3', 'Talks') }}
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4" id="result-12-wrapper">
+          {{ generalcard.generalcard("Bewitched: The Witches School for Cats", 'Norwich Castle • Norwich', 'Saturday 14 May 2022 • 12:00 - 12:30', 'Free', 'All', 'Join Susie the friendly witch for our bewitching school for cats, slinking and pouncing and meowing practice galore! Suitable for all the family.', 'museums-events/norwich-castle.jpg', '/example-event/', 'card-light museum-card norwich-castle', '12', 'May', '14', 'Family activities') }}
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4" id="result-13-wrapper">
+          {{ generalcard.generalcard("Creepy Cromer", 'Cromer Museum • Cromer', 'Wednesday 26 October 2022 • 12:00 - 12:30', 'Free', 'All', 'Get in the mood for Halloween, with this creepy craft event. Make decorations to take home and hear spooky local stories. No activities between noon and 1pm.', 'museums-events/workshops.jpg', '/example-event/', 'card-light museum-card cromer', '13', 'Oct', '26', 'Family activities') }}
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4" id="result-14-wrapper">
+          {{ generalcard.generalcard("Mystic Medicine", 'Elizabethan House • Great Yarmouth', 'Sunday 30 October 2022 • 11:00 - 16:00', 'Free', 'All', 'Learn about peculiar (and terrifying) historical remedies from the past. This is the go-to-guide for how NOT to seek medical relief!', 'museums-events/workshops.jpg', '/example-event/', 'card-light museum-card elizabethan', '14', 'Oct', '30', 'Family activities') }}
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4" id="result-15-wrapper">
+          {{ generalcard.generalcard("Myths and Legends", 'Lynn Museum • King’s Lynn', 'Tuesday 25 October 2022 • 10:30 - 13:00', 'Free', 'All', 'Get hands-on with our collections, enjoy storytelling and get creative with crafts.', 'museums-events/activities.jpg', '/example-event/', 'card-light museum-card lynn', '15', 'Oct', '25', 'Workshops') }}
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4" id="result-16-wrapper">
+          {{ generalcard.generalcard("Coffee Cake and Collections", 'Lynn Museum • King’s Lynn', 'Wednesday 26 October 2022 • 10:30 - 12:00', '£1, members free', 'Adults', 'Join us to find out more about our collections over coffee and cake.', 'museums-events/tours.jpg', '/example-event/', 'card-light museum-card lynn', '16', 'Oct', '26', 'Workshops') }}
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4" id="result-17-wrapper">
+          {{ generalcard.generalcard("Little Lives: Snapshots of childhood from 1800 to the present", 'Lynn Museum • King’s Lynn', 'Saturday 24 September 2022 • 10:00 - 17:00', 'Free', 'All', 'This exhibition touches on the stories of childhood over the last two centuries. Childhood objects from the museum collections together with photographs and paintings often snapshots of the changing experience of childhood.', 'museums-events/exhibitions.jpg', '/example-event/', 'card-light museum-card lynn', '17', 'Sep', '24', 'Exhibitions') }}
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4" id="result-1-wrapper">
+          {{ generalcard.generalcard("St Nicholas and the Wishing Tree", 'Strangers’ Hall • Norwich', 'Monday 5 December 2022 • 13:15 - 14:00', '£7', 'Children', 'Take a seat and immerse yourself in the magic of Christmas in our beautifully decorated Great Hall. Be entertained by Fool’s Puppet Theatre Company and their delightful tale of St Nicholas and the Wishing Tree, with hurdy-gurdy musical accompaniment.', 'museums-events/strangers-hall.jpg', '/example-event/', 'card-light museum-card strangers-hall', '1', 'Dec', '5', 'Exhibitions') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-2-wrapper">
+          {{ generalcard.generalcard("St Nicholas and the Wishing Tree", 'Strangers’ Hall • Norwich', 'Monday 5 December 2022 • 14:15 - 15:00', '£7', 'Children', 'Take a seat and immerse yourself in the magic of Christmas in our beautifully decorated Great Hall. Be entertained by Fool’s Puppet Theatre Company and their delightful tale of St Nicholas and the Wishing Tree, with hurdy-gurdy musical accompaniment.', 'museums-events/strangers-hall.jpg', '/example-event/', 'card-light museum-card strangers-hall', '2', 'Dec', '5', 'Exhibitions') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-3-wrapper">
+          {{ generalcard.generalcard("St Nicholas and the Wishing Tree", 'Strangers’ Hall • Norwich', 'Monday 5 December 2022 • 15:15 - 16:00', '£7', 'Children', 'Take a seat and immerse yourself in the magic of Christmas in our beautifully decorated Great Hall. Be entertained by Fool’s Puppet Theatre Company and their delightful tale of St Nicholas and the Wishing Tree, with hurdy-gurdy musical accompaniment.', 'museums-events/strangers-hall.jpg', '/example-event/', 'card-light museum-card strangers-hall', '3', 'Dec', '5', 'Exhibitions') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-4-wrapper">
+          {{ generalcard.generalcard("St Nicholas and the Wishing Tree", 'Strangers’ Hall • Norwich', 'Monday 12 December 2022 • 13:15 - 14:00', '£7', 'Children', 'Take a seat and immerse yourself in the magic of Christmas in our beautifully decorated Great Hall. Be entertained by Fool’s Puppet Theatre Company and their delightful tale of St Nicholas and the Wishing Tree, with hurdy-gurdy musical accompaniment.', 'museums-events/strangers-hall.jpg', '/example-event/', 'card-light museum-card strangers-hall', '4', 'Dec', '12', 'Exhibitions') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-5-wrapper">
+          {{ generalcard.generalcard("St Nicholas and the Wishing Tree", 'Strangers’ Hall • Norwich', 'Monday 12 December 2022 • 14:15 - 15:00', '£7', 'Children', 'Take a seat and immerse yourself in the magic of Christmas in our beautifully decorated Great Hall. Be entertained by Fool’s Puppet Theatre Company and their delightful tale of St Nicholas and the Wishing Tree, with hurdy-gurdy musical accompaniment.', 'museums-events/strangers-hall.jpg', '/example-event/', 'card-light museum-card strangers-hall', '5', 'Dec', '12', 'Exhibitions') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-6-wrapper">
+          {{ generalcard.generalcard("St Nicholas and the Wishing Tree", 'Strangers’ Hall • Norwich', 'Monday 12 December 2022 • 15:15 - 16:00', '£7', 'Children', 'Take a seat and immerse yourself in the magic of Christmas in our beautifully decorated Great Hall. Be entertained by Fool’s Puppet Theatre Company and their delightful tale of St Nicholas and the Wishing Tree, with hurdy-gurdy musical accompaniment.', 'museums-events/strangers-hall.jpg', '/example-event/', 'card-light museum-card strangers-hall', '6', 'Dec', '12', 'Exhibitions') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-7-wrapper">
+          {{ generalcard.generalcard("St Nicholas and the Wishing Tree", 'Strangers’ Hall • Norwich', 'Monday 19 December 2022 • 13:15 - 14:00', '£7', 'Children', 'Take a seat and immerse yourself in the magic of Christmas in our beautifully decorated Great Hall. Be entertained by Fool’s Puppet Theatre Company and their delightful tale of St Nicholas and the Wishing Tree, with hurdy-gurdy musical accompaniment.', 'museums-events/strangers-hall.jpg', '/example-event/', 'card-light museum-card strangers-hall', '7', 'Dec', '19', 'Exhibitions') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-8-wrapper">
+          {{ generalcard.generalcard("St Nicholas and the Wishing Tree", 'Strangers’ Hall • Norwich', 'Monday 19 December 2022 • 14:15 - 15:00', '£7', 'Children', 'Take a seat and immerse yourself in the magic of Christmas in our beautifully decorated Great Hall. Be entertained by Fool’s Puppet Theatre Company and their delightful tale of St Nicholas and the Wishing Tree, with hurdy-gurdy musical accompaniment.', 'museums-events/strangers-hall.jpg', '/example-event/', 'card-light museum-card strangers-hall', '8', 'Dec', '19', 'Exhibitions') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-9-wrapper">
+          {{ generalcard.generalcard("St Nicholas and the Wishing Tree", 'Strangers’ Hall • Norwich', 'Monday 19 December 2022 • 15:15 - 16:00', '£7', 'Children', 'Take a seat and immerse yourself in the magic of Christmas in our beautifully decorated Great Hall. Be entertained by Fool’s Puppet Theatre Company and their delightful tale of St Nicholas and the Wishing Tree, with hurdy-gurdy musical accompaniment.', 'museums-events/strangers-hall.jpg', '/example-event/', 'card-light museum-card strangers-hall', '9', 'Dec', '19', 'Exhibitions') }}
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4" id="result-18-wrapper">
+          {{ generalcard.generalcard("Apple Tree Pruning", 'Gressenhall Farm and Workhouse • Dereham', 'Friday 20 May 2022 • 10:00 - 15:00', '£50', 'Adults', 'Learn how to prune apple trees with our resident expert. Ticket price includes a hot lunch and all equipment.', 'museums-events/ghfw.jpg', '/example-event/', 'card-light museum-card gressenhall', '18', 'May', '20', 'Workshops') }}
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4" id="result-19-wrapper">
+          {{ generalcard.generalcard("Collections Centre Tour", 'Gressenhall Farm and Workhouse • Dereham', 'Wednesday 1 June 2022 • 10:30 - 11:30', 'Free', 'Adults', 'Take a tour of our collections centre - some of the star objects include the West Runton mammoth, the famous Norwich Snap Dragons, a mustard stamper used to crush mustard seeds at the Colman’s factory in the 19th century.', 'museums-events/ghfw.jpg', '/example-event/', 'card-light museum-card gressenhall', '19', 'June', '1', 'Tours') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-20-wrapper">
+          {{ generalcard.generalcard("Collections Centre Tour", 'Gressenhall Farm and Workhouse • Dereham', 'Wednesday 1 June 2022 • 11:30 - 12:30', 'Free', 'Adults', 'Take a tour of our collections centre - some of the star objects include the West Runton mammoth, the famous Norwich Snap Dragons, a mustard stamper used to crush mustard seeds at the Colman’s factory in the 19th century.', 'museums-events/ghfw.jpg', '/example-event/', 'card-light museum-card gressenhall', '20', 'June', '1', 'Tours') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-21-wrapper">
+          {{ generalcard.generalcard("Collections Centre Tour", 'Gressenhall Farm and Workhouse • Dereham', 'Wednesday 1 June 2022 • 13:30 - 14:30', 'Free', 'Adults', 'Take a tour of our collections centre - some of the star objects include the West Runton mammoth, the famous Norwich Snap Dragons, a mustard stamper used to crush mustard seeds at the Colman’s factory in the 19th century.', 'museums-events/ghfw.jpg', '/example-event/', 'card-light museum-card gressenhall', '21', 'June', '1', 'Tours') }}
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4" id="result-22-wrapper">
+          {{ generalcard.generalcard("Living History Day", 'Gressenhall Farm and Workhouse • Dereham', 'Friday 1 July 2022 • 10:00 - 17:00', 'Adult £20 Child £15', 'All', 'Meet costumed characters, see vintage cars, browse the produce marquee and have a go on our vintage fairground (fairground rides cost extra).', 'museums-events/ghfw.jpg', '/example-event/', 'card-light museum-card gressenhall', '22', 'July', '1', 'Exhibitions') }}
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4" id="result-23-wrapper">
+          {{ generalcard.generalcard("Mini Museum Club", 'Ancient House • Thetford', 'Thursday 27 October 2022 • 10:30 - 11:30', 'Child 50p Adult free', 'Children', 'This month we’re focusing on dinosaurs! Join us to sing, play, and get creative in the museum.', 'museums-events/whats-on-3.jpg', '/example-event/', 'card-light museum-card ancient-house', '23', 'Oct', '27', 'Exhibitions') }}
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4" id="result-24-wrapper">
+          {{ generalcard.generalcard("Ghostly Gressenhall", 'Gressenhall Farm and Workhouse • Dereham', 'Friday 28 October 2022 • 18:00 - 20:00', '£6', 'Children', 'A halloween party for all your little witches and warlocks.', 'museums-events/ghfw.jpg', '/example-event/', 'card-light museum-card gressenhall', '24', 'October', '28', 'Parties') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-25-wrapper">
+          {{ generalcard.generalcard("Ghostly Gressenhall", 'Gressenhall Farm and Workhouse • Dereham', 'Saturday 29 October 2022 • 18:00 - 20:00', '£6', 'Children', 'A halloween party for all your little witches and warlocks.', 'museums-events/ghfw.jpg', '/example-event/', 'card-light museum-card gressenhall', '25', 'October', '29', 'Parties') }}
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4" id="result-26-wrapper">
+          {{ generalcard.generalcard("Knit and Knatter", 'Ancient House • Thetford', 'Tuseday 2 August 2022 • 10:30 - 12:00', '£2, museums pass £1', 'Adults', 'Join us to knit, chat and have a cuppa. Booking essential.', 'museums-events/whats-on-3.jpg', '/example-event/', 'card-light museum-card ancient-house', '26', 'Aug', '2', 'Workshops') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-27-wrapper">
+          {{ generalcard.generalcard("Knit and Knatter", 'Ancient House • Thetford', 'Thursday 11 August 2022 • 13:30 - 15:00', '£2, museums pass £1', 'Adults', 'Join us to knit, chat and have a cuppa. Booking essential.', 'museums-events/whats-on-3.jpg', '/example-event/', 'card-light museum-card ancient-house', '27', 'Aug', '11', 'Workshops') }}
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4" id="result-28-wrapper">
+          {{ generalcard.generalcard("Talking Textiles: Think Pink", 'Norwich Castle • Norwich', 'Thursday 12 April 2022 • 11:00 - 12:30', '£8', 'Adults', 'A look at the changing meanings and associations of the colour pink - from 18th century Rococo gowns, to the height of the Victorian craze for synthetic dyes.', 'museums-events/norwich-castle.jpg', '/example-event/', 'card-light museum-card norwich-castle', '28', 'Apr', '12', 'Workshops') }}
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4" id="result-29-wrapper">
+          {{ generalcard.generalcard("Princess Sophia - Online Talk", 'Online', 'Tuesday 12 July 2022 • 19:00 - 20:00', '£5 per device', 'Adults', 'Online talk discussing the life of Princess Sophia Duleep Singh. The Zoom link will be sent by email after booking.', 'museums-events/online.jpg', '/example-event/', 'card-light museum-card online', '29', 'Jul', '12', 'Talks') }}
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4" id="result-30-wrapper">
+          {{ generalcard.generalcard("The Story of the King", 'Norwich Castle • Norwich', 'Wednesday 21 December 2022 • 11:00 - 12:00', '£6.70', 'All', 'King Henry 1 and Queen Adleiza look back upon their visit to Norwich Castle in the Christmas of 1121. What do they remember..and will they actually agree? Join us for this affectionate and playful exploration of the reality of this royal visit. Your event ticket also includes museum admission up to 1 hour before the event time.', 'museums-events/norwich-castle.jpg', '/example-event/', 'card-light museum-card norwich-castle', '30', 'Dec', '21', 'Exhibitions') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-31-wrapper">
+          {{ generalcard.generalcard("The Story of the King", 'Norwich Castle • Norwich', 'Wednesday 21 December 2022 • 12:30 - 13:30', '£6.70', 'All', 'King Henry 1 and Queen Adleiza look back upon their visit to Norwich Castle in the Christmas of 1121. What do they remember..and will they actually agree? Join us for this affectionate and playful exploration of the reality of this royal visit. Your event ticket also includes museum admission up to 1 hour before the event time.', 'museums-events/norwich-castle.jpg', '/example-event/', 'card-light museum-card norwich-castle', '31', 'Dec', '21', 'Exhibitions') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-32-wrapper">
+          {{ generalcard.generalcard("The Story of the King", 'Norwich Castle • Norwich', 'Wednesday 21 December 2022 • 14:00 - 15:00', '£6.70', 'All', 'King Henry 1 and Queen Adleiza look back upon their visit to Norwich Castle in the Christmas of 1121. What do they remember..and will they actually agree? Join us for this affectionate and playful exploration of the reality of this royal visit. Your event ticket also includes museum admission up to 1 hour before the event time.', 'museums-events/norwich-castle.jpg', '/example-event/', 'card-light museum-card norwich-castle', '32', 'Dec', '21', 'Exhibitions') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-33-wrapper">
+          {{ generalcard.generalcard("The Story of the King", 'Norwich Castle • Norwich', 'Thursday 22 December 2022 • 11:00 - 12:00', '£6.70', 'All', 'King Henry 1 and Queen Adleiza look back upon their visit to Norwich Castle in the Christmas of 1121. What do they remember..and will they actually agree? Join us for this affectionate and playful exploration of the reality of this royal visit. Your event ticket also includes museum admission up to 1 hour before the event time.', 'museums-events/norwich-castle.jpg', '/example-event/', 'card-light museum-card norwich-castle', '33', 'Dec', '22', 'Exhibitions') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-34-wrapper">
+          {{ generalcard.generalcard("The Story of the King", 'Norwich Castle • Norwich', 'Thursday 22 December 2022 • 12:30 - 13:30', '£6.70', 'All', 'King Henry 1 and Queen Adleiza look back upon their visit to Norwich Castle in the Christmas of 1121. What do they remember..and will they actually agree? Join us for this affectionate and playful exploration of the reality of this royal visit. Your event ticket also includes museum admission up to 1 hour before the event time.', 'museums-events/norwich-castle.jpg', '/example-event/', 'card-light museum-card norwich-castle', '34', 'Dec', '22', 'Exhibitions') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-35-wrapper">
+          {{ generalcard.generalcard("The Story of the King", 'Norwich Castle • Norwich', 'Thursday 22 December 2022 • 14:00 - 15:00', '£6.70', 'All', 'King Henry 1 and Queen Adleiza look back upon their visit to Norwich Castle in the Christmas of 1121. What do they remember..and will they actually agree? Join us for this affectionate and playful exploration of the reality of this royal visit. Your event ticket also includes museum admission up to 1 hour before the event time.', 'museums-events/norwich-castle.jpg', '/example-event/', 'card-light museum-card norwich-castle', '35', 'Dec', '22', 'Exhibitions') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-36-wrapper">
+          {{ generalcard.generalcard("The Story of the King", 'Norwich Castle • Norwich', 'Wednesday 28 December 2022 • 11:00 - 12:00', '£6.70', 'All', 'King Henry 1 and Queen Adleiza look back upon their visit to Norwich Castle in the Christmas of 1121. What do they remember..and will they actually agree? Join us for this affectionate and playful exploration of the reality of this royal visit. Your event ticket also includes museum admission up to 1 hour before the event time.', 'museums-events/norwich-castle.jpg', '/example-event/', 'card-light museum-card norwich-castle', '36', 'Dec', '28', 'Exhibitions') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-37-wrapper">
+          {{ generalcard.generalcard("The Story of the King", 'Norwich Castle • Norwich', 'Wednesday 28 December 2022 • 12:30 - 13:30', '£6.70', 'All', 'King Henry 1 and Queen Adleiza look back upon their visit to Norwich Castle in the Christmas of 1121. What do they remember..and will they actually agree? Join us for this affectionate and playful exploration of the reality of this royal visit. Your event ticket also includes museum admission up to 1 hour before the event time.', 'museums-events/norwich-castle.jpg', '/example-event/', 'card-light museum-card norwich-castle', '37', 'Dec', '28', 'Exhibitions') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-38-wrapper">
+          {{ generalcard.generalcard("The Story of the King", 'Norwich Castle • Norwich', 'Wednesday 28 December 2022 • 14:00 - 15:00', '£6.70', 'All', 'King Henry 1 and Queen Adleiza look back upon their visit to Norwich Castle in the Christmas of 1121. What do they remember..and will they actually agree? Join us for this affectionate and playful exploration of the reality of this royal visit. Your event ticket also includes museum admission up to 1 hour before the event time.', 'museums-events/norwich-castle.jpg', '/example-event/', 'card-light museum-card norwich-castle', '38', 'Dec', '28', 'Exhibitions') }}
+        </div>
+
+        {# dummy events #}
+
+        <div class="col-12 col-sm-6 col-lg-4" id="result-2-wrapper">
+          {{ generalcard.generalcard('A Fish Tail Trail', 'Cromer Museum • Cromer', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', 'All', "It's not Nemo that needs to be found this time, but our local fishy friends. Help them find their tails (and claws) which have been scattered around the museum and learn some fin-tastic facts.", 'museums-events/event2.jpg', '/example-event/', 'card-light museum-card cromer', '2', 'May', '17', '') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-3-wrapper">
+          {{ generalcard.generalcard('How to be an Elizabethan Trail', 'Elizabethan House • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', 'All', 'A Beginners guide to the “Golden Age” Ever wanted to know how to fit into Elizabethan society? Well this is your perfect starter guide! Follow the trail to find out some fantastic facts.', 'museums-events/event3.jpg', '/example-event/', 'card-light museum-card elizabethan', '3', 'May', '17', '') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-4-wrapper">
+          {{ generalcard.generalcard("Where's Wookie?", 'Time & Tide • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', 'All', "The Wookies have gone into hiding as they spotted Storm Troopers in our exhibition. Can you help us find them amongst our collections?", 'museums-events/event1.jpg', '/example-event/', 'card-light museum-card time-and-tide', '4', 'May', '17', '') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-5-wrapper">
+          {{ generalcard.generalcard('How to be an Elizabethan Trail', 'Elizabethan House • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', 'All', 'A Beginners guide to the “Golden Age” Ever wanted to know how to fit into Elizabethan society? Well this is your perfect starter guide! Follow the trail to find out some fantastic facts.', 'museums-events/event3.jpg', '/example-event/', 'card-light museum-card elizabethan', '5', 'May', '17', '') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-6-wrapper">
+          {{ generalcard.generalcard('A Fish Tail Trail', 'Cromer Museum • Cromer', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', 'All', "It's not Nemo that needs to be found this time, but our local fishy friends. Help them find their tails (and claws) which have been scattered around the museum and learn some fin-tastic facts.", 'museums-events/event2.jpg', '/example-event/', 'card-light museum-card cromer', '6', 'May', '17', '') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-7-wrapper">
+          {{ generalcard.generalcard('A Fish Tail Trail', 'Cromer Museum • Cromer', 'Monday 25 June 2021 • 10:00 - 16:00', 'Free', 'All', "It's not Nemo that needs to be found this time, but our local fishy friends. Help them find their tails (and claws) which have been scattered around the museum and learn some fin-tastic facts.", 'museums-events/event2.jpg', '/example-event/', 'card-light museum-card cromer', '7', 'Jun', '25', '') }}
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" id="result-8-wrapper">
+          {{ generalcard.generalcard("Where's Wookie?", 'Time & Tide • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', 'All', "The Wookies have gone into hiding as they spotted Storm Troopers in our exhibition. Can you help us find them amongst our collections?", 'museums-events/event1.jpg', '/example-event/', 'card-light museum-card time-and-tide', '8', 'May', '17', '') }}
+        </div>
       </div>
 
       {# <div class="d-flex justify-content-center">
@@ -706,7 +838,6 @@
         console.log(`${titleEl.textContent} matches ${cookie}`);
         return true;
       }
-       
     }
 
     function checkType(n, cookie) {

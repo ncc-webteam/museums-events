@@ -698,6 +698,56 @@
     }
   }
 }
+.card.museum-card.strangers-hall {
+  .card-location {
+    color: #b32017;
+  }
+  &:focus-within {
+    .card-location {
+      color: $focus-text-colour;
+    }
+  }
+}
+.card.museum-card.lynn {
+  .card-location {
+    color: #80623c;
+  }
+  &:focus-within {
+    .card-location {
+      color: $focus-text-colour;
+    }
+  }
+}
+.card.museum-card.gressenhall {
+  .card-location {
+    color: #597730;
+  }
+  &:focus-within {
+    .card-location {
+      color: $focus-text-colour;
+    }
+  }
+}
+.card.museum-card.ancient-house {
+  .card-location {
+    color: #4c7285;
+  }
+  &:focus-within {
+    .card-location {
+      color: $focus-text-colour;
+    }
+  }
+}
+.card.museum-card.online {
+  .card-location {
+    color: $primary;
+  }
+  &:focus-within {
+    .card-location {
+      color: $focus-text-colour;
+    }
+  }
+}
 
 // filters and dropdowns ////////////////////////////////////////////
 
