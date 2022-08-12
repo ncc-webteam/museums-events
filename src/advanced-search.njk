@@ -15,12 +15,14 @@
         <div class="filters-wrapper my-3">
           <div class="filters-1 mb-3 mb-md-0">
             <div class="duet-wrapper me-1">
-              <label class="h5" for="date">Date to</label>
-              <duet-date-picker id="date-to" identifier="date"></duet-date-picker>
+              <label class="h5" for="date">Date from</label>
+              <duet-date-picker id="date-from" identifier="date" min="2022-01-01"
+  max="2022-12-31"></duet-date-picker>
             </div>
             <div class="duet-wrapper">
-              <label class="h5" for="date">Date from</label>
-              <duet-date-picker id="date-from" identifier="date"></duet-date-picker>
+              <label class="h5" for="date">Date to</label>
+              <duet-date-picker id="date-to" identifier="date" min="2022-01-01"
+  max="2022-12-31"></duet-date-picker>
             </div>
           </div>
           <div class="filters-2">
@@ -449,7 +451,7 @@
             {{ generalcard.generalcard('A Fish Tail Trail', 'Cromer Museum • Cromer', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', 'All', "It's not Nemo that needs to be found this time, but our local fishy friends. Help them find their tails (and claws) which have been scattered around the museum and learn some fin-tastic facts.", 'museums-events/event2.jpg', '/example-event/', 'card-light museum-card cromer', '6', 'May', '17', '') }}
           </div>
           <div class="col-12 col-sm-6 col-lg-4" id="result-7-wrapper">
-            {{ generalcard.generalcard('A Fish Tail Trail', 'Cromer Museum • Cromer', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', 'All', "It's not Nemo that needs to be found this time, but our local fishy friends. Help them find their tails (and claws) which have been scattered around the museum and learn some fin-tastic facts.", 'museums-events/event2.jpg', '/example-event/', 'card-light museum-card cromer', '7', 'May', '17', '') }}
+            {{ generalcard.generalcard('A Fish Tail Trail', 'Cromer Museum • Cromer', 'Monday 25 June 2021 • 10:00 - 16:00', 'Free', 'All', "It's not Nemo that needs to be found this time, but our local fishy friends. Help them find their tails (and claws) which have been scattered around the museum and learn some fin-tastic facts.", 'museums-events/event2.jpg', '/example-event/', 'card-light museum-card cromer', '7', 'Jun', '25', '') }}
           </div>
           <div class="col-12 col-sm-6 col-lg-4" id="result-8-wrapper">
             {{ generalcard.generalcard("Where's Wookie?", 'Time & Tide • Great Yarmouth', 'Monday 17 May 2021 • 10:00 - 16:00', 'Free', 'All', "The Wookies have gone into hiding as they spotted Storm Troopers in our exhibition. Can you help us find them amongst our collections?", 'museums-events/event1.jpg', '/example-event/', 'card-light museum-card time-and-tide', '8', 'May', '17', '') }}
@@ -659,36 +661,27 @@
       }
 
       let fromCheck = false;
-      if (fM > month) {
-        console.log(`fM ${fM} is a higher month than ${month}`);
+      if (fM < month) {
         fromCheck = true;
-      } else if (fM === month && fD >= day)  {
-        console.log(`fM ${fM} is the same as month ${month}`);
-        console.log(`fD ${fD} is the same or higher day than ${day}`);
+      } else if (fM === month && fD <= day)  {
         fromCheck = true;
       }
 
       let toCheck = false;
-      if (tM < month) {
-        console.log(`tM ${tM} is a lower month than ${month}`);
+      if (tM > month) {
         toCheck = true;
-      } else if (tM === month && tD <= day)  {
-        console.log(`tM ${tM} is the same as month ${month}`);
-        console.log(`tD ${tD} is the same or lower day than ${day}`);
+      } else if (tM === month && tD >= day)  {
         toCheck = true;
       }
 
       if (fromCheck && cTo == '') {
-        console.log("searching only date from")
         return true;
       }
       if (toCheck && cFrom == '') {
-        console.log("searching only date to")
         return true;
       }
 
       if (fromCheck && toCheck) {
-        console.log(`date match for ${document.getElementById(`result-${n}-title`).textContent}`);
         return true;
       }
       return false;
