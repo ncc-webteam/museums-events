@@ -540,6 +540,7 @@ Search</button>
   <section>
     <div class="container">
       <h3 id="search-indicator" class="m0"></h3>
+      <h3 id="multi-filter-indicator" class="m0"></h3>
       <div class="row mt-0 mb-5 g-md-4 g-2" id="page-content">
 
         <div class="col-12 col-sm-6 col-lg-4" id="result-10-wrapper">
@@ -2830,6 +2831,8 @@ Search</button>
     const RESULTS_WRAPPER = document.getElementById('page-content');
 
     const SEARCH_INDICATOR = document.getElementById('search-indicator');
+    const FILTER_INDICATOR = document.getElementById('multi-filter-indicator');
+
 
     const LINK1 = document.getElementById("page1-link");
     const LINK2 = document.getElementById("page2-link");
@@ -2950,7 +2953,7 @@ Search</button>
           }
           if (searchCookie != '') {
             console.log("search field not empty, refining...");
-            SEARCH_INDICATOR.textContent = `Searching by "${searchCookie}":`;
+            // SEARCH_INDICATOR.textContent = `Searching by "${searchCookie}":`;
             if (!checkSearch(num, searchCookie)) {
               r.style.display = 'none';
               console.log(`${r.id} failed search. hiding`);
@@ -2966,11 +2969,64 @@ Search</button>
           }
         });
       }
+
+      let typeNum = typeCookie.split(",").length;
+      let locNum = locationCookie.split(",").length;
+      let audNum = audienceCookie.split(",").length;
+
+      // flags
+      let queryFlag = false;
+      let noTypes = false;
+      let noLocs = false;
+      let noAuds = false;
+      let allBlank = false;
+      if (typeCookie == '') {
+        noTypes = true;
+        typeNum = 0;
+      }
+      if (locationCookie == '') {
+        noLocs = true;
+        locNum = 0;
+      }
+      if (audienceCookie == '') {
+        noAuds = true;
+        audNum = 0;
+      }
+      if (noTypes && noLocs && noAuds) {
+        allBlank = true;
+      }
+
+      let nFilters = typeNum + locNum + audNum;
+
+      let filterString = `Searching`;
+      if (searchCookie != '') {
+        queryFlag = true;
+        filterString = filterString.concat(` by "${searchCookie}"`);
+      }
+      if (nFilters > 1) {
+        filterString = filterString.concat(` with multiple filters`);
+      }
+      else if (typeNum == 1 && !noTypes && noLocs && noAuds) {
+        filterString = filterString.concat(` ${queryFlag ? `with` : `by`} type "${typeCookie}"`);
+      }
+      else if (locNum == 1 && !noLocs && noTypes && noAuds) {
+        filterString = filterString.concat(` ${queryFlag ? `with` : `by`} location "${locationCookie}"`);
+      }
+      else if (audNum == 1 && !noAuds && noTypes && noLocs) {
+        filterString = filterString.concat(` ${queryFlag ? `with` : `by`} audience "${audienceCookie}"`);
+      }
+      if (dateFromCookie != '' || dateToCookie != '') {
+        filterString = filterString.concat(` in a date range`);
+      }
+      if (filterString === `Searching`) {
+        filterString = `Showing all results`;
+      }
+      filterString = filterString.concat(`:`);
+      FILTER_INDICATOR.textContent = filterString;
     }
 
     function checkDate(n, cFrom, cTo) {
       if (cFrom == '' && cTo == '') {
-        console.log("both date fields blank");
         return true;
       }
 
@@ -3032,7 +3088,6 @@ Search</button>
     }
 
     function checkSearch(n, cookie) {
-      console.log(`search= ${cookie}`); // 'puppet show'
       if (cookie == '')
         return true;
       const typeEl = document.getElementById(`result-${n}-type`);
@@ -3042,7 +3097,6 @@ Search</button>
       if (typeEl.textContent.toLowerCase().includes(cookie.toLowerCase())
           || locationEl.textContent.toLowerCase().includes(cookie.toLowerCase()) 
           || titleEl.textContent.toLowerCase().includes(cookie.toLowerCase()) ) {
-        console.log(`${titleEl.textContent} matches ${cookie}`);
         return true;
       }
     }
@@ -3055,7 +3109,6 @@ Search</button>
       let match = false;
       types.forEach(function (type) {
         if (typeEl.textContent.includes(type)) {
-          console.log("TYPE MATCH");
           match = true;
         }
       });
@@ -3070,7 +3123,6 @@ Search</button>
       let match = false;
       locations.forEach(function (loc) {
         if (locationEl.textContent.includes(loc)) {
-          console.log("LOCATION MATCH");
           match = true;
         }
       });
@@ -3085,7 +3137,6 @@ Search</button>
       let match = false;
       audiences.forEach(function (aud) {
         if (audienceEl.textContent.includes(aud)) {
-          console.log("AUDIENCE MATCH");
           match = true;
         }
       });
