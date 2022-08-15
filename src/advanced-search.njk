@@ -775,7 +775,7 @@
       let noTypes = false;
       let noLocs = false;
       let noAuds = false;
-      let allBlank = false;
+
       if (typeCookie == '') {
         noTypes = true;
         typeNum = 0;
@@ -788,35 +788,34 @@
         noAuds = true;
         audNum = 0;
       }
-      if (noTypes && noLocs && noAuds) {
-        allBlank = true;
-      }
 
       let nFilters = typeNum + locNum + audNum;
 
       let filterString = `Searching`;
+
       if (searchCookie != '') {
         queryFlag = true;
         filterString = filterString.concat(` by "${searchCookie}"`);
       }
+
       if (nFilters > 1) {
         filterString = filterString.concat(` with multiple filters`);
-      }
-      else if (typeNum == 1 && !noTypes && noLocs && noAuds) {
+      } else if (!noTypes && noLocs && noAuds) {
         filterString = filterString.concat(` ${queryFlag ? `with` : `by`} type "${typeCookie}"`);
-      }
-      else if (locNum == 1 && !noLocs && noTypes && noAuds) {
+      } else if (!noLocs && noTypes && noAuds) {
         filterString = filterString.concat(` ${queryFlag ? `with` : `by`} location "${locationCookie}"`);
-      }
-      else if (audNum == 1 && !noAuds && noTypes && noLocs) {
+      } else if (!noAuds && noTypes && noLocs) {
         filterString = filterString.concat(` ${queryFlag ? `with` : `by`} audience "${audienceCookie}"`);
       }
+
       if (dateFromCookie != '' || dateToCookie != '') {
         filterString = filterString.concat(` in a date range`);
       }
+
       if (filterString === `Searching`) {
         filterString = `Showing all results`;
       }
+
       filterString = filterString.concat(`:`);
       FILTER_INDICATOR.textContent = filterString;
     }
