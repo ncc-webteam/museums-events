@@ -976,6 +976,11 @@ Search</button>
     // 'Browse by' links & filters //////////////
 
     function browseLocation(loc) {
+      setCookie('typeSelections', '', 1);
+      setCookie('audienceSelections', '', 1);
+      setCookie('searchQuery', '', 1);
+      setCookie('dateFrom', '', 1);
+      setCookie('dateTo', '', 1);
       switch(loc) {
         case 'Online':
           setCookie('locationSelections', 'Online', 1);
@@ -1016,6 +1021,11 @@ Search</button>
       window.location.href = "/museums-events/public/advanced-search/";
     }
     function browseType(type) {
+      setCookie('locationSelections', '', 1);
+      setCookie('audienceSelections', '', 1);
+      setCookie('searchQuery', '', 1);
+      setCookie('dateFrom', '', 1);
+      setCookie('dateTo', '', 1);
       switch(type) {
         case 'Talks':
           setCookie('typeSelections', 'Talks', 1);
