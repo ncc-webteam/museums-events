@@ -888,10 +888,12 @@
       const typeEl = document.getElementById(`result-${n}-type`);
       const locationEl = document.getElementById(`result-${n}-location`);
       const titleEl = document.getElementById(`result-${n}-title`);
+      const descEl = document.getElementById(`result-${n}-desc`);
       let match = false;
       if (typeEl.textContent.toLowerCase().includes(cookie.toLowerCase())
           || locationEl.textContent.toLowerCase().includes(cookie.toLowerCase()) 
-          || titleEl.textContent.toLowerCase().includes(cookie.toLowerCase()) ) {
+          || titleEl.textContent.toLowerCase().includes(cookie.toLowerCase())
+          || descEl.textContent.toLowerCase().includes(cookie.toLowerCase()) ) {
         return true;
       }
     }
