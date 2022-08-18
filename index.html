@@ -699,6 +699,23 @@ Search</button>
     </div>
   </section>
 
+  <script>
+    window.onload = function() {
+      clearCookies();
+      updateSelections();
+    }
+
+    const clearCookies = function() {
+      setCookie('typeSelections', '', 1);
+      setCookie('locationSelections', '', 1);
+      setCookie('audienceSelections', '', 1);
+      setCookie('searchQuery', '', 1);
+      setCookie('dateFrom', '', 1);
+      setCookie('dateTo', '', 1);
+    }
+
+  </script>
+
 
   </main>
   <footer>
