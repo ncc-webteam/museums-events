@@ -14,14 +14,9 @@
         </form>
         <div class="filters-wrapper my-3">
           <div class="filters-1 mb-3 mb-md-0">
-            <div class="duet-wrapper me-1">
-              <label class="h5" for="date">Date from</label>
-              <duet-date-picker id="date-from" identifier="date" min="2022-01-01"
-  max="2022-12-31"></duet-date-picker>
-            </div>
             <div class="duet-wrapper">
-              <label class="h5" for="date">Date to</label>
-              <duet-date-picker id="date-to" identifier="date" min="2022-01-01"
+              <label class="h5" for="date">Date</label>
+              <duet-date-picker id="date" identifier="date" min="2022-01-01"
   max="2022-12-31"></duet-date-picker>
             </div>
           </div>
@@ -638,13 +633,11 @@
     const LINK_NEXT = document.getElementById("page-next-link");
 
     function fillFields() {
-      const dateFromCookie = getCookie('dateFrom');
-      const dateToCookie = getCookie('dateTo');
+      const dateCookie = getCookie('date');
       const searchCookie = getCookie('searchQuery');
 
       SEARCH_INPUT.value = searchCookie;
-      DATE_FROM.value = dateFromCookie;
-      DATE_TO.value = dateToCookie;
+      DATE.value = dateCookie;
     }
 
     function showResults(start, end) {
@@ -728,12 +721,11 @@
       const typeCookie = getCookie('typeSelections');
       const locationCookie = getCookie('locationSelections');
       const audienceCookie = getCookie('audienceSelections');
-      const dateFromCookie = getCookie('dateFrom');
-      const dateToCookie = getCookie('dateTo');
+      const dateCookie = getCookie('date');
 
       const results = RESULTS_WRAPPER.children;
 
-      if (typeCookie == '' && locationCookie == '' && audienceCookie == '' && searchCookie == '' && dateFromCookie == '' && dateToCookie == '') {
+      if (typeCookie == '' && locationCookie == '' && audienceCookie == '' && searchCookie == '' && dateCookie == '') {
         console.log('no filters specified');
         Array.from(results).forEach(function (r) {
           r.style.display = 'block';
@@ -757,7 +749,7 @@
               console.log(`${r.id} passed search. showing`);
             }
           }
-          if (!checkDate(num, dateFromCookie, dateToCookie)) {
+          if (!checkDate(num, dateCookie)) {
             r.style.display = 'none';
             console.log(`${r.id} failed date. hiding`);
           } else {
@@ -808,7 +800,7 @@
         filterString = filterString.concat(` ${queryFlag ? `with` : `by`} audience "${audienceCookie}"`);
       }
 
-      if (dateFromCookie != '' || dateToCookie != '') {
+      if (dateCookie != '') {
         filterString = filterString.concat(` in a date range`);
       }
 
@@ -820,24 +812,21 @@
       FILTER_INDICATOR.textContent = filterString;
     }
 
-    function checkDate(n, cFrom, cTo) {
-      if (cFrom == '' && cTo == '') {
+    function checkDate(n, cDate) {
+      if (cDate == '') {
         return true;
       }
 
       // YYYY-MM-DD
-      const f = cFrom.split("-");
-      const t = cTo.split("-");
+      const date = cDate.split("-");
 
-      const fM = Number(f[1]);
-      const fD = Number(f[2]);
-      const tM = Number(t[1]);
-      const tD = Number(t[2]);
+      const dateM = Number(date[1]);
+      const dateD = Number(date[2]);
 
       const monthEl = document.getElementById(`result-${n}-month`);
       const dayEl = document.getElementById(`result-${n}-day`);
       let month = 0;
-      let day = dayEl.textContent;
+      let day = +dayEl.textContent; // the '+' converts from a string to a number :)
 
       switch (monthEl.textContent) {
         case 'Jan': month = 1; break;
@@ -855,31 +844,9 @@
         default: console.error(`invalid month`);
       }
 
-      let fromCheck = false;
-      if (fM < month) {
-        fromCheck = true;
-      } else if (fM === month && fD <= day)  {
-        fromCheck = true;
-      }
+      console.log(`checking date ${dateM}=${month} and ${dateD}=${day}`);
 
-      let toCheck = false;
-      if (tM > month) {
-        toCheck = true;
-      } else if (tM === month && tD >= day)  {
-        toCheck = true;
-      }
-
-      if (fromCheck && cTo == '') {
-        return true;
-      }
-      if (toCheck && cFrom == '') {
-        return true;
-      }
-
-      if (fromCheck && toCheck) {
-        return true;
-      }
-      return false;
+      return (dateM === month && dateD === day);
     }
 
     function checkSearch(n, cookie) {

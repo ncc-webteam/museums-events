@@ -275,16 +275,11 @@ Search</button>
       else
         setCookie('searchQuery', '', 1);
 
-      const dateFrom = DATE_FROM.value;
-      const dateTo = DATE_TO.value;
-      if (dateFrom != '')
-        setCookie('dateFrom', dateFrom, 1);
+      const date = DATE.value;;
+      if (date != '')
+        setCookie('date', date, 1);
       else
-        setCookie('dateFrom', '', 1);
-      if (dateTo != '')
-        setCookie('dateTo', dateTo, 1);
-      else
-        setCookie('dateTo', '', 1);
+        setCookie('date', '', 1);
 
       window.location.href = "/museums-events/public/advanced-search/";
     }
@@ -293,8 +288,7 @@ Search</button>
 
     const SEARCH_INPUT = document.getElementById('home-search-input');
 
-    const DATE_FROM = document.getElementById('date-from');
-    const DATE_TO = document.getElementById('date-to');
+    const DATE = document.getElementById('date');
 
     const FILTERS_BTN = document.getElementById('modal-filter-all');
     const TYPE_BTN = document.getElementById('dropdown-filter-type');
@@ -489,8 +483,7 @@ Search</button>
       setCookie('typeSelections', '', 1);
       setCookie('audienceSelections', '', 1);
       setCookie('searchQuery', '', 1);
-      setCookie('dateFrom', '', 1);
-      setCookie('dateTo', '', 1);
+      setCookie('date', '', 1);
       switch(loc) {
         case 'Online':
           setCookie('locationSelections', 'Online', 1);
@@ -534,8 +527,7 @@ Search</button>
       setCookie('locationSelections', '', 1);
       setCookie('audienceSelections', '', 1);
       setCookie('searchQuery', '', 1);
-      setCookie('dateFrom', '', 1);
-      setCookie('dateTo', '', 1);
+      setCookie('date', '', 1);
       switch(type) {
         case 'Talks':
           setCookie('typeSelections', 'Talks', 1);
