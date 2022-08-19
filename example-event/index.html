@@ -524,33 +524,68 @@ Search</button>
       window.location.href = "/museums-events/public/advanced-search/";
     }
     function browseType(type) {
-      setCookie('locationSelections', '', 1);
-      setCookie('audienceSelections', '', 1);
-      setCookie('searchQuery', '', 1);
-      setCookie('date', '', 1);
+      let currentCookie = getCookie('typeSelections');
+
+      if (currentCookie != '') {
+        currentCookie = currentCookie.concat(',')
+      }
+
       switch(type) {
         case 'Talks':
-          setCookie('typeSelections', 'Talks', 1);
+          setCookie('typeSelections', `${currentCookie.includes('Talks') ? currentCookie.slice(0, -1) : currentCookie.concat('Talks')}`, 1);
           break;
         case 'Tours':
-          setCookie('typeSelections', 'Tours', 1);
+          setCookie('typeSelections', `${currentCookie.includes('Tours') ? currentCookie.slice(0, -1) : currentCookie.concat('Tours')}`, 1);
           break;
         case 'Family activities':
-          setCookie('typeSelections', 'Family activities', 1);
+          setCookie('typeSelections', `${currentCookie.includes('Family activities') ? currentCookie.slice(0, -1) : currentCookie.concat('Family activities')}`, 1);
           break;
         case 'Exhibitions':
-          setCookie('typeSelections', 'Exhibitions', 1);
+          setCookie('typeSelections', `${currentCookie.includes('Exhibitions') ? currentCookie.slice(0, -1) : currentCookie.concat('Exhibitions')}`, 1);
           break;
         case 'Parties':
-          setCookie('typeSelections', 'Parties', 1);
+          setCookie('typeSelections', `${currentCookie.includes('Parties') ? currentCookie.slice(0, -1) : currentCookie.concat('Parties')}`, 1);
           break;
         case 'Workshops':
-          setCookie('typeSelections', 'Workshops', 1);
+          setCookie('typeSelections', `${currentCookie.includes('Workshops') ? currentCookie.slice(0, -1) : currentCookie.concat('Workshops')}`, 1);
           break;
         default:
           console.error(`no match for "browse by type"`);
       }
-      window.location.href = "/museums-events/public/advanced-search/";
+      
+      if (!window.location.href.includes('/advanced-search/')) {
+        window.location.href = "/museums-events/public/advanced-search/";
+      } else {
+        updateSelections();
+      }
+    }
+
+    function browseAudience(audience) {
+      let currentCookie = getCookie('audienceSelections');
+
+      if (currentCookie != '') {
+        currentCookie = currentCookie.concat(',')
+      }
+
+      switch(audience) {
+        case 'All':
+          setCookie('audienceSelections', `${currentCookie.includes('All') ? currentCookie.slice(0, -1) : currentCookie.concat('All')}`, 1);
+          break;
+        case 'Adults':
+          setCookie('audienceSelections', `${currentCookie.includes('Adults') ? currentCookie.slice(0, -1) : currentCookie.concat('Adults')}`, 1);
+          break;
+        case 'Children':
+          setCookie('audienceSelections', `${currentCookie.includes('Children') ? currentCookie.slice(0, -1) : currentCookie.concat('Children')}`, 1);
+          break;
+        default:
+          console.error(`no match for "browse by audience"`);
+      }
+      
+      if (!window.location.href.includes('/advanced-search/')) {
+        window.location.href = "/museums-events/public/advanced-search/";
+      } else {
+        updateSelections();
+      }
     }
 
 
