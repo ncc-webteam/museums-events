@@ -4,8 +4,33 @@
 
 .museums-events-stage {
   color: white;
-  height: 348px;
+  height: 300px;
   background: rgba(0, 35, 93, 0.8);
+
+  @include media-breakpoint-down(md) {
+    height: 250px;
+  }
+}
+.museums-events-stage.advanced-search-stage {
+  height: 340px;
+  @include media-breakpoint-down(md) {
+    height: 320px;
+  }
+}
+
+.advanced-search-link {
+  text-align: center;
+  color: white;
+  font-size: 1.25rem;
+  &:hover {
+    text-decoration: underline;
+    color: white;
+  }
+  &:focus {
+    text-decoration: underline;
+    color: $focus-text-colour;
+    background-color: $focus-colour;
+  }
 }
 
 .stage-search {
