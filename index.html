@@ -116,531 +116,122 @@ Search</button>
   <section class="museums-events-stage" style="background: linear-gradient(to right, rgba(0, 35, 93, 0.8), rgba(0, 35, 93, 0.8)), url('/museums-events/public/img/stage-img-1.jpg');">
     <div class="container">
       <div class="stage-search">
-        <h1 class="text-center mt-md-4 mb-md-5">Museums event search</h1>
+        <h1 class="text-center mt-md-5 mb-md-4 mb-4">Museums event search</h1>
         <form id="main-search-form" class="form-inline d-flex stage-search" onsubmit="advancedSearchLink()">
           <input id="home-search-input" class="form-control mr-sm-2" type="text" placeholder="For example &quot;Tours&quot;" aria-label="Search">
           <button id="home-search-button" class="btn btn-outline-light home-search-btn d-inline-flex" type="button" onclick="advancedSearchLink()"><span class="search-text-long">Search events</span><span class="search-text-short">Search</span></button>
         </form>
-        <div class="filters-wrapper my-3">
-          <div class="filters-1 mb-3 mb-md-0">
-            <div class="duet-wrapper me-1">
-              <label class="h5" for="date-from">Date from</label>
-              <duet-date-picker id="date-from" identifier="date-from" min="2022-01-01"
-  max="2022-12-31"></duet-date-picker>
-            </div>
-            <div class="duet-wrapper ">
-              <label class="h5" for="date-to">Date to</label>
-              <duet-date-picker id="date-to" identifier="date-to" min="2022-01-01"
-  max="2022-12-31"></duet-date-picker>
-            </div>
-          </div>
-          <div class="filters-2">
-            <div>
-              <h2 class="h5">Refine</h2>
-              <div class="filter-separator">
-                <button id="dropdown-filter-type" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Type</button>
-                      <ul class="dropdown-menu" aria-labelledby="dropdown-filter-type">
-                        <div class="dropdown-top-section">
-                          <h3 class="dropdown-heading h4">Event type</h3>
-                          
-                        </div>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="type1check">
-                            <input type="checkbox" class="form-check-input" name="typeOption" value="Tours" id="type1check">
-                            <div class="text-wrapper">
-                              Tours 
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="type2check">
-                            <input type="checkbox" class="form-check-input" name="typeOption" value="Talks" id="type2check">
-                            <div class="text-wrapper">
-                              Talks 
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="type3check">
-                            <input type="checkbox" class="form-check-input" name="typeOption" value="Family activities" id="type3check">
-                            <div class="text-wrapper">
-                              Family activities
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="type4check">
-                            <input type="checkbox" class="form-check-input" name="typeOption" value="Exhibitions" id="type4check">
-                            <div class="text-wrapper">
-                              Exhibitions 
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="type5check">
-                            <input type="checkbox" class="form-check-input" name="typeOption" value="Parties" id="type5check">
-                            <div class="text-wrapper">
-                              Parties 
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="type6check">
-                            <input type="checkbox" class="form-check-input" name="typeOption" value="Workshops" id="type6check">
-                            <div class="text-wrapper">
-                              Workshops 
-                            </div>
-                          </label>
-                        </li>
-                        <div class="dropdown-bottom-section">
-                          <button class="filter-control-btn clear-filter" type="button" onclick="clearFiltersDropdown('typeOption')" data-bs-dismiss="dropdown">Clear filters</button>
-                          <button class="filter-control-btn apply-filter" type="button" onclick="applyfiltersDropdown('typeOption', document.getElementsByName('typeOption'))" data-bs-dismiss="dropdown">Apply filters</button>
-                        </div>
-                      </ul>
-                <button id="dropdown-filter-location" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Location</button>
-                <ul class="dropdown-menu" aria-labelledby="dropdown-filter-location">
-                        <div class="dropdown-top-section">
-                          <h3 class="dropdown-heading h4">Location</h3>
-                          
-                        </div>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="location0check">
-                            <input type="checkbox" class="form-check-input" name="locationOption" value="Online" id="location0check">
-                            <div class="text-wrapper">
-                              Online
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="location1check">
-                            <input type="checkbox" class="form-check-input" name="locationOption" value="Norwich Castle" id="location1check">
-                            <div class="text-wrapper">
-                              Norwich Castle • Norwich 
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="location2check">
-                            <input type="checkbox" class="form-check-input" name="locationOption" value="Strangers' Hall" id="location2check">
-                            <div class="text-wrapper">
-                              Strangers' Hall • Norwich
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="location3check">
-                            <input type="checkbox" class="form-check-input" name="locationOption" value="Time & Tide" id="location3check">
-                            <div class="text-wrapper">
-                              Time & Tide • Great Yarmouth 
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="location4check">
-                            <input type="checkbox" class="form-check-input" name="locationOption" value="Gressenhall" id="location4check">
-                            <div class="text-wrapper">
-                              Gressenhall Farm & Workhouse
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="location5check">
-                            <input type="checkbox" class="form-check-input" name="locationOption" value="Museum of Norwich" id="location5check">
-                            <div class="text-wrapper">
-                              Museum of Norwich • Norwich
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="location6check">
-                            <input type="checkbox" class="form-check-input" name="locationOption" value="Elizabethan House" id="location6check">
-                            <div class="text-wrapper">
-                              Elizabethan House • Great Yarmouth
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="location7check">
-                            <input type="checkbox" class="form-check-input" name="locationOption" value="Lynn" id="location7check">
-                            <div class="text-wrapper">
-                              Lynn Museum • King's Lynn
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="location8check">
-                            <input type="checkbox" class="form-check-input" name="locationOption" value="Cromer" id="location8check">
-                            <div class="text-wrapper">
-                              Cromer Museum • Cromer
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="location9check">
-                            <input type="checkbox" class="form-check-input" name="locationOption" value="Tolhouse Gaol" id="location9check">
-                            <div class="text-wrapper">
-                              Tolhouse Gaol • Great Yarmouth
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="location10check">
-                            <input type="checkbox" class="form-check-input" name="locationOption" value="Ancient House" id="location10check">
-                            <div class="text-wrapper">
-                              Ancient House • Thetford
-                            </div>
-                          </label>
-                        </li>
-                        <div class="dropdown-bottom-section">
-                          <button class="filter-control-btn clear-filter" type="button" onclick="clearFiltersDropdown('locationOption')" data-bs-dismiss="dropdown">Clear filters</button>
-                          <button class="filter-control-btn apply-filter" type="button" onclick="applyfiltersDropdown('locationOption', document.getElementsByName('locationOption'))" data-bs-dismiss="dropdown">Apply filters</button>
-                        </div>
-                      </ul>
-                <button id="dropdown-filter-audience" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Audience</button>
-                <ul class="dropdown-menu" aria-labelledby="dropdown-filter-type">
-                        <div class="dropdown-top-section">
-                          <h3 class="dropdown-heading h4">Audience</h3>
-                          
-                        </div>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="audience1check">
-                            <input type="checkbox" class="form-check-input" name="audienceOption" value="All" id="audience1check">
-                            <div class="text-wrapper">
-                              All audiences 
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="audience2check">
-                            <input type="checkbox" class="form-check-input" name="audienceOption" value="Adults" id="audience2check">
-                            <div class="text-wrapper">
-                              Adults focused 
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="audience3check">
-                            <input type="checkbox" class="form-check-input" name="audienceOption" value="Children" id="audience3check">
-                            <div class="text-wrapper">
-                              Children focused 
-                            </div>
-                          </label>
-                        </li>
-                        <div class="dropdown-bottom-section">
-                          <button class="filter-control-btn clear-filter" type="button" onclick="clearFiltersDropdown('audienceOption')" data-bs-dismiss="dropdown">Clear filters</button>
-                          <button class="filter-control-btn apply-filter" type="button" onclick="applyfiltersDropdown('audienceOption', document.getElementsByName('audienceOption'))" data-bs-dismiss="dropdown">Apply filters</button>
-                        </div>
-                      </ul>
-                <button id="modal-filter-all" class="btn btn-primary filter-btn filter-btn-all" data-bs-toggle="modal" data-bs-target="#filtersModal">Filters</button>
-              </div>
-            </div>
-          </div>
+        <div class="w-100 d-flex justify-content-center my-4">
+          <a class="advanced-search-link" href="/museums-events/public/advanced-search/">Advanced search - find events by location, type or date</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Filters Modal -->
-<div class="modal fade filters-modal" id="filtersModal" tabindex="-1" aria-labelledby="filtersModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title" id="filtersModalLabel">Filters</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-          <ul class="filter-list">
-                        <div class="dropdown-top-section">
-                          <h3 class="dropdown-heading h4">Event type</h3>
-                        </div>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="type1check">
-                            <input type="checkbox" class="form-check-input" name="typeOptionModal" value="Tours" id="type1check">
-                            <div class="text-wrapper">
-                              Tours 
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="type2check">
-                            <input type="checkbox" class="form-check-input" name="typeOptionModal" value="Talks" id="type2check">
-                            <div class="text-wrapper">
-                              Talks 
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="type3check">
-                            <input type="checkbox" class="form-check-input" name="typeOptionModal" value="Family activities" id="type3check">
-                            <div class="text-wrapper">
-                              Family activities 
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="type4check">
-                            <input type="checkbox" class="form-check-input" name="typeOptionModal" value="Exhibitions" id="type4check">
-                            <div class="text-wrapper">
-                              Exhibitions 
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="type5check">
-                            <input type="checkbox" class="form-check-input" name="typeOptionModal" value="Parties" id="type5check">
-                            <div class="text-wrapper">
-                              Parties
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="type6check">
-                            <input type="checkbox" class="form-check-input" name="typeOptionModal" value="Workshops" id="type6check">
-                            <div class="text-wrapper">
-                              Workshops
-                            </div>
-                          </label>
-                        </li>
-                      </ul>
-                      <ul class="filter-list">
-                        <div class="dropdown-top-section">
-                          <h3 class="dropdown-heading h4">Location</h3>
-                        </div>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="location0check">
-                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Online" id="location0check">
-                            <div class="text-wrapper">
-                              Online
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="location1check">
-                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Norwich Castle" id="location1check">
-                            <div class="text-wrapper">
-                              Norwich Castle • Norwich 
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="location2check">
-                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Strangers' Hall" id="location2check">
-                            <div class="text-wrapper">
-                              Strangers' Hall • Norwich
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="location3check">
-                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Time & Tide" id="location3check">
-                            <div class="text-wrapper">
-                              Time & Tide • Great Yarmouth 
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="location4check">
-                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Gressenhall" id="location4check">
-                            <div class="text-wrapper">
-                              Gressenhall Farm & Workhouse
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="location5check">
-                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Museum of Norwich" id="location5check">
-                            <div class="text-wrapper">
-                              Museum of Norwich • Norwich
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="location6check">
-                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Elizabethan House" id="location6check">
-                            <div class="text-wrapper">
-                              Elizabethan House • Great Yarmouth
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="location7check">
-                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Lynn" id="location7check">
-                            <div class="text-wrapper">
-                              Lynn Museum • King's Lynn
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="location8check">
-                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Cromer" id="location8check">
-                            <div class="text-wrapper">
-                              Cromer Museum • Cromer
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="location9check">
-                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Tolhouse Gaol" id="location9check">
-                            <div class="text-wrapper">
-                              Tolhouse Gaol • Great Yarmouth
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="location10check">
-                            <input type="checkbox" class="form-check-input" name="locationOptionModal" value="Ancient House" id="location10check">
-                            <div class="text-wrapper">
-                              Ancient House • Thetford
-                            </div>
-                          </label>
-                        </li>
-                      </ul>
-                      <ul class="filter-list">
-                        <div class="dropdown-top-section">
-                          <h3 class="dropdown-heading h4">Audience</h3>
-                          
-                        </div>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="audience1check">
-                            <input type="checkbox" class="form-check-input" name="audienceOptionModal" value="All" id="audience1check">
-                            <div class="text-wrapper">
-                              All audiences 
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="audience2check">
-                            <input type="checkbox" class="form-check-input" name="audienceOptionModal" value="Adults" id="audience2check">
-                            <div class="text-wrapper">
-                              Adults focused 
-                            </div>
-                          </label>
-                        </li>
-                        <li class="selection-item">
-                          <label class="form-check-label" for="audience3check">
-                            <input type="checkbox" class="form-check-input" name="audienceOptionModal" value="Children" id="audience3check">
-                            <div class="text-wrapper">
-                              Children focused 
-                            </div>
-                          </label>
-                        </li>
-                      </ul>
-      
-      </div>
-      <div class="modal-footer">
-        <div class="dropdown-bottom-section modal-bottom-section">
-          <button class="filter-control-btn clear-filter" type="button" onclick="clearFilters(document.getElementsByName('typeOptionModal'), document.getElementsByName('locationOptionModal'), document.getElementsByName('audienceOptionModal'))" data-bs-dismiss="modal">Clear filters</button>
-          <button class="filter-control-btn apply-filter" type="button" onclick="applyFilters(document.getElementsByName('typeOptionModal'), document.getElementsByName('locationOptionModal'), document.getElementsByName('audienceOptionModal'))" data-bs-dismiss="modal">Apply filters</button>
+  <section class="bg-gray-200">
+    <div class="container py-4">
+      <h2 class="h3" style="margin-bottom: 0px;">Browse by location</h2>
+      <div class="card-wrapper-slick">
+        <div class="card card-light">
+          <div class="img-wrapper ratio ratio-1x1">
+            <img src="img/museums-events/norwich-castle.jpg" class="card-img-top" alt="image for Norwich Castle">
+          </div>
+          <div class="card-body">
+            <h2 class="card-title h4"><a class="stretched-link" onclick="browseLocation('Norwich Castle');return false;" href="/museums-events/public/advanced-search/">Norwich Castle</a></h2>
+          </div>
+        </div>
+        <div class="card card-light">
+          <div class="img-wrapper ratio ratio-1x1">
+            <img src="img/museums-events/time-and-tide.jpg" class="card-img-top" alt="image for Time & Tide">
+          </div>
+          <div class="card-body">
+            <h2 class="card-title h4"><a class="stretched-link" onclick="browseLocation('Time & Tide');return false;" href="/museums-events/public/advanced-search/">Time & Tide</a></h2>
+          </div>
+        </div>
+        <div class="card card-light">
+          <div class="img-wrapper ratio ratio-1x1">
+            <img src="img/museums-events/ghfw.jpg" onclick="browseLocation(`Strangers' Hall`);return false;" class="card-img-top" alt="image for Gressenhall Farm">
+          </div>
+          <div class="card-body">
+            <h2 class="card-title h4"><a class="stretched-link" onclick="browseLocation('Gressenhall');return false;" href="/museums-events/public/advanced-search/">Gressenhall Farm</a></h2>
+          </div>
+        </div>
+        <div class="card card-light">
+          <div class="img-wrapper ratio ratio-1x1">
+            <img src="img/museums-events/mon.jpg" class="card-img-top" alt="image for Museum of Norwich">
+          </div>
+          <div class="card-body">
+            <h2 class="card-title h4"><a class="stretched-link" onclick="browseLocation('Museum of Norwich');return false;" href="/museums-events/public/advanced-search/">Museum of Norwich</a></h2>
+          </div>
+        </div>
+        <div class="card card-light">
+          <div class="img-wrapper ratio ratio-1x1">
+            <img src="img/museums-events/elizabethan-house.jpg" class="card-img-top" alt="image for Elizabethan House">
+          </div>
+          <div class="card-body">
+            <h2 class="card-title h4"><a class="stretched-link" onclick="browseLocation('Elizabethan House');return false;" href="/museums-events/public/advanced-search/">Elizabethan House</a></h2>
+          </div>
+        </div>
+        <div class="card card-light">
+          <div class="img-wrapper ratio ratio-1x1">
+            <img src="img/museums-events/strangers-hall.jpg" class="card-img-top" alt="image for Strangers' hall">
+          </div>
+          <div class="card-body">
+            <h2 class="card-title h4"><a class="stretched-link" onclick="browseLocation(`Strangers' Hall`);return false;" href="/museums-events/public/advanced-search/">Strangers' hall</a></h2>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-  <section class="bg-gray-200">
-    <div class="container py-5">
-      <h2 class="h3" style="margin-bottom: 0px;">Browse by type</h2>
-        <div class="card-wrapper-slick">
-            <div class="card card-light">
-              <div class="img-wrapper ratio ratio-1x1">
-                <img src="img/museums-events/workshops.jpg" class="card-img-top" alt="image for Family activities"> 
-              </div>
-              <div class="card-body">
-                <h2 class="card-title h4"><a class="stretched-link" onclick="browseType('Family activities');return false;"  href="/museums-events/public/advanced-search/">Family activities</a></h2>
-              </div>
-            </div>
-            <div class="card card-light">
-              <div class="img-wrapper ratio ratio-1x1">
-                <img src="img/museums-events/exhibitions.jpg" class="card-img-top" alt="image for Exhibitions">
-              </div>
-              <div class="card-body">
-                <h2 class="card-title h4"><a class="stretched-link" onclick="browseType('Exhibitions');return false;"  href="/museums-events/public/advanced-search/">Exhibitions</a></h2>
-              </div>
-            </div>
-            <div class="card card-light">
-              <div class="img-wrapper ratio ratio-1x1">
-                <img src="img/museums-events/events.jpg" class="card-img-top" alt="image for Talks">
-              </div>
-              <div class="card-body">
-                <h2 class="card-title h4"><a class="stretched-link" onclick="browseType('Talks');return false;"  href="/museums-events/public/advanced-search/">Talks</a></h2>
-              </div>
-            </div>
-            <div class="card card-light">
-              <div class="img-wrapper ratio ratio-1x1">
-                <img src="img/museums-events/tours.jpg" class="card-img-top" alt="image for Tours">
-              </div>
-              <div class="card-body">
-                <h2 class="card-title h4"><a class="stretched-link" onclick="browseType('Tours');return false;"  href="/museums-events/public/advanced-search/">Tours</a></h2>
-              </div>
-            </div>
-            <div class="card card-light">
-              <div class="img-wrapper ratio ratio-1x1">
-                <img src="img/museums-events/activities.jpg" class="card-img-top" alt="image for Workshop">
-              </div>
-              <div class="card-body">
-                <h2 class="card-title h4"><a class="stretched-link" onclick="browseType('Workshops');return false;" href="/museums-events/public/advanced-search/">Workshops</a></h2>
-              </div>
-            </div>
-            <div class="card card-light">
-              <div class="img-wrapper ratio ratio-1x1">
-                <img src="img/museums-events/exhibitions.jpg" class="card-img-top" alt="image for Parties">
-              </div>
-              <div class="card-body">
-                <h2 class="card-title h4"><a class="stretched-link" onclick="browseType('Parties');return false;" href="/museums-events/public/advanced-search/">Parties</a></h2>
-              </div>
-            </div>
-          </div>
-      <h2 class="h3 mt-5" style="margin-bottom: 0px;">Browse by location</h2>
+      <h2 class="h3 mt-3 mt-md-4 " style="margin-bottom: 0px;">Browse by type</h2>
       <div class="card-wrapper-slick">
-            <div class="card card-light">
-              <div class="img-wrapper ratio ratio-1x1">
-                <img src="img/museums-events/norwich-castle.jpg" class="card-img-top" alt="image for Norwich Castle">
-              </div>
-              <div class="card-body">
-                <h2 class="card-title h4"><a class="stretched-link" onclick="browseLocation('Norwich Castle');return false;" href="/museums-events/public/advanced-search/">Norwich Castle</a></h2>
-              </div>
-            </div>
-            <div class="card card-light">
-              <div class="img-wrapper ratio ratio-1x1">
-                <img src="img/museums-events/time-and-tide.jpg" class="card-img-top" alt="image for Time & Tide">
-              </div>
-              <div class="card-body">
-                <h2 class="card-title h4"><a class="stretched-link" onclick="browseLocation('Time & Tide');return false;" href="/museums-events/public/advanced-search/">Time & Tide</a></h2>
-              </div>
-            </div>
-            <div class="card card-light">
-              <div class="img-wrapper ratio ratio-1x1">
-                <img src="img/museums-events/ghfw.jpg" onclick="browseLocation(`Strangers' Hall`);return false;" class="card-img-top" alt="image for Gressenhall Farm">
-              </div>
-              <div class="card-body">
-                <h2 class="card-title h4"><a class="stretched-link" onclick="browseLocation('Gressenhall');return false;" href="/museums-events/public/advanced-search/">Gressenhall Farm</a></h2>
-              </div>
-            </div>
-            <div class="card card-light">
-              <div class="img-wrapper ratio ratio-1x1">
-                <img src="img/museums-events/mon.jpg" class="card-img-top" alt="image for Museum of Norwich">
-              </div>
-              <div class="card-body">
-                <h2 class="card-title h4"><a class="stretched-link" onclick="browseLocation('Museum of Norwich');return false;" href="/museums-events/public/advanced-search/">Museum of Norwich</a></h2>
-              </div>
-            </div>
-            <div class="card card-light">
-              <div class="img-wrapper ratio ratio-1x1">
-                <img src="img/museums-events/elizabethan-house.jpg" class="card-img-top" alt="image for Elizabethan House">
-              </div>
-              <div class="card-body">
-                <h2 class="card-title h4"><a class="stretched-link" onclick="browseLocation('Elizabethan House');return false;" href="/museums-events/public/advanced-search/">Elizabethan House</a></h2>
-              </div>
-            </div>
-            <div class="card card-light">
-              <div class="img-wrapper ratio ratio-1x1">
-                <img src="img/museums-events/strangers-hall.jpg" class="card-img-top" alt="image for Strangers' hall">
-              </div>
-              <div class="card-body">
-                <h2 class="card-title h4"><a class="stretched-link" onclick="browseLocation(`Strangers' Hall`);return false;" href="/museums-events/public/advanced-search/">Strangers' hall</a></h2>
-              </div>
-            </div>
+        <div class="card card-light">
+          <div class="img-wrapper ratio ratio-1x1">
+            <img src="img/museums-events/workshops.jpg" class="card-img-top" alt="image for Family activities"> 
           </div>
+          <div class="card-body">
+            <h2 class="card-title h4"><a class="stretched-link" onclick="browseType('Family activities');return false;"  href="/museums-events/public/advanced-search/">Family activities</a></h2>
+          </div>
+        </div>
+        <div class="card card-light">
+          <div class="img-wrapper ratio ratio-1x1">
+            <img src="img/museums-events/exhibitions.jpg" class="card-img-top" alt="image for Exhibitions">
+          </div>
+          <div class="card-body">
+            <h2 class="card-title h4"><a class="stretched-link" onclick="browseType('Exhibitions');return false;"  href="/museums-events/public/advanced-search/">Exhibitions</a></h2>
+          </div>
+        </div>
+        <div class="card card-light">
+          <div class="img-wrapper ratio ratio-1x1">
+            <img src="img/museums-events/events.jpg" class="card-img-top" alt="image for Talks">
+          </div>
+          <div class="card-body">
+            <h2 class="card-title h4"><a class="stretched-link" onclick="browseType('Talks');return false;"  href="/museums-events/public/advanced-search/">Talks</a></h2>
+          </div>
+        </div>
+        <div class="card card-light">
+          <div class="img-wrapper ratio ratio-1x1">
+            <img src="img/museums-events/tours.jpg" class="card-img-top" alt="image for Tours">
+          </div>
+          <div class="card-body">
+            <h2 class="card-title h4"><a class="stretched-link" onclick="browseType('Tours');return false;"  href="/museums-events/public/advanced-search/">Tours</a></h2>
+          </div>
+        </div>
+        <div class="card card-light">
+          <div class="img-wrapper ratio ratio-1x1">
+            <img src="img/museums-events/activities.jpg" class="card-img-top" alt="image for Workshop">
+          </div>
+          <div class="card-body">
+            <h2 class="card-title h4"><a class="stretched-link" onclick="browseType('Workshops');return false;" href="/museums-events/public/advanced-search/">Workshops</a></h2>
+          </div>
+        </div>
+        <div class="card card-light">
+          <div class="img-wrapper ratio ratio-1x1">
+            <img src="img/museums-events/exhibitions.jpg" class="card-img-top" alt="image for Parties">
+          </div>
+          <div class="card-body">
+            <h2 class="card-title h4"><a class="stretched-link" onclick="browseType('Parties');return false;" href="/museums-events/public/advanced-search/">Parties</a></h2>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
