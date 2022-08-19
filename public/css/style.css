@@ -12630,13 +12630,22 @@ section.section_stage_theme .lead {
 .selection-item {
   font-weight: 600;
   color: #767676;
-  padding: 10px 20px;
+  padding: 5px 20px;
   font-size: 1.125rem;
   margin: 0;
+}
+.selection-item:last-child {
+  padding: 5px 20px 18px 20px;
 }
 .selection-item:focus-within .form-check-input {
   outline: solid #ffdd00 4px !important;
   border: solid #0b0c0c 3px !important;
+}
+.selection-item > a {
+  color: #767676;
+}
+.selection-item > a:hover {
+  color: black;
 }
 .selection-item .form-check-label {
   width: 100%;
@@ -12680,7 +12689,7 @@ section.section_stage_theme .lead {
   background-color: white;
   border: solid #495057 1px;
   border-radius: 6px;
-  max-height: 350px;
+  max-height: 295px;
   min-width: 400px;
   overflow-y: scroll;
   position: relative;
@@ -12692,7 +12701,7 @@ section.section_stage_theme .lead {
   }
 }
 .dropdown-menu .dropdown-top-section {
-  padding: 20px 20px 0px 20px;
+  padding: 20px 20px 10px 20px;
   width: 100%;
   display: flex;
   justify-content: space-between;

@@ -25,52 +25,22 @@
               <h3 class="dropdown-heading h4">Event type</h3>
             </div>
             <li class="selection-item">
-              <label class="form-check-label" for="type1check">
-                <input type="checkbox" class="form-check-input" name="typeOption" value="Tours" id="type1check">
-                <div class="text-wrapper">
-                  Tours 
-                </div>
-              </label>
+              <a href="#" onclick="browseType('Tours');return false;">Tours</a>
             </li>
             <li class="selection-item">
-              <label class="form-check-label" for="type2check">
-                <input type="checkbox" class="form-check-input" name="typeOption" value="Talks" id="type2check">
-                <div class="text-wrapper">
-                  Talks 
-                </div>
-              </label>
+              <a href="#" onclick="browseType('Talks');return false;">Talks</a>
             </li>
             <li class="selection-item">
-              <label class="form-check-label" for="type3check">
-                <input type="checkbox" class="form-check-input" name="typeOption" value="Family activities" id="type3check">
-                <div class="text-wrapper">
-                  Family activities
-                </div>
-              </label>
+              <a href="#" onclick="browseType('Family activities');return false;">Family activities</a>
             </li>
             <li class="selection-item">
-              <label class="form-check-label" for="type4check">
-                <input type="checkbox" class="form-check-input" name="typeOption" value="Exhibitions" id="type4check">
-                <div class="text-wrapper">
-                  Exhibitions 
-                </div>
-              </label>
+              <a href="#" onclick="browseType('Exhibitions');return false;">Exhibitions</a>
             </li>
             <li class="selection-item">
-              <label class="form-check-label" for="type5check">
-                <input type="checkbox" class="form-check-input" name="typeOption" value="Parties" id="type5check">
-                <div class="text-wrapper">
-                  Parties 
-                </div>
-              </label>
+              <a href="#" onclick="browseType('Parties');return false;">Parties</a>
             </li>
             <li class="selection-item">
-              <label class="form-check-label" for="type6check">
-                <input type="checkbox" class="form-check-input" name="typeOption" value="Workshops" id="type6check">
-                <div class="text-wrapper">
-                  Workshops 
-                </div>
-              </label>
+              <a href="#" onclick="browseType('Workshops');return false;">Workshops</a>
             </li>
           </ul>
           <button id="dropdown-filter-location" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Location<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
@@ -177,28 +147,13 @@
               <h3 class="dropdown-heading h4">Audience</h3>
             </div>
             <li class="selection-item">
-              <label class="form-check-label" for="audience1check">
-                <input type="checkbox" class="form-check-input" name="audienceOption" value="All" id="audience1check">
-                <div class="text-wrapper">
-                  All audiences 
-                </div>
-              </label>
+              <a href="#" onclick="browseAudience('All');return false;">All</a>
             </li>
             <li class="selection-item">
-              <label class="form-check-label" for="audience2check">
-                <input type="checkbox" class="form-check-input" name="audienceOption" value="Adults" id="audience2check">
-                <div class="text-wrapper">
-                  Adults focused 
-                </div>
-              </label>
+              <a href="#" onclick="browseAudience('Adults');return false;">Adults focused</a>
             </li>
             <li class="selection-item">
-              <label class="form-check-label" for="audience3check">
-                <input type="checkbox" class="form-check-input" name="audienceOption" value="Children" id="audience3check">
-                <div class="text-wrapper">
-                  Children focused 
-                </div>
-              </label>
+              <a href="#" onclick="browseAudience('Children');return false;">Children focused</a>
             </li>
           </ul>
         </div>
@@ -564,28 +519,6 @@
         </div>
       </div>
 
-      {# <div class="d-flex justify-content-center">
-        <nav aria-label="Acle library events pagination"> 
-          <ul class="pagination libraries-pagination">
-            <li id="page-prev-link" class="page-item disabled">
-              <button class="page-link" onclick="prevPage()" tabindex="-1">Previous</button>
-            </li>
-            <li id="page1-link" class="page-item active">
-              <button class="page-link" onclick="showPage(1)">1</button>
-            </li>
-            <li id="page2-link" class="page-item">
-              <button class="page-link" onclick="showPage(2)">2</button>
-            </li>
-            <li id="page3-link" class="page-item">
-              <button class="page-link" onclick="showPage(3)">3</button>
-            </li>
-            <li id="page-next-link" class="page-item">
-              <button class="page-link" onclick="nextPage()">Next</button>
-            </li>
-          </ul>
-        </nav>
-      </div> #}
-
     </div>
   </section>
 
@@ -594,7 +527,6 @@
     window.onload = function() {
       fillFields();
       updateSelections();
-      showResults(0,3);
     }
 
     // PAGINATION /////////////////////////////////////////////////// 
@@ -604,94 +536,12 @@
     const SEARCH_INDICATOR = document.getElementById('search-indicator');
     const FILTER_INDICATOR = document.getElementById('multi-filter-indicator');
 
-
-    const LINK1 = document.getElementById("page1-link");
-    const LINK2 = document.getElementById("page2-link");
-    const LINK3 = document.getElementById("page3-link");
-
-    const LINK_PREV = document.getElementById("page-prev-link");
-    const LINK_NEXT = document.getElementById("page-next-link");
-
     function fillFields() {
       const dateCookie = getCookie('date');
       const searchCookie = getCookie('searchQuery');
 
       SEARCH_INPUT.value = searchCookie;
       DATE.value = dateCookie;
-    }
-
-    function showResults(start, end) {
-      let results = RESULTS_WRAPPER.children;
-      console.log(`number of resuts= ${results.length}`);
-
-      for (i = 0; i < results.length; i++) {
-        if (i >= start && i < end) {
-          results[i].style.display = 'block'; 
-        } else {
-          results[i].style.display = 'none';
-        }
-      }
-      filterResults();
-    }
-
-    let currentPage = 1;
-
-    function nextPage() {
-      if (currentPage >= 3) return;
-      showPage(currentPage + 1);
-    }
-
-    function prevPage() {
-      if (currentPage <= 1) return;
-      showPage(currentPage - 1);
-    }
-
-    function showPage(pageNum) {
-      if (pageNum == 1) {
-        LINK1.classList.add("active");
-        LINK2.classList.remove("active");
-        LINK3.classList.remove("active");
-
-        LINK_PREV.classList.add("disabled");
-        LINK_PREV.firstElementChild.tabIndex="-1";
-        LINK_NEXT.classList.remove("disabled");
-        LINK_NEXT.firstElementChild.tabIndex="0";
-        
-        currentPage = 1;
-        showResults(0,3);
-        RESULTS_WRAPPER.scrollIntoView();
-        //page1.getElementsByTagName('a')[0].focus();
-      } else if (pageNum == 2) {
-        LINK1.classList.remove("active");
-        LINK2.classList.add("active");
-        LINK3.classList.remove("active");
-
-        LINK_PREV.classList.remove("disabled");
-        LINK_PREV.firstElementChild.tabIndex="0";
-        LINK_NEXT.classList.remove("disabled");
-        LINK_NEXT.firstElementChild.tabIndex="0";
-        
-        currentPage = 2;
-        showResults(3,6);
-        RESULTS_WRAPPER.scrollIntoView();
-        //page2.getElementsByTagName('a')[0].focus();
-      } else if (pageNum == 3) {
-        LINK1.classList.remove("active");
-        LINK2.classList.remove("active");
-        LINK3.classList.add("active");
-
-        LINK_PREV.classList.remove("disabled");
-        LINK_PREV.firstElementChild.tabIndex="0";
-        LINK_NEXT.classList.add("disabled");
-        LINK_NEXT.firstElementChild.tabIndex="-1";
-
-        currentPage = 3;
-        showResults(6,8)
-        RESULTS_WRAPPER.scrollIntoView();
-        //page3.getElementsByTagName('a')[0].focus();
-      } else {
-        console.log("pagination error");
-      }
     }
 
     // FILTERS //////////////////////////////////
