@@ -12073,36 +12073,6 @@ section.section_stage_theme .lead {
 .filters-wrapper {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-}
-.filters-wrapper .filters-1 {
-  display: flex;
-  justify-content: space-between;
-}
-@media (max-width: 767.98px) {
-  .filters-wrapper .filters-1 {
-    width: 100%;
-  }
-}
-.filters-wrapper .filter-separator {
-  display: flex;
-  flex-wrap: wrap;
-}
-@media (max-width: 991.98px) {
-  .filters-wrapper .filter-separator .filter-btn {
-    display: none;
-  }
-}
-.filters-wrapper .filter-separator .filter-btn:not(:last-child) {
-  margin-right: 10px;
-}
-.filters-wrapper .filter-separator .filter-btn-all {
-  display: none;
-}
-@media (max-width: 991.98px) {
-  .filters-wrapper .filter-separator .filter-btn-all {
-    display: inline-flex;
-  }
 }
 .filters-wrapper .filter-btn {
   display: inline-flex;
@@ -12114,14 +12084,27 @@ section.section_stage_theme .lead {
   text-align: center;
   align-items: center;
   padding: 10px 20px;
+  margin-right: 10px;
   max-height: 40px;
   min-width: 0px;
+  width: calc(25% - 10px);
   border: solid white 2px;
   justify-content: center;
+  position: relative;
+}
+.filters-wrapper .filter-btn svg {
+  position: absolute;
+  right: 17px;
+}
+.filters-wrapper .filter-btn:last-of-type {
+  margin-right: 0px;
 }
 .filters-wrapper .filter-btn:hover {
   color: white;
   background-color: #212529;
+}
+.filters-wrapper .filter-btn:hover svg path {
+  fill: white;
 }
 .filters-wrapper .filter-btn:focus {
   color: #0b0c0c;
@@ -12130,7 +12113,7 @@ section.section_stage_theme .lead {
   outline: none;
   box-shadow: none;
 }
-.filters-wrapper .filter-btn:focus path {
+.filters-wrapper .filter-btn:focus svg path {
   fill: #0b0c0c;
 }
 .filters-wrapper .filter-btn:active:focus {
@@ -12141,53 +12124,27 @@ section.section_stage_theme .lead {
     height: 40px;
   }
 }
-.filters-wrapper .filter-btn.date-filter {
-  position: relative;
-  min-width: 200px;
-  padding-right: 60px;
+.filters-wrapper .duet-wrapper {
+  width: calc(25% - 10px);
+  margin-right: 10px;
 }
-@media (max-width: 575.98px) {
-  .filters-wrapper .filter-btn.date-filter {
-    width: auto;
-    min-width: 0px;
-    padding: 10px;
-    padding-right: 50px;
-    font-size: 1rem;
+.filters-wrapper .filter-btn-all {
+  display: none;
+}
+@media (max-width: 767.98px) {
+  .filters-wrapper {
+    flex-wrap: wrap;
   }
-}
-.filters-wrapper .filter-btn.date-filter .icon-space {
-  position: absolute;
-  width: 40px;
-  height: 100%;
-  right: 0;
-  border-radius: 0px 8px 8px 0px;
-  background-color: #e9ecef;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-@media (prefers-reduced-motion: reduce) {
-  .filters-wrapper .filter-btn.date-filter .icon-space {
-    animation: none;
-    transition: none;
+  .filters-wrapper .filter-btn,
+.filters-wrapper .duet-wrapper {
+    margin-right: 3px;
+    margin-bottom: 6px;
+    width: calc(50% - 3px);
   }
-}
-.filters-wrapper .filter-btn.date-filter .icon-space svg path {
-  fill: #767676;
-  transform: translateX(-20%);
-  margin-right: 5px;
-}
-.filters-wrapper .filter-btn.date-filter:hover .icon-space {
-  background-color: #495057;
-}
-.filters-wrapper .filter-btn.date-filter:hover .icon-space svg path {
-  fill: #e9ecef;
-}
-.filters-wrapper .filter-btn.date-filter:focus .icon-space {
-  transition: none;
-  background-color: #0b0c0c;
-  outline: solid 2px #0b0c0c;
-}
-.filters-wrapper .filter-btn.date-filter:focus .icon-space svg path {
-  fill: #ffdd00;
+  .filters-wrapper .filter-btn:nth-child(even),
+.filters-wrapper .duet-wrapper:nth-child(even) {
+    margin-right: 0px;
+  }
 }
 
 .filter-list {
@@ -12728,6 +12685,12 @@ section.section_stage_theme .lead {
   overflow-y: scroll;
   position: relative;
 }
+@media (max-width: 575.98px) {
+  .dropdown-menu {
+    width: 100%;
+    min-width: 0px;
+  }
+}
 .dropdown-menu .dropdown-top-section {
   padding: 20px 20px 0px 20px;
   width: 100%;
@@ -12747,6 +12710,7 @@ section.section_stage_theme .lead {
   padding: 0;
   display: flex;
   flex-direction: column;
+  box-shadow: 0px 15px 18px rgba(0, 0, 0, 0.6);
 }
 
 .filters-modal .modal-content {
