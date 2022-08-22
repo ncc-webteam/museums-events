@@ -3258,6 +3258,17 @@ Search</button>
         node.innerHTML = `${FILTER_DISMISS_SVG}${searchCookie}`;
         FILTER_DISMISS_LIST.appendChild(node);
       }
+
+      if (dateCookie !== '') {
+        const node = document.createElement("a");
+        node.href = `#`;
+        node.dataset.filter = `date`;
+        node.classList.add(`filter-dismiss-btn`);
+        node.classList.add(`me-2`);
+        node.setAttribute("onclick", `dismissFilterDate();return false;`);
+        node.innerHTML = `${FILTER_DISMISS_SVG}${dateCookie}`;
+        FILTER_DISMISS_LIST.appendChild(node);
+      }
     }
 
     const dismissFilterNoUpdate = function (data) {
@@ -3301,6 +3312,13 @@ Search</button>
       fillFields();
       updateSelections();
     }
+    const dismissFilterDate = function () {
+      const element = document.querySelector(`[data-filter="date"]`);
+      if (element) element.remove();
+      setCookie('date', '', 1);
+      fillFields();
+      updateSelections();
+    }
 
     // used by modal
     function applyFilters(types, locations, audiences) {
@@ -3334,6 +3352,7 @@ Search</button>
       setCookie('locationSelections', '', 1);
       setCookie('audienceSelections', '', 1);
       dismissFilterSearch();
+      dismissFilterDate();
     }
 
     // used by dropdowns
