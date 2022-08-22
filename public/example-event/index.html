@@ -267,6 +267,15 @@ Search</button>
     } 
     FORM.addEventListener('submit', handleForm);
 
+    const picker = document.querySelector("duet-date-picker")
+    const output = document.querySelector("output")
+
+    picker.addEventListener("duetChange", function(event) {
+      console.log(event.detail.value);
+      setCookie('date', event.detail.value, 1);
+      updateSelections();
+    });
+
     function advancedSearchLink() {
       // set search query, if any
       const query = SEARCH_INPUT.value;
@@ -275,7 +284,7 @@ Search</button>
       else
         setCookie('searchQuery', '', 1);
 
-      const date = DATE.value;;
+      const date = DATE.value;
       if (date != '')
         setCookie('date', date, 1);
       else
