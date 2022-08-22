@@ -126,9 +126,7 @@ Search</button>
           <div class="duet-wrapper">
             <duet-date-picker id="date" identifier="date" min="2022-01-01" max="2022-12-31"></duet-date-picker>
           </div>
-          <button id="dropdown-filter-type" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Type<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
-<path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/>
-</svg></button>
+          <button id="dropdown-filter-type" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Type<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/></svg></button>
           <ul class="dropdown-menu" aria-labelledby="dropdown-filter-type">
             <div class="dropdown-top-section">
               <h3 class="dropdown-heading h4">Event type</h3>
@@ -152,9 +150,7 @@ Search</button>
               <a href="#" onclick="browseType('Workshops');return false;">Workshops</a>
             </li>
           </ul>
-          <button id="dropdown-filter-location" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Location<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
-<path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/>
-</svg></button>
+          <button id="dropdown-filter-location" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Location<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/></svg></button>
           <ul class="dropdown-menu" aria-labelledby="dropdown-filter-location" onclick="applyfiltersDropdown('locationOption', document.getElementsByName('locationOption'))">
             <div class="dropdown-top-section">
               <h3 class="dropdown-heading h4">Location</h3>
@@ -248,9 +244,7 @@ Search</button>
               </label>
             </li>
           </ul>
-          <button id="dropdown-filter-audience" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Audience<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
-<path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/>
-</svg></button>
+          <button id="dropdown-filter-audience" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Audience<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/></svg></button>
           <ul class="dropdown-menu" aria-labelledby="dropdown-filter-type">
             <div class="dropdown-top-section">
               <h3 class="dropdown-heading h4">Audience</h3>
@@ -269,6 +263,21 @@ Search</button>
       </div>
     </div>
   </section>
+
+  <div class="filters-section py-3">
+    <div class="container">
+      <div class="filters-bar">
+          <div class="d-flex align-items-baseline flex-wrap">
+            <span class="me-3">Showing results for:</span>
+            <div id="filter-dismiss-list" class="filter-dismiss">
+            </div>
+          </div>
+          <div class="dismiss-all">
+            <a href="#" class="me-2" onclick="clearFilters();return false;">Clear Filters</a>
+          </div>
+      </div>
+    </div>
+  </div>
 
     <!-- Filters Modal -->
 <div class="modal fade filters-modal" id="filtersModal" tabindex="-1" aria-labelledby="filtersModalLabel" aria-hidden="true">
@@ -2791,23 +2800,23 @@ Search</button>
           const num = idString[1];
           if (checkType(num, typeCookie) && checkLocation(num, locationCookie) && checkAudience(num, audienceCookie)) {
             r.style.display = 'block';
-            console.log(`${r.id} passed either type, location or audience. showing`);
+            //console.log(`${r.id} passed either type, location or audience. showing`);
           }
           if (searchCookie != '') {
-            console.log("search field not empty, refining...");
+            //console.log("search field not empty, refining...");
             // SEARCH_INDICATOR.textContent = `Searching by "${searchCookie}":`;
             if (!checkSearch(num, searchCookie)) {
               r.style.display = 'none';
-              console.log(`${r.id} failed search. hiding`);
+              //console.log(`${r.id} failed search. hiding`);
             } else {
-              console.log(`${r.id} passed search. showing`);
+              //console.log(`${r.id} passed search. showing`);
             }
           }
           if (!checkDate(num, dateCookie)) {
             r.style.display = 'none';
-            console.log(`${r.id} failed date. hiding`);
+            //console.log(`${r.id} failed date. hiding`);
           } else {
-            console.log(`${r.id} passed date. showing`);
+            //console.log(`${r.id} passed date. showing`);
           }
         });
       }
@@ -3080,6 +3089,14 @@ Search</button>
     const LOCATION_LIST_MODAL = document.getElementsByName('locationOptionModal');
     const AUDIENCE_LIST_MODAL = document.getElementsByName('audienceOptionModal');
 
+    const FILTER_DISMISS_LIST = document.getElementById('filter-dismiss-list');
+
+    const DROPDOWN_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
+<path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/></svg>`;
+
+    const FILTER_DISMISS_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" viewBox="2 0 20 23" fill="none"><path d="M10 0C15.53 0 20 4.47 20 10C20 15.53 15.53 20 10 20C4.47 20 0 15.53 0 10C0 4.47 4.47 0 10 0ZM13.59 5L10 8.59L6.41 5L5 6.41L8.59 10L5 13.59L6.41 15L10 11.41L13.59 15L15 13.59L11.41 10L15 6.41L13.59 5Z" fill="black"/></svg>`;
+
+
     function updateSelections() {
       let types = getCookie('typeSelections');
       let locations = getCookie('locationSelections');
@@ -3102,6 +3119,7 @@ Search</button>
           type.checked = true;
         } else {
           type.checked = false;
+          dismissFilterNoUpdate(type.value);
         }
       });
       LOCATION_LIST_MODAL.forEach(function (location) {
@@ -3117,6 +3135,7 @@ Search</button>
           location.checked = true;
         } else {
           location.checked = false;
+          dismissFilterNoUpdate(location.value);
         }
       });
       AUDIENCE_LIST_MODAL.forEach(function (audience) {
@@ -3132,58 +3151,136 @@ Search</button>
           audience.checked = true;
         } else {
           audience.checked = false;
+          dismissFilterNoUpdate(audience.value);
         }
       });
       //updateFiltersButton(nType + nLocation + nAudience);
       updateTypeButton(nType);
       updateLocationButton(nLocation);
       updateAudienceButton(nAudience);
+
+      updateFiltersBar();
+
       filterResults();
     }
 
     function updateFiltersButton(n) {
       if (n === 0) {
-        FILTERS_BTN.innerHTML = `Filters <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
-<path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/>
-</svg>`;
+        FILTERS_BTN.innerHTML = `Filters ${DROPDOWN_SVG}`;
       } else {
-        FILTERS_BTN.innerHTML = `Filters • ${n} <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
-<path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/>
-</svg>`;
+        FILTERS_BTN.innerHTML = `Filters • ${DROPDOWN_SVG}`;
       }
     }
     function updateTypeButton(n) {
       if (n === 0) {
-        TYPE_BTN.innerHTML = `What? <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
-<path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/>
-</svg>`;
+        TYPE_BTN.innerHTML = `What ${DROPDOWN_SVG}`;
       } else {
-        TYPE_BTN.innerHTML = `What? • ${n} <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
-<path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/>
-</svg>`;
+        TYPE_BTN.innerHTML = `What • ${n} ${DROPDOWN_SVG}`;
       }
     }
     function updateLocationButton(n) {
       if (n === 0) {
-        LOCATION_BTN.innerHTML = `Where? <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
-<path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/>
-</svg>` ;
+        LOCATION_BTN.innerHTML = `Where ${DROPDOWN_SVG}` ;
       } else {
-        LOCATION_BTN.innerHTML = `Where? • ${n} <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
-<path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/>
-</svg>`;
+        LOCATION_BTN.innerHTML = `Where • ${n} ${DROPDOWN_SVG}`;
       }
     }
     function updateAudienceButton(n) {
       if (n === 0) {
-        AUDIENCE_BTN.innerHTML = `Who's Visiting? <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
-<path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/>
-</svg>`;
+        AUDIENCE_BTN.innerHTML = `Who's Visiting ${DROPDOWN_SVG}`;
       } else {
-        AUDIENCE_BTN.innerHTML = `Who's Visiting? • ${n} <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
-<path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/>
-</svg>`;
+        AUDIENCE_BTN.innerHTML = `Who's Visiting • ${n} ${DROPDOWN_SVG}`;
       }
+    }
+
+    function updateFiltersBar() {
+      const searchCookie = getCookie('searchQuery');
+      const typeCookie = getCookie('typeSelections');
+      const locationCookie = getCookie('locationSelections');
+      const audienceCookie = getCookie('audienceSelections');
+      const dateCookie = getCookie('date');
+
+      types = typeCookie.split(',');
+      locations = locationCookie.split(',');
+      audiences = audienceCookie.split(',');
+
+      // remove all filters from filter bar
+      const allFilterBtns = document.querySelectorAll(".filter-dismiss-btn");
+      allFilterBtns.forEach(btn => btn.remove());
+
+      if (typeCookie !== '') {
+        types.forEach(function(type) {
+          if (document.querySelector(`[data-filter="${type}"]`)) return;
+          const node = document.createElement("a");
+          node.href = `#`;
+          node.dataset.filter = `${type}`;
+          node.classList.add(`filter-dismiss-btn`);
+          node.classList.add(`me-2`);
+          node.setAttribute("onclick", `dismissFilter("${type}");return false;`);
+          node.innerHTML = `${FILTER_DISMISS_SVG}${type}`;
+          FILTER_DISMISS_LIST.appendChild(node);
+        });
+      }
+      if (locationCookie !== '') {
+        locations.forEach(function(location) {
+          if (document.querySelector(`[data-filter="${location}"]`)) return;
+          const node = document.createElement("a");
+          node.href = `#`;
+          node.dataset.filter = `${location}`;
+          node.classList.add(`filter-dismiss-btn`);
+          node.classList.add(`me-2`);
+          node.setAttribute("onclick", `dismissFilter("${location}");return false;`);
+          node.innerHTML = `${FILTER_DISMISS_SVG}${location}`;
+          FILTER_DISMISS_LIST.appendChild(node);
+        });
+      }
+      if (audienceCookie !== '') {
+        audiences.forEach(function(audience) {
+          if (document.querySelector(`[data-filter="${audience}"]`)) return;
+          const node = document.createElement("a");
+          node.href = `#`;
+          node.dataset.filter = `${audience}`;
+          node.classList.add(`filter-dismiss-btn`);
+          node.classList.add(`me-2`);
+          node.setAttribute("onclick", `dismissFilter("${audience}");return false;`);
+          node.innerHTML = `${FILTER_DISMISS_SVG}${audience}`;
+          FILTER_DISMISS_LIST.appendChild(node);
+        });
+      }
+    }
+
+    const dismissFilterNoUpdate = function (data) {
+      const element = document.querySelector(`[data-filter="${data}"]`);
+      if (element) element.remove();
+    }
+
+    const dismissFilter = function (data) {
+      const element = document.querySelector(`[data-filter="${data}"]`);
+      if (element) element.remove();
+
+      const searchCookie = getCookie('searchQuery');
+      const typeCookie = getCookie('typeSelections');
+      const locationCookie = getCookie('locationSelections');
+      const audienceCookie = getCookie('audienceSelections');
+      const dateCookie = getCookie('date');
+
+      if (typeCookie.includes(data)) {
+        items = typeCookie.split(',');
+        items = items.filter(e => e !== data);
+        setCookie('typeSelections', items, 1);
+      }
+      if (locationCookie.includes(data)) {
+        items = locationCookie.split(',');
+        items = items.filter(e => e !== data);
+        setCookie('locationSelections', items, 1);
+      }
+      if (audienceCookie.includes(data)) {
+        items = audienceCookie.split(',');
+        items = items.filter(e => e !== data);
+        setCookie('audienceSelections', items, 1);
+      }
+
+      updateSelections();
     }
 
     // used by modal
