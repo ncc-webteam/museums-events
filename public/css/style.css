@@ -12094,7 +12094,10 @@ section.section_stage_theme .lead {
 }
 .filters-wrapper .filter-btn svg {
   position: absolute;
-  right: 17px;
+  right: 10px;
+}
+.filters-wrapper .filter-btn svg path {
+  fill: #00235d;
 }
 .filters-wrapper .filter-btn:last-of-type {
   margin-right: 0px;
@@ -12118,6 +12121,17 @@ section.section_stage_theme .lead {
 }
 .filters-wrapper .filter-btn:active:focus {
   box-shadow: none;
+}
+@media (max-width: 991.98px) {
+  .filters-wrapper .filter-btn {
+    font-size: 1rem;
+    padding: 10px 20px 10px 5px;
+  }
+}
+@media (max-width: 767.98px) {
+  .filters-wrapper .filter-btn {
+    padding: 10px 20px 10px 5px;
+  }
 }
 @media (max-width: 575.98px) {
   .filters-wrapper .filter-btn {
@@ -12789,6 +12803,33 @@ section.section_stage_theme .lead {
 
 .dropdown-bottom-section.modal-bottom-section {
   border-top: none;
+}
+
+.filters-section {
+  border-bottom: solid 2px #00235d;
+}
+
+.filters-bar {
+  display: flex;
+  justify-content: space-between;
+}
+.filters-bar a {
+  color: black;
+}
+.filters-bar a:hover {
+  color: black;
+}
+.filters-bar span {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+.filters-bar .dismiss-all {
+  align-self: flex-end;
+  min-width: 101px;
+}
+.filters-bar .filter-dismiss {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* Slider */

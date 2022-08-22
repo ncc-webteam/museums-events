@@ -17,9 +17,7 @@
           <div class="duet-wrapper">
             <duet-date-picker id="date" identifier="date" min="2022-01-01" max="2022-12-31"></duet-date-picker>
           </div>
-          <button id="dropdown-filter-type" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Type<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
-<path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/>
-</svg></button>
+          <button id="dropdown-filter-type" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Type<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/></svg></button>
           <ul class="dropdown-menu" aria-labelledby="dropdown-filter-type">
             <div class="dropdown-top-section">
               <h3 class="dropdown-heading h4">Event type</h3>
@@ -43,9 +41,7 @@
               <a href="#" onclick="browseType('Workshops');return false;">Workshops</a>
             </li>
           </ul>
-          <button id="dropdown-filter-location" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Location<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
-<path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/>
-</svg></button>
+          <button id="dropdown-filter-location" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Location<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/></svg></button>
           <ul class="dropdown-menu" aria-labelledby="dropdown-filter-location" onclick="applyfiltersDropdown('locationOption', document.getElementsByName('locationOption'))">
             <div class="dropdown-top-section">
               <h3 class="dropdown-heading h4">Location</h3>
@@ -139,9 +135,7 @@
               </label>
             </li>
           </ul>
-          <button id="dropdown-filter-audience" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Audience<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
-<path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/>
-</svg></button>
+          <button id="dropdown-filter-audience" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Audience<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/></svg></button>
           <ul class="dropdown-menu" aria-labelledby="dropdown-filter-type">
             <div class="dropdown-top-section">
               <h3 class="dropdown-heading h4">Audience</h3>
@@ -160,6 +154,21 @@
       </div>
     </div>
   </section>
+
+  <div class="filters-section py-3">
+    <div class="container">
+      <div class="filters-bar">
+          <div class="d-flex align-items-baseline flex-wrap">
+            <span class="me-3">Showing results for:</span>
+            <div id="filter-dismiss-list" class="filter-dismiss">
+            </div>
+          </div>
+          <div class="dismiss-all">
+            <a href="#" class="me-2" onclick="clearFilters();return false;">Clear Filters</a>
+          </div>
+      </div>
+    </div>
+  </div>
 
     <!-- Filters Modal -->
 <div class="modal fade filters-modal" id="filtersModal" tabindex="-1" aria-labelledby="filtersModalLabel" aria-hidden="true">
@@ -567,23 +576,23 @@
           const num = idString[1];
           if (checkType(num, typeCookie) && checkLocation(num, locationCookie) && checkAudience(num, audienceCookie)) {
             r.style.display = 'block';
-            console.log(`${r.id} passed either type, location or audience. showing`);
+            //console.log(`${r.id} passed either type, location or audience. showing`);
           }
           if (searchCookie != '') {
-            console.log("search field not empty, refining...");
+            //console.log("search field not empty, refining...");
             // SEARCH_INDICATOR.textContent = `Searching by "${searchCookie}":`;
             if (!checkSearch(num, searchCookie)) {
               r.style.display = 'none';
-              console.log(`${r.id} failed search. hiding`);
+              //console.log(`${r.id} failed search. hiding`);
             } else {
-              console.log(`${r.id} passed search. showing`);
+              //console.log(`${r.id} passed search. showing`);
             }
           }
           if (!checkDate(num, dateCookie)) {
             r.style.display = 'none';
-            console.log(`${r.id} failed date. hiding`);
+            //console.log(`${r.id} failed date. hiding`);
           } else {
-            console.log(`${r.id} passed date. showing`);
+            //console.log(`${r.id} passed date. showing`);
           }
         });
       }
