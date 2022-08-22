@@ -559,6 +559,17 @@ Search</button>
           FILTER_DISMISS_LIST.appendChild(node);
         });
       }
+
+      if (searchCookie !== '') {
+        const node = document.createElement("a");
+        node.href = `#`;
+        node.dataset.filter = `search`;
+        node.classList.add(`filter-dismiss-btn`);
+        node.classList.add(`me-2`);
+        node.setAttribute("onclick", `dismissFilterSearch();return false;`);
+        node.innerHTML = `${FILTER_DISMISS_SVG}${searchCookie}`;
+        FILTER_DISMISS_LIST.appendChild(node);
+      }
     }
 
     const dismissFilterNoUpdate = function (data) {
@@ -595,6 +606,14 @@ Search</button>
       updateSelections();
     }
 
+    const dismissFilterSearch = function () {
+      const element = document.querySelector(`[data-filter="search"]`);
+      if (element) element.remove();
+      setCookie('searchQuery', '', 1);
+      fillFields();
+      updateSelections();
+    }
+
     // used by modal
     function applyFilters(types, locations, audiences) {
       let typeSelections = [];
@@ -626,8 +645,7 @@ Search</button>
       setCookie('typeSelections', '', 1);
       setCookie('locationSelections', '', 1);
       setCookie('audienceSelections', '', 1);
-
-      updateSelections();
+      dismissFilterSearch();
     }
 
     // used by dropdowns
