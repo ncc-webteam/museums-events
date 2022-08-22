@@ -366,30 +366,46 @@ Search</button>
 
     function updateFiltersButton(n) {
       if (n === 0) {
-        FILTERS_BTN.textContent = 'Filters';
+        FILTERS_BTN.innerHTML = `Filters <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
+<path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/>
+</svg>`;
       } else {
-        FILTERS_BTN.textContent = `Filters • ${n}`;
+        FILTERS_BTN.innerHTML = `Filters • ${n} <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
+<path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/>
+</svg>`;
       }
     }
     function updateTypeButton(n) {
       if (n === 0) {
-        TYPE_BTN.textContent = 'Type';
+        TYPE_BTN.innerHTML = `What? <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
+<path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/>
+</svg>`;
       } else {
-        TYPE_BTN.textContent = `Type • ${n}`;
+        TYPE_BTN.innerHTML = `What? • ${n} <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
+<path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/>
+</svg>`;
       }
     }
     function updateLocationButton(n) {
       if (n === 0) {
-        LOCATION_BTN.textContent = 'Location';
+        LOCATION_BTN.innerHTML = `Where? <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
+<path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/>
+</svg>` ;
       } else {
-        LOCATION_BTN.textContent = `Location • ${n}`;
+        LOCATION_BTN.innerHTML = `Where? • ${n} <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
+<path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/>
+</svg>`;
       }
     }
     function updateAudienceButton(n) {
       if (n === 0) {
-        AUDIENCE_BTN.textContent = 'Audience';
+        AUDIENCE_BTN.innerHTML = `Who's Visiting? <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
+<path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/>
+</svg>`;
       } else {
-        AUDIENCE_BTN.textContent = `Audience • ${n}`;
+        AUDIENCE_BTN.innerHTML = `Who's Visiting? • ${n} <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
+<path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/>
+</svg>`;
       }
     }
 
