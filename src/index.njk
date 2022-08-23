@@ -182,7 +182,8 @@
   <script>
     window.onload = function() {
       clearCookies();
-      updateSelections();
+      //updateSelections();
+      window.location.href = "{{ '/advanced-search/' | url }}";
     }
 
     const clearCookies = function() {
