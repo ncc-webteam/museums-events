@@ -12825,7 +12825,7 @@ section.section_stage_theme .lead {
 }
 .filters-bar .dismiss-all {
   align-self: flex-start;
-  min-width: 101px;
+  min-width: 110px;
 }
 .filters-bar .filter-dismiss {
   display: flex;
