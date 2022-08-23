@@ -264,15 +264,15 @@ Search</button>
     </div>
   </section>
 
-  <div class="filters-section py-3">
+  <div id="filter-bar-section" class="filters-section py-3">
     <div class="container">
       <div class="filters-bar">
           <div class="d-flex align-items-baseline flex-wrap">
-            <span class="me-3">Showing results for:</span>
+            <span id="fliter-bar-infotext" class="me-3">Showing results for:</span>
             <div id="filter-dismiss-list" class="filter-dismiss">
             </div>
           </div>
-          <div class="dismiss-all">
+          <div id="dismiss-all-wrapper" class="dismiss-all">
             <a href="#" class="me-2" onclick="clearFilters();return false;">Clear Filters</a>
           </div>
       </div>
@@ -2867,12 +2867,30 @@ Search</button>
         filterString = filterString.concat(` in a date range`);
       }
 
+      //if (filterString === `Searching`) {
+      //  filterString = `Showing all results`;
+      //}
       if (filterString === `Searching`) {
-        filterString = `Showing all results`;
+        clearFiltersBar(true);
+      } else {
+        clearFiltersBar(false);
       }
+
 
       filterString = filterString.concat(`:`);
       //FILTER_INDICATOR.textContent = filterString;
+    }
+
+    const clearFiltersBar = function(clear) {
+      const filterBarText = document.getElementById('fliter-bar-infotext');
+      const clearFiltersBtn = document.getElementById('dismiss-all-wrapper');
+      if (clear) {
+        filterBarText.textContent = `Showing all results:`;
+        clearFiltersBtn.style.display = `None`;
+      } else {
+        filterBarText.textContent = `Showing results for`;
+        clearFiltersBtn.style.display = `Block`;
+      }
     }
 
     function checkDate(n, cDate) {

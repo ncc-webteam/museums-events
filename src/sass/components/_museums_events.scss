@@ -928,7 +928,8 @@
     font-size: 1.25rem;
   }
   .dismiss-all {
-    align-self: flex-end;
+    //align-self: flex-end;
+    align-self: flex-start;
     min-width: 101px;
   }
   .filter-dismiss {

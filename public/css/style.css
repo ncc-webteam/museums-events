@@ -12824,7 +12824,7 @@ section.section_stage_theme .lead {
   font-size: 1.25rem;
 }
 .filters-bar .dismiss-all {
-  align-self: flex-end;
+  align-self: flex-start;
   min-width: 101px;
 }
 .filters-bar .filter-dismiss {
