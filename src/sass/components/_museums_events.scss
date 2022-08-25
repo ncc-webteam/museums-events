@@ -935,5 +935,11 @@
   .filter-dismiss {
     display: flex;
     flex-wrap: wrap;
+
+    @include media-breakpoint-down(sm) {
+      .filter-dismiss-btn {
+        width: 100%;
+      }
+    }
   }
 }
