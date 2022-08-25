@@ -12831,6 +12831,11 @@ section.section_stage_theme .lead {
   display: flex;
   flex-wrap: wrap;
 }
+@media (max-width: 575.98px) {
+  .filters-bar .filter-dismiss .filter-dismiss-btn {
+    width: 100%;
+  }
+}
 
 /* Slider */
 .slick-slider {
