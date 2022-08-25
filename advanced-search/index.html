@@ -2790,11 +2790,11 @@ Search</button>
 
       if (typeCookie == '' && locationCookie == '' && audienceCookie == '' && searchCookie == '' && dateCookie == '') {
         console.log('no filters specified');
-        Array.from(results).forEach(function (r) {
+        [...results].forEach(function (r) {
           r.style.display = 'block';
         });
       } else {
-        Array.from(results).forEach(function (r) {
+        [...results].forEach(function (r) {
           r.style.display = 'none';
           const idString = r.id.split("-");
           const num = idString[1];
