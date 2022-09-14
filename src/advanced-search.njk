@@ -371,7 +371,8 @@
     <div class="container">
       <h3 id="search-indicator" class="m0"></h3>
       <h3 id="multi-filter-indicator" class="m0"></h3>
-      <div class="row {{rowDefaults}}" id="page-content" aria-live="polite">
+      <h3 id="result-number-indicator" aria-live="polite"></h3>
+      <div class="row {{rowDefaults}}" id="page-content">
 
         <div class="col-12 col-sm-6 col-lg-4" id="result-10-wrapper">
           {{ generalcard.generalcard("Fighting Gallery Tour", 'Norwich Castle • Norwich', 'Friday 1 April 2022 • 13:00 - 13:30', 'from £2.80', 'All', 'Join our costumed Knight for a journey through the castle’s defensive past. Check out the medieval graffiti and stonemason’s remarks, learn how the castle survived under siege, and get behind the scenes as we take you into the mysterious fighting gallery.', 'museums-events/norwich-castle.jpg', '/example-event/', 'card-light museum-card norwich-castle', '10', 'Apr', '1', 'Tours') }}
@@ -545,6 +546,10 @@
     const SEARCH_INDICATOR = document.getElementById('search-indicator');
     const FILTER_INDICATOR = document.getElementById('multi-filter-indicator');
 
+    const RESULT_NUM_INDICATOR = document.getElementById('result-number-indicator');
+
+    let resultNum = 0;
+
     function fillFields() {
       const dateCookie = getCookie('date');
       const searchCookie = getCookie('searchQuery');
@@ -564,25 +569,31 @@
 
       const results = RESULTS_WRAPPER.children;
 
+      resultNum = 0; // resetting filter num before updating
+
       if (typeCookie == '' && locationCookie == '' && audienceCookie == '' && searchCookie == '' && dateCookie == '') {
         console.log('no filters specified');
         [...results].forEach(function (r) {
           r.style.display = 'block';
+          resultNum++;
         });
       } else {
         [...results].forEach(function (r) {
+          let showResult = false;
           r.style.display = 'none';
           const idString = r.id.split("-");
           const num = idString[1];
           if (checkType(num, typeCookie) && checkLocation(num, locationCookie) && checkAudience(num, audienceCookie)) {
             r.style.display = 'block';
+            showResult = true;
             //console.log(`${r.id} passed either type, location or audience. showing`);
           }
           if (searchCookie != '') {
             //console.log("search field not empty, refining...");
             // SEARCH_INDICATOR.textContent = `Searching by "${searchCookie}":`;
             if (!checkSearch(num, searchCookie)) {
-              r.style.display = 'none';
+              r.style.display = 'none';     
+              showResult = false;
               //console.log(`${r.id} failed search. hiding`);
             } else {
               //console.log(`${r.id} passed search. showing`);
@@ -590,12 +601,19 @@
           }
           if (!checkDate(num, dateCookie)) {
             r.style.display = 'none';
+            showResult = false;
             //console.log(`${r.id} failed date. hiding`);
           } else {
             //console.log(`${r.id} passed date. showing`);
           }
+
+          if (showResult) {
+            resultNum++;
+          }
         });
       }
+
+      RESULT_NUM_INDICATOR.textContent = `${resultNum} events found.`;
 
       let typeNum = typeCookie.split(",").length;
       let locNum = locationCookie.split(",").length;
@@ -660,6 +678,7 @@
     const clearFiltersBar = function(clear) {
       const filterBarText = document.getElementById('fliter-bar-infotext');
       const clearFiltersBtn = document.getElementById('dismiss-all-wrapper');
+      
       if (clear) {
         filterBarText.textContent = `Showing all results`;
         clearFiltersBtn.style.display = `None`;
