@@ -200,79 +200,93 @@
 
       // remove all filters from filter bar
       const allFilterBtns = document.querySelectorAll(".filter-dismiss-btn");
-      allFilterBtns.forEach(btn => btn.remove());
+      allFilterBtns.forEach(btn => btn.parentElement.remove());
 
       if (typeCookie !== '') {
         types.forEach(function(type) {
           if (document.querySelector(`[data-filter="${type}"]`)) return;
-          const node = document.createElement("a");
-          node.href = `#`;
-          node.dataset.filter = `${type}`;
-          node.classList.add(`filter-dismiss-btn`);
-          node.classList.add(`me-2`);
-          node.setAttribute("onclick", `dismissFilter("${type}");return false;`);
-          node.innerHTML = `${FILTER_DISMISS_SVG}${type}`;
+          const node = document.createElement("li");
+          const nodeLink = document.createElement("a");
+          nodeLink.dataset.filter = `${type}`;
+          nodeLink.classList.add(`filter-dismiss-btn`);
+          nodeLink.classList.add(`me-2`);
+          nodeLink.href = "#";
+          nodeLink.setAttribute("onclick", `dismissFilter("${type}");return false;`);
+          nodeLink.innerHTML = `${FILTER_DISMISS_SVG}${type}`;
+          node.appendChild(nodeLink);
           FILTER_DISMISS_LIST.appendChild(node);
         });
       }
       if (locationCookie !== '') {
         locations.forEach(function(location) {
           if (document.querySelector(`[data-filter="${location}"]`)) return;
-          const node = document.createElement("a");
-          node.href = `#`;
-          node.dataset.filter = `${location}`;
-          node.classList.add(`filter-dismiss-btn`);
-          node.classList.add(`me-2`);
-          node.setAttribute("onclick", `dismissFilter("${location}");return false;`);
-          node.innerHTML = `${FILTER_DISMISS_SVG}${location}`;
+          const node = document.createElement("li");
+          const nodeLink = document.createElement("a");
+          nodeLink.dataset.filter = `${location}`;
+          nodeLink.classList.add(`filter-dismiss-btn`);
+          nodeLink.classList.add(`me-2`);
+          nodeLink.href = "#";
+          nodeLink.setAttribute("onclick", `dismissFilter("${location}");return false;`);
+          nodeLink.innerHTML = `${FILTER_DISMISS_SVG}${location}`;
+          node.appendChild(nodeLink);
           FILTER_DISMISS_LIST.appendChild(node);
         });
       }
       if (audienceCookie !== '') {
         audiences.forEach(function(audience) {
           if (document.querySelector(`[data-filter="${audience}"]`)) return;
-          const node = document.createElement("a");
-          node.href = `#`;
-          node.dataset.filter = `${audience}`;
-          node.classList.add(`filter-dismiss-btn`);
-          node.classList.add(`me-2`);
-          node.setAttribute("onclick", `dismissFilter("${audience}");return false;`);
-          node.innerHTML = `${FILTER_DISMISS_SVG}${audience}`;
+          const node = document.createElement("li");
+          const nodeLink = document.createElement("a");
+          nodeLink.dataset.filter = `${audience}`;
+          nodeLink.classList.add(`filter-dismiss-btn`);
+          nodeLink.classList.add(`me-2`);
+          nodeLink.href = "#";
+          nodeLink.setAttribute("onclick", `dismissFilter("${audience}");return false;`);
+          nodeLink.innerHTML = `${FILTER_DISMISS_SVG}${audience}`;
+          node.appendChild(nodeLink);
           FILTER_DISMISS_LIST.appendChild(node);
         });
       }
 
       if (searchCookie !== '') {
-        const node = document.createElement("a");
-        node.href = `#`;
-        node.dataset.filter = `search`;
-        node.classList.add(`filter-dismiss-btn`);
-        node.classList.add(`me-2`);
-        node.setAttribute("onclick", `dismissFilterSearch();return false;`);
-        node.innerHTML = `${FILTER_DISMISS_SVG}${searchCookie}`;
+        const node = document.createElement("li");
+        const nodeLink = document.createElement("a");
+        nodeLink.dataset.filter = `search`;
+        nodeLink.classList.add(`filter-dismiss-btn`);
+        nodeLink.classList.add(`me-2`);
+        nodeLink.href = "#";
+        nodeLink.setAttribute("onclick", `dismissFilterSearch();return false;`);
+        nodeLink.innerHTML = `${FILTER_DISMISS_SVG}${searchCookie}`;
+        node.appendChild(nodeLink);
         FILTER_DISMISS_LIST.appendChild(node);
       }
 
       if (dateCookie !== '') {
-        const node = document.createElement("a");
-        node.href = `#`;
-        node.dataset.filter = `date`;
-        node.classList.add(`filter-dismiss-btn`);
-        node.classList.add(`me-2`);
-        node.setAttribute("onclick", `dismissFilterDate();return false;`);
-        node.innerHTML = `${FILTER_DISMISS_SVG}${dateCookie}`;
+        const node = document.createElement("li");
+        const nodeLink = document.createElement("a");
+        nodeLink.dataset.filter = `date`;
+        nodeLink.classList.add(`filter-dismiss-btn`);
+        nodeLink.classList.add(`me-2`);
+        nodeLink.href = "#";
+        nodeLink.setAttribute("onclick", `dismissFilterDate();return false;`);
+        nodeLink.innerHTML = `${FILTER_DISMISS_SVG}${dateCookie}`;
+        node.appendChild(nodeLink);
         FILTER_DISMISS_LIST.appendChild(node);
       }
     }
 
     const dismissFilterNoUpdate = function (data) {
       const element = document.querySelector(`[data-filter="${data}"]`);
-      if (element) element.remove();
+      if (element) {
+        element.parentElement.remove();
+      }
     }
 
     const dismissFilter = function (data) {
       const element = document.querySelector(`[data-filter="${data}"]`);
-      if (element) element.remove();
+      if (element) {
+        element.parentElement.remove();
+      }
 
       const searchCookie = getCookie('searchQuery');
       const typeCookie = getCookie('typeSelections');
@@ -301,14 +315,18 @@
 
     const dismissFilterSearch = function () {
       const element = document.querySelector(`[data-filter="search"]`);
-      if (element) element.remove();
+      if (element) {
+        element.parentElement.remove();
+      }
       setCookie('searchQuery', '', 1);
       fillFields();
       updateSelections();
     }
     const dismissFilterDate = function () {
       const element = document.querySelector(`[data-filter="date"]`);
-      if (element) element.remove();
+      if (element) {
+        element.parentElement.remove();
+      }
       setCookie('date', '', 1);
       fillFields();
       updateSelections();

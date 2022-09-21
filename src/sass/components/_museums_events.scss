@@ -935,6 +935,9 @@
   .filter-dismiss {
     display: flex;
     flex-wrap: wrap;
+    list-style: none;
+    padding-left: 0px;
+    margin-bottom: 0px;
 
     @include media-breakpoint-down(sm) {
       .filter-dismiss-btn {
