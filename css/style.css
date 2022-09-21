@@ -12830,6 +12830,9 @@ section.section_stage_theme .lead {
 .filters-bar .filter-dismiss {
   display: flex;
   flex-wrap: wrap;
+  list-style: none;
+  padding-left: 0px;
+  margin-bottom: 0px;
 }
 @media (max-width: 575.98px) {
   .filters-bar .filter-dismiss .filter-dismiss-btn {
