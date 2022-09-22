@@ -61,6 +61,10 @@ header {
       flex-direction: column;
       color: $light;
 
+      img {
+        width: 100%;
+      }
+
       .top {
         font-weight: 600;
         font-size: 1.5rem;
