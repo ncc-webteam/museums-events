@@ -181,7 +181,7 @@
 
   <section>
     <div class="container">
-      <h3 id="search-indicator" class="m0"></h3>
+      <h2 id="search-indicator" class="m0"></h3>
       <h3 id="multi-filter-indicator" class="m0"></h3>
       <h2 id="result-number-indicator" class="h3" aria-live="polite"></h2>
       <div class="row {{rowDefaults}}" id="page-content">
@@ -492,10 +492,10 @@
       const clearFiltersBtn = document.getElementById('dismiss-all-wrapper');
       
       if (clear) {
-        filterBarText.textContent = `Showing all results`;
+        filterBarText.textContent = `All results`;
         clearFiltersBtn.style.display = `None`;
       } else {
-        filterBarText.textContent = `Showing results for:`;
+        filterBarText.textContent = `Results for:`;
         clearFiltersBtn.style.display = `Block`;
       }
     }
