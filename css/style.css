@@ -11358,6 +11358,9 @@ header .top-wrapper #main-logo {
   flex-direction: column;
   color: #f8f9fa;
 }
+header .top-wrapper #main-logo img {
+  width: 100%;
+}
 header .top-wrapper #main-logo .top {
   font-weight: 600;
   font-size: 1.5rem;
