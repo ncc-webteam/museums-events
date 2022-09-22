@@ -50,6 +50,23 @@
       outline: solid 4px $focus-colour;
       box-shadow: none;
     }
+    @include media-breakpoint-down(sm) {
+      // &::-webkit-input-placeholder {
+      //   color: transparent;
+      // }
+      // &:-moz-placeholder {
+      //   color: transparent;
+      // }
+      // &::-moz-placeholder {
+      //   color: transparent;
+      // }
+      &::placeholder {
+        color: transparent;
+      }
+      // &::input-placeholder {
+      //   color: transparent;
+      // }
+    }
   }
   .home-search-btn {
     background-color: #006666;

@@ -12016,6 +12016,11 @@ section.section_stage_theme .lead {
   outline: solid 4px #ffdd00;
   box-shadow: none;
 }
+@media (max-width: 575.98px) {
+  .stage-search input::placeholder {
+    color: transparent;
+  }
+}
 .stage-search .home-search-btn {
   background-color: #006666;
   min-width: 130px;
