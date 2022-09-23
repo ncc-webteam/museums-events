@@ -211,6 +211,7 @@
           nodeLink.classList.add(`filter-dismiss-btn`);
           nodeLink.classList.add(`me-2`);
           nodeLink.href = "#";
+          nodeLink.setAttribute("role", "button");
           nodeLink.setAttribute("onclick", `dismissFilter("${type}");return false;`);
           nodeLink.innerHTML = `${FILTER_DISMISS_SVG}${type}`;
           node.appendChild(nodeLink);
@@ -226,6 +227,7 @@
           nodeLink.classList.add(`filter-dismiss-btn`);
           nodeLink.classList.add(`me-2`);
           nodeLink.href = "#";
+          nodeLink.setAttribute("role", "button");
           nodeLink.setAttribute("onclick", `dismissFilter("${location}");return false;`);
           nodeLink.innerHTML = `${FILTER_DISMISS_SVG}${location}`;
           node.appendChild(nodeLink);
@@ -241,6 +243,7 @@
           nodeLink.classList.add(`filter-dismiss-btn`);
           nodeLink.classList.add(`me-2`);
           nodeLink.href = "#";
+          nodeLink.setAttribute("role", "button");
           nodeLink.setAttribute("onclick", `dismissFilter("${audience}");return false;`);
           nodeLink.innerHTML = `${FILTER_DISMISS_SVG}${audience}`;
           node.appendChild(nodeLink);
@@ -255,6 +258,7 @@
         nodeLink.classList.add(`filter-dismiss-btn`);
         nodeLink.classList.add(`me-2`);
         nodeLink.href = "#";
+        nodeLink.setAttribute("role", "button");
         nodeLink.setAttribute("onclick", `dismissFilterSearch();return false;`);
         nodeLink.innerHTML = `${FILTER_DISMISS_SVG}${searchCookie}`;
         node.appendChild(nodeLink);
@@ -268,6 +272,7 @@
         nodeLink.classList.add(`filter-dismiss-btn`);
         nodeLink.classList.add(`me-2`);
         nodeLink.href = "#";
+        nodeLink.setAttribute("role", "button");
         nodeLink.setAttribute("onclick", `dismissFilterDate();return false;`);
         nodeLink.innerHTML = `${FILTER_DISMISS_SVG}${dateCookie}`;
         node.appendChild(nodeLink);

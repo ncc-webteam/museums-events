@@ -10131,19 +10131,23 @@ textarea.form-control-lg {
   color: #d2982c;
   font-weight: 700;
   margin: 5px 0px;
+  order: 0;
 }
 .card .card-date {
   font-size: 1rem;
   color: #adb5bd;
   margin: 5px 0px;
+  order: 0;
 }
 .card .card-extra-info {
   font-size: 1rem;
   color: #f8f9fa;
   margin: 5px 0px;
+  order: 2;
 }
 .card .card-title {
   margin: 0px 0px 5px 0px;
+  order: 1;
 }
 .card .card-title a {
   text-decoration: none;
@@ -10159,6 +10163,7 @@ textarea.form-control-lg {
   font-size: 1rem;
   display: inline-block;
   color: #f8f9fa;
+  order: 4;
 }
 .card .flair-full {
   background-color: #BE4600;
@@ -10170,6 +10175,7 @@ textarea.form-control-lg {
   margin: 5px 0px 0px 0px;
   color: #adb5bd;
   font-weight: 600;
+  order: 3;
 }
 .card img {
   border-radius: 0px;
@@ -12545,7 +12551,6 @@ section.section_stage_theme .lead {
   font-weight: 500;
 }
 .card.museum-card .card-body .flair {
-  order: 1;
   font-size: 1.5rem;
   color: #212529;
   background-color: transparent;
@@ -12680,7 +12685,7 @@ section.section_stage_theme .lead {
   border: solid #767676 2px;
   min-width: 34px;
   min-height: 34px;
-  margin: 0;
+  margin: 0px 10px 0px 0px;
 }
 .selection-item .form-check-label .form-check-input:active {
   box-shadow: none;

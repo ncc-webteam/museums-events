@@ -18,16 +18,16 @@
 
   <div class="card-body">
 
+    {% if title|length %}
+    <h3 class="card-title h3"><a id="result-{{id}}-title" class="stretched-link" href="/museums-events/public/{{link}}">{{ title }}</a></h3>
+    {% else %}{% endif %}
+
     {% if location|length %}
     <p id="result-{{id}}-location" class="card-location">{{ location }}</p>
     {% else %}{% endif %}
 
     {% if date|length %}
     <p class="card-date">{{ date }}</p>
-    {% else %}{% endif %}
-
-    {% if title|length %}
-    <h3 class="card-title h3"><a id="result-{{id}}-title" class="stretched-link" href="/museums-events/public/{{link}}">{{ title }}</a></h3>
     {% else %}{% endif %}
 
     {% if flair|length %}

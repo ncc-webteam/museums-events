@@ -618,7 +618,6 @@
       font-weight: 500;
     }
     .flair {
-      order: 1;
       font-size: 1.5rem;
       color: $dark;
       background-color: transparent;
@@ -794,7 +793,7 @@
       border: solid #767676 2px;
       min-width: 34px;
       min-height: 34px;
-      margin: 0;
+      margin: 0px 10px 0px 0px;
 
       &:active {
         box-shadow: none;
@@ -810,6 +809,7 @@
         background-size: 24px 24px;
       }
     }
+    // --- not currently used:
     .text-wrapper {
       margin-left: 10px;
       .smaller-text {
@@ -818,6 +818,7 @@
         font-size: 16px;
       }
     }
+    // ---
     &:focus-within {
       .text-wrapper .smaller-text {
         color: $focus-text-colour;
