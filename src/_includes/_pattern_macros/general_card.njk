@@ -4,10 +4,10 @@
 
   {% if 'museum-card' in options %}
     <div class="date-overlay">
-      <div id="result-{{id}}-month" class="month">{{month}}</div>
-      <div id="result-{{id}}-day" class="day">{{day}}</div>
+      <div aria-hidden="true" id="result-{{id}}-month" class="month">{{month}}</div>
+      <div aria-hidden="true" id="result-{{id}}-day" class="day">{{day}}</div>
     </div>
-    <div id="result-{{id}}-type" class="type">{{type}}</div>
+    <div aria-hidden="true" id="result-{{id}}-type" class="type">{{type}}</div>
   {% endif %}
 
   {% if img|length %}
