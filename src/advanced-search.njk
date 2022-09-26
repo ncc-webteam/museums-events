@@ -338,6 +338,12 @@
       fillFields();
       updateSelections();
       giveOnclickEvent();
+
+      const searched = getCookie('goToFilters');
+      if (searched === 'yes') {
+        document.querySelector('.duet-date__input').focus();
+      }
+      setCookie('goToFilters', '', 1);
     }
 
     // DROPDOWN TOGGLE //////////////////////////////////////////////

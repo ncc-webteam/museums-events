@@ -2703,6 +2703,12 @@ Search</button>
       fillFields();
       updateSelections();
       giveOnclickEvent();
+
+      const searched = getCookie('goToFilters');
+      if (searched === 'yes') {
+        document.querySelector('.duet-date__input').focus();
+      }
+      setCookie('goToFilters', '', 1);
     }
 
     // DROPDOWN TOGGLE //////////////////////////////////////////////
@@ -3080,6 +3086,8 @@ Search</button>
         setCookie('date', date, 1);
       else
         setCookie('date', '', 1);
+
+      setCookie('goToFilters', 'yes', 1);
 
       window.location.href = "/museums-events/public/advanced-search/";
     }
