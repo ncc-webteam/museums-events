@@ -870,6 +870,23 @@
   }
 }
 
+.btn-dismiss-dropdown {
+  &:focus {
+    transition: none;
+    border-color: $focus-colour;
+    background-color: $focus-colour;
+    color: $focus-text-colour;
+    outline: none;
+    box-shadow: none;
+    path {
+      fill: $focus-text-colour;
+    }
+  }
+  &:active:focus {
+    box-shadow: none;
+  }
+}
+
 .dropdown-bottom-section {
   display: flex;
   justify-content: space-between;

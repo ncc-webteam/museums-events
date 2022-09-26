@@ -127,9 +127,10 @@ Search</button>
             <duet-date-picker id="date" identifier="date" min="2022-01-01" max="2022-12-31"></duet-date-picker>
           </div>
           <button id="dropdown-filter-type" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Type<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/></svg></button>
-          <ul class="dropdown-menu" aria-labelledby="dropdown-filter-type">
+          <ul id="dropdown-menu-type" class="dropdown-menu" aria-labelledby="dropdown-filter-type">
             <div class="dropdown-top-section">
               <h3 class="dropdown-heading h4">Event type</h3>
+              <button id="closedropdown-type" type="button" class="btn-close btn-dismiss-dropdown" aria-label="Close"></button>
             </div>
             <li class="selection-item">
               <a href="#" onclick="browseType('Tours');return false;">Tours</a>
@@ -151,9 +152,10 @@ Search</button>
             </li>
           </ul>
           <button id="dropdown-filter-location" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Location<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/></svg></button>
-          <ul class="dropdown-menu" aria-labelledby="dropdown-filter-location" onclick="applyfiltersDropdown('locationOption', document.getElementsByName('locationOption'))">
+          <ul id="dropdown-menu-location" class="dropdown-menu" aria-labelledby="dropdown-filter-location" onclick="applyfiltersDropdown('locationOption', document.getElementsByName('locationOption'))">
             <div class="dropdown-top-section">
               <h3 class="dropdown-heading h4">Location</h3>
+              <button id="closedropdown-location" type="button" class="btn-close btn-dismiss-dropdown" aria-label="Close"></button>
             </div>
             <li class="selection-item">
               <label class="form-check-label" for="location0check">
@@ -229,9 +231,10 @@ Search</button>
             </li>
           </ul>
           <button id="dropdown-filter-audience" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Audience<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/></svg></button>
-          <ul class="dropdown-menu" aria-labelledby="dropdown-filter-type">
+          <ul id="dropdown-menu-audience" class="dropdown-menu" aria-labelledby="dropdown-filter-type">
             <div class="dropdown-top-section">
               <h3 class="dropdown-heading h4">Audience</h3>
+              <button id="closedropdown-audience" type="button" class="btn-close btn-dismiss-dropdown" aria-label="Close"></button>
             </div>
             <li class="selection-item">
               <a href="#" onclick="browseAudience('All');return false;">All</a>
@@ -2549,6 +2552,33 @@ Search</button>
     window.onload = function() {
       fillFields();
       updateSelections();
+      giveOnclickEvent();
+    }
+
+    // DROPDOWN TOGGLE //////////////////////////////////////////////
+
+    const dropdownDismissBtns = document.querySelectorAll('.btn-dismiss-dropdown');
+    const dropdowns = document.querySelectorAll('.dropdown-menu');
+
+    const dismissDropdowns = function(btnID) {
+      const id = btnID.split('-');
+      const dropdownID = id[1];
+      console.log(`ID = ${dropdownID}`);
+
+      const dropdownMenu = document.querySelector(`#dropdown-menu-${dropdownID}`);
+      console.log(`before`);
+      console.log(dropdownMenu);
+      dropdownMenu.classList.remove('show');
+      console.log(`after`);
+      console.log(dropdownMenu);
+
+      const dropdownToggleBtn = document.querySelector(`#dropdown-filter-${dropdownID}`);
+      dropdownToggleBtn.classList.remove('show');
+      dropdownToggleBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    const giveOnclickEvent = function() {
+      dropdownDismissBtns.forEach(b => b.onclick = function() { dismissDropdowns(b.id); });
     }
 
     // PAGINATION /////////////////////////////////////////////////// 
