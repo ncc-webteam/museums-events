@@ -391,7 +391,7 @@
       DATE.value = dateCookie;
     }
 
-    // FILTERS //////////////////////////////////
+    // FILTERS ////////////////////////////////// 
 
     function filterResults() {
       const searchCookie = getCookie('searchQuery');
@@ -419,25 +419,17 @@
           if (checkType(num, typeCookie) && checkLocation(num, locationCookie) && checkAudience(num, audienceCookie)) {
             r.style.display = 'block';
             showResult = true;
-            //console.log(`${r.id} passed either type, location or audience. showing`);
           }
           if (searchCookie != '') {
-            //console.log("search field not empty, refining...");
             // SEARCH_INDICATOR.textContent = `Searching by "${searchCookie}":`;
             if (!checkSearch(num, searchCookie)) {
               r.style.display = 'none';     
               showResult = false;
-              //console.log(`${r.id} failed search. hiding`);
-            } else {
-              //console.log(`${r.id} passed search. showing`);
             }
           }
           if (!checkDate(num, dateCookie)) {
             r.style.display = 'none';
             showResult = false;
-            //console.log(`${r.id} failed date. hiding`);
-          } else {
-            //console.log(`${r.id} passed date. showing`);
           }
 
           if (showResult) {
