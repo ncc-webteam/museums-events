@@ -836,6 +836,11 @@
   overflow-y: scroll;
   position: relative;
 
+  ul {
+    list-style: none;
+    padding-left: 0px;
+  }
+
   @include media-breakpoint-down(sm) {
     width: 100%;
     min-width: 0px;

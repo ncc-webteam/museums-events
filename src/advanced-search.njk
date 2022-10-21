@@ -18,125 +18,131 @@
             <duet-date-picker id="date" identifier="date" min="2022-01-01" max="2022-12-31"></duet-date-picker>
           </div>
           <button id="dropdown-filter-type" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Type<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/></svg></button>
-          <ul id="dropdown-menu-type" class="dropdown-menu" aria-labelledby="dropdown-filter-type">
-            <li class="dropdown-top-section">
+          <div id="dropdown-container-type" class="dropdown-menu" aria-labelledby="dropdown-filter-type">
+            <div class="dropdown-top-section">
               <h3 class="dropdown-heading h4">Event type</h3>
               <button id="closedropdown-type" type="button" class="btn-close btn-dismiss-dropdown" aria-label="Close"></button>
-            </li>
-            <li class="selection-item">
-              <a href="#" onclick="browseType('Tours');return false;">Tours</a>
-            </li>
-            <li class="selection-item">
-              <a href="#" onclick="browseType('Talks');return false;">Talks</a>
-            </li>
-            <li class="selection-item">
-              <a href="#" onclick="browseType('Family activities');return false;">Family activities</a>
-            </li>
-            <li class="selection-item">
-              <a href="#" onclick="browseType('Exhibitions');return false;">Exhibitions</a>
-            </li>
-            <li class="selection-item">
-              <a href="#" onclick="browseType('Parties');return false;">Parties</a>
-            </li>
-            <li class="selection-item">
-              <a href="#" onclick="browseType('Workshops');return false;">Workshops</a>
-            </li>
-          </ul>
+            </div>
+            <ul id="dropdown-menu-type">
+              <li class="selection-item">
+                <a href="#" onclick="browseType('Tours');return false;">Tours</a>
+              </li>
+              <li class="selection-item">
+                <a href="#" onclick="browseType('Talks');return false;">Talks</a>
+              </li>
+              <li class="selection-item">
+                <a href="#" onclick="browseType('Family activities');return false;">Family activities</a>
+              </li>
+              <li class="selection-item">
+                <a href="#" onclick="browseType('Exhibitions');return false;">Exhibitions</a>
+              </li>
+              <li class="selection-item">
+                <a href="#" onclick="browseType('Parties');return false;">Parties</a>
+              </li>
+              <li class="selection-item">
+                <a href="#" onclick="browseType('Workshops');return false;">Workshops</a>
+              </li>
+            </ul>
+          </div>
           <button id="dropdown-filter-location" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Location<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/></svg></button>
-          <ul id="dropdown-menu-location" class="dropdown-menu" aria-labelledby="dropdown-filter-location" onclick="applyfiltersDropdown('locationOption', document.getElementsByName('locationOption'))">
-            <li class="dropdown-top-section">
+          <div id="dropdown-container-location" class="dropdown-menu" aria-labelledby="dropdown-filter-location">
+            <div class="dropdown-top-section">
               <h3 class="dropdown-heading h4">Location</h3>
-              <button id="closedropdown-location" type="button" class="btn-close btn-dismiss-dropdown" aria-label="Close"></button>
-            </li>
-            <li class="selection-item">
-              <label class="form-check-label" for="location0check">
-                <input type="checkbox" class="form-check-input" name="locationOption" value="Online" id="location0check">
-                Online
-              </label>
-            </li>
-            <li class="selection-item">
-              <label class="form-check-label" for="location6check">
-                <input type="checkbox" class="form-check-input" name="locationOption" value="Elizabethan House" id="location6check">
-                Elizabethan House • Great Yarmouth
-              </label>
-            </li>
-            <li class="selection-item">
-              <label class="form-check-label" for="location3check">
-                <input type="checkbox" class="form-check-input" name="locationOption" value="Time & Tide" id="location3check">
-                Time & Tide • Great Yarmouth 
-              </label>
-            </li>
-            <li class="selection-item">
-              <label class="form-check-label" for="location9check">
-                <input type="checkbox" class="form-check-input" name="locationOption" value="Tolhouse Gaol" id="location9check">
-                Tolhouse Gaol • Great Yarmouth
-              </label>
-            </li>
-            <li class="selection-item">
-              <label class="form-check-label" for="location5check">
-                <input type="checkbox" class="form-check-input" name="locationOption" value="Museum of Norwich" id="location5check">
-                Museum of Norwich • Norwich
-              </label>
-            </li>
-            <li class="selection-item">
-              <label class="form-check-label" for="location1check">
-                <input type="checkbox" class="form-check-input" name="locationOption" value="Norwich Castle" id="location1check">
-                Norwich Castle • Norwich 
-              </label>
-            </li>
-            <li class="selection-item">
-              <label class="form-check-label" for="location2check">
-                <input type="checkbox" class="form-check-input" name="locationOption" value="Strangers' Hall" id="location2check">
-                Strangers' Hall • Norwich
-              </label>
-            </li>
-            <li class="selection-item">
-              <label class="form-check-label" for="location8check">
-                <input type="checkbox" class="form-check-input" name="locationOption" value="Cromer" id="location8check">
-                Cromer Museum • Cromer
-              </label>
-            </li>
-            <li class="selection-item">
-              <label class="form-check-label" for="location4check">
-                <input type="checkbox" class="form-check-input" name="locationOption" value="Gressenhall" id="location4check">
-                Gressenhall Farm & Workhouse • Dereham
-              </label>
-            </li>
-            <li class="selection-item">
-              <label class="form-check-label" for="location11check">
-                <input type="checkbox" class="form-check-input" name="locationOption" value="Dereham Library" id="location11check">
-                Dereham Library • Dereham
-              </label>
-            </li>
-            <li class="selection-item">
-              <label class="form-check-label" for="location7check">
-                <input type="checkbox" class="form-check-input" name="locationOption" value="Lynn" id="location7check">
-                Lynn Museum • King's Lynn
-              </label>
-            </li>
-            <li class="selection-item">
-              <label class="form-check-label" for="location10check">
-                <input type="checkbox" class="form-check-input" name="locationOption" value="Ancient House" id="location10check">
-                Ancient House • Thetford
-              </label>
-            </li>
-          </ul>
+              <button id="closedropdown-location" type="button" class="btn-close btn-dismiss-dropdown" onclick="dismissDropdowns('dropdown-menu-location')" aria-label="Close"></button>
+            </div>
+            <ul id="dropdown-menu-location" onclick="applyfiltersDropdown('locationOption', document.getElementsByName('locationOption'))">
+              <li class="selection-item">
+                <label class="form-check-label" for="location0check">
+                  <input type="checkbox" class="form-check-input" name="locationOption" value="Online" id="location0check">
+                  Online
+                </label>
+              </li>
+              <li class="selection-item">
+                <label class="form-check-label" for="location6check">
+                  <input type="checkbox" class="form-check-input" name="locationOption" value="Elizabethan House" id="location6check">
+                  Elizabethan House • Great Yarmouth
+                </label>
+              </li>
+              <li class="selection-item">
+                <label class="form-check-label" for="location3check">
+                  <input type="checkbox" class="form-check-input" name="locationOption" value="Time & Tide" id="location3check">
+                  Time & Tide • Great Yarmouth 
+                </label>
+              </li>
+              <li class="selection-item">
+                <label class="form-check-label" for="location9check">
+                  <input type="checkbox" class="form-check-input" name="locationOption" value="Tolhouse Gaol" id="location9check">
+                  Tolhouse Gaol • Great Yarmouth
+                </label>
+              </li>
+              <li class="selection-item">
+                <label class="form-check-label" for="location5check">
+                  <input type="checkbox" class="form-check-input" name="locationOption" value="Museum of Norwich" id="location5check">
+                  Museum of Norwich • Norwich
+                </label>
+              </li>
+              <li class="selection-item">
+                <label class="form-check-label" for="location1check">
+                  <input type="checkbox" class="form-check-input" name="locationOption" value="Norwich Castle" id="location1check">
+                  Norwich Castle • Norwich 
+                </label>
+              </li>
+              <li class="selection-item">
+                <label class="form-check-label" for="location2check">
+                  <input type="checkbox" class="form-check-input" name="locationOption" value="Strangers' Hall" id="location2check">
+                  Strangers' Hall • Norwich
+                </label>
+              </li>
+              <li class="selection-item">
+                <label class="form-check-label" for="location8check">
+                  <input type="checkbox" class="form-check-input" name="locationOption" value="Cromer" id="location8check">
+                  Cromer Museum • Cromer
+                </label>
+              </li>
+              <li class="selection-item">
+                <label class="form-check-label" for="location4check">
+                  <input type="checkbox" class="form-check-input" name="locationOption" value="Gressenhall" id="location4check">
+                  Gressenhall Farm & Workhouse • Dereham
+                </label>
+              </li>
+              <li class="selection-item">
+                <label class="form-check-label" for="location11check">
+                  <input type="checkbox" class="form-check-input" name="locationOption" value="Dereham Library" id="location11check">
+                  Dereham Library • Dereham
+                </label>
+              </li>
+              <li class="selection-item">
+                <label class="form-check-label" for="location7check">
+                  <input type="checkbox" class="form-check-input" name="locationOption" value="Lynn" id="location7check">
+                  Lynn Museum • King's Lynn
+                </label>
+              </li>
+              <li class="selection-item">
+                <label class="form-check-label" for="location10check">
+                  <input type="checkbox" class="form-check-input" name="locationOption" value="Ancient House" id="location10check">
+                  Ancient House • Thetford
+                </label>
+              </li>
+            </ul>
+          </div>
           <button id="dropdown-filter-audience" data-bs-toggle="dropdown" aria-expanded="false"  data-bs-auto-close="outside" type="button" class="btn btn-primary filter-btn">Audience<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1.41 0.0799561L6 4.66996L10.59 0.0799561L12 1.49996L6 7.49996L0 1.49996L1.41 0.0799561Z" fill="black"/></svg></button>
-          <ul id="dropdown-menu-audience" class="dropdown-menu" aria-labelledby="dropdown-filter-type">
-            <li class="dropdown-top-section">
+          <div id="dropdown-container-audience" class="dropdown-menu" aria-labelledby="dropdown-filter-type">
+            <div class="dropdown-top-section">
               <h3 class="dropdown-heading h4">Audience</h3>
               <button id="closedropdown-audience" type="button" class="btn-close btn-dismiss-dropdown" aria-label="Close"></button>
-            </li>
-            <li class="selection-item">
-              <a href="#" onclick="browseAudience('All');return false;">All</a>
-            </li>
-            <li class="selection-item">
-              <a href="#" onclick="browseAudience('Adults');return false;">Adults focused</a>
-            </li>
-            <li class="selection-item">
-              <a href="#" onclick="browseAudience('Children');return false;">Children focused</a>
-            </li>
-          </ul>
+            </div>
+            <ul id="dropdown-menu-audience">
+              <li class="selection-item">
+                <a href="#" onclick="browseAudience('All');return false;">All</a>
+              </li>
+              <li class="selection-item">
+                <a href="#" onclick="browseAudience('Adults');return false;">Adults focused</a>
+              </li>
+              <li class="selection-item">
+                <a href="#" onclick="browseAudience('Children');return false;">Children focused</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -356,7 +362,7 @@
       const dropdownID = id[1];
       console.log(`ID = ${dropdownID}`);
 
-      const dropdownMenu = document.querySelector(`#dropdown-menu-${dropdownID}`);
+      const dropdownMenu = document.querySelector(`#dropdown-container-${dropdownID}`);
       console.log(`before`);
       console.log(dropdownMenu);
       dropdownMenu.classList.remove('show');
