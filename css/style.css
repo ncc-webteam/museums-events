@@ -12556,6 +12556,7 @@ section.section_stage_theme .lead {
   background-color: transparent;
   padding: 0;
   font-weight: 800;
+  margin-top: auto;
 }
 .card.museum-card .card-body .card-extra-info {
   display: none;
