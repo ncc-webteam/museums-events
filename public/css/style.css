@@ -12549,6 +12549,7 @@ section.section_stage_theme .lead {
 .card.museum-card .card-body .card-text {
   color: #767676;
   font-weight: 500;
+  margin: 0px 0px 5px 0px;
 }
 .card.museum-card .card-body .flair {
   font-size: 1.5rem;
