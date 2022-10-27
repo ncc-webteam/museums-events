@@ -13217,6 +13217,13 @@ section.section_stage_theme .lead {
   outline: solid #ffdd00 2px;
 }
 
+.duet-date__day:not(.is-month):hover, .duet-date__day[aria-disabled=true]:hover {
+  opacity: 1;
+}
+.duet-date__day:not(.is-month):hover::before, .duet-date__day[aria-disabled=true]:hover::before {
+  background-color: transparent;
+}
+
 html {
   height: 100%;
 }
