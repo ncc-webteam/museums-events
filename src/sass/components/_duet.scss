@@ -19,3 +19,14 @@
     outline: solid $focus-colour 2px;
   }
 }
+
+.duet-date__day:not(.is-month), .duet-date__day[aria-disabled="true"] {
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:hover::before {
+    background-color: transparent;
+  }
+}
