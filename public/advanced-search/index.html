@@ -1451,7 +1451,7 @@ Search</button>
   
     <div class="date-overlay">
       <div aria-hidden="true" id="result-24-month" class="month">Oct</div>
-      <div aria-hidden="true" id="result-24-day" class="day">28</div>
+      <div aria-hidden="true" id="result-24-day" class="day">28,29</div>
     </div>
     <div aria-hidden="true" id="result-24-type" class="type">Parties</div>
   
@@ -1465,7 +1465,7 @@ Search</button>
   <div class="card-body">
 
     
-    <h3 class="card-title h3"><a aria-label="Ghostly Gressenhall on Friday 28 October 2022 • 18:00 - 20:00" id="result-24-title" class="stretched-link" href="/museums-events/public//example-event/">Ghostly Gressenhall</a></h3>
+    <h3 class="card-title h3"><a aria-label="Ghostly Gressenhall on Friday 28 October 2022 - Saturday 29 October 2022" id="result-24-title" class="stretched-link" href="/museums-events/public//example-event/">Ghostly Gressenhall</a></h3>
     
 
     
@@ -1473,7 +1473,7 @@ Search</button>
     
 
     
-    <p class="card-date">Friday 28 October 2022 • 18:00 - 20:00</p>
+    <p class="card-date">Friday 28 October 2022 - Saturday 29 October 2022</p>
     
 
     
@@ -1493,56 +1493,7 @@ Search</button>
 
 
         </div>
-        <div class="col-12 col-sm-6 col-lg-4" id="result-25-wrapper">
-          
-
-<div class="card card-light museum-card gressenhall h-100 " data-component="72">
-
-  
-    <div class="date-overlay">
-      <div aria-hidden="true" id="result-25-month" class="month">Oct</div>
-      <div aria-hidden="true" id="result-25-day" class="day">29</div>
-    </div>
-    <div aria-hidden="true" id="result-25-type" class="type">Parties</div>
-  
-
-  
-  <div class="img-wrapper ratio ratio-16x9">
-    <img src="/museums-events/public/img/museums-events/ghfw.jpg" class="card-img-top" alt="">
-  </div>
-  
-
-  <div class="card-body">
-
-    
-    <h3 class="card-title h3"><a aria-label="Ghostly Gressenhall on Saturday 29 October 2022 • 18:00 - 20:00" id="result-25-title" class="stretched-link" href="/museums-events/public//example-event/">Ghostly Gressenhall</a></h3>
-    
-
-    
-    <p id="result-25-location" class="card-location">Gressenhall Farm and Workhouse • Dereham</p>
-    
-
-    
-    <p class="card-date">Saturday 29 October 2022 • 18:00 - 20:00</p>
-    
-
-    
-    <span class="flair flair-full">£6</span>
-    
-
-    
-    <p id="result-25-audience" class="card-extra-info">Children</p>
-    
-
-    
-    <p id="result-25-desc" class="card-text">A halloween party for all your little witches and warlocks.</p>
-    
-
-  </div>
-</div>
-
-
-        </div>
+        
 
         <div class="col-12 col-sm-6 col-lg-4" id="result-26-wrapper">
           
@@ -2890,13 +2841,22 @@ Search</button>
       }
 
       // YYYY-MM-DD
-      const date = cDate.split("-");
+      const date = cDate.split('-');
 
       const dateM = Number(date[1]);
       const dateD = Number(date[2]);
 
       const monthEl = document.getElementById(`result-${n}-month`);
       const dayEl = document.getElementById(`result-${n}-day`);
+
+      let dateRange = false;
+      let days = '';
+
+      if (dayEl.textContent.includes(',')) {
+        days = dayEl.textContent.split(',');
+        dateRange = true;
+      }
+
       let month = 0;
       let day = +dayEl.textContent; // the '+' converts from a string to a number :)
 
@@ -2918,6 +2878,12 @@ Search</button>
 
       console.log(`checking date ${dateM}=${month} and ${dateD}=${day}`);
 
+      if (dateRange) {
+        console.log(`checking range ${days}`);
+        console.log(`does ${days} include ${dateD} ?`);
+        console.log(days.includes(`${dateD}`));
+        return (dateM === month && days.includes(`${dateD}`));
+      }
       return (dateM === month && dateD === day);
     }
 

@@ -254,11 +254,11 @@
         </div>
 
         <div class="col-12 col-sm-6 col-lg-4" id="result-24-wrapper">
-          {{ generalcard.generalcard("Ghostly Gressenhall", 'Gressenhall Farm and Workhouse • Dereham', 'Friday 28 October 2022 • 18:00 - 20:00', '£6', 'Children', 'A halloween party for all your little witches and warlocks.', 'museums-events/ghfw.jpg', '/example-event/', 'card-light museum-card gressenhall', '24', 'Oct', '28', 'Parties') }}
+          {{ generalcard.generalcard("Ghostly Gressenhall", 'Gressenhall Farm and Workhouse • Dereham', 'Friday 28 October 2022 - Saturday 29 October 2022', '£6', 'Children', 'A halloween party for all your little witches and warlocks.', 'museums-events/ghfw.jpg', '/example-event/', 'card-light museum-card gressenhall', '24', 'Oct', '28,29', 'Parties') }}
         </div>
-        <div class="col-12 col-sm-6 col-lg-4" id="result-25-wrapper">
+        {# <div class="col-12 col-sm-6 col-lg-4" id="result-25-wrapper">
           {{ generalcard.generalcard("Ghostly Gressenhall", 'Gressenhall Farm and Workhouse • Dereham', 'Saturday 29 October 2022 • 18:00 - 20:00', '£6', 'Children', 'A halloween party for all your little witches and warlocks.', 'museums-events/ghfw.jpg', '/example-event/', 'card-light museum-card gressenhall', '25', 'Oct', '29', 'Parties') }}
-        </div>
+        </div> #}
 
         <div class="col-12 col-sm-6 col-lg-4" id="result-26-wrapper">
           {{ generalcard.generalcard("Knit and Knatter", 'Ancient House • Thetford', 'Tuseday 2 August 2022 • 10:30 - 12:00', '£2, museums pass £1', 'Adults', 'Join us to knit, chat and have a cuppa. Booking essential.', 'museums-events/whats-on-3.jpg', '/example-event/', 'card-light museum-card ancient-house', '26', 'Aug', '2', 'Workshops') }}
@@ -525,13 +525,22 @@
       }
 
       // YYYY-MM-DD
-      const date = cDate.split("-");
+      const date = cDate.split('-');
 
       const dateM = Number(date[1]);
       const dateD = Number(date[2]);
 
       const monthEl = document.getElementById(`result-${n}-month`);
       const dayEl = document.getElementById(`result-${n}-day`);
+
+      let dateRange = false;
+      let days = '';
+
+      if (dayEl.textContent.includes(',')) {
+        days = dayEl.textContent.split(',');
+        dateRange = true;
+      }
+
       let month = 0;
       let day = +dayEl.textContent; // the '+' converts from a string to a number :)
 
@@ -553,6 +562,12 @@
 
       console.log(`checking date ${dateM}=${month} and ${dateD}=${day}`);
 
+      if (dateRange) {
+        console.log(`checking range ${days}`);
+        console.log(`does ${days} include ${dateD} ?`);
+        console.log(days.includes(`${dateD}`));
+        return (dateM === month && days.includes(`${dateD}`));
+      }
       return (dateM === month && dateD === day);
     }
 
