@@ -3,11 +3,11 @@
 <div class="card {{options}} h-100 {% if title|length %}{% else %}nohover{% endif %}" data-component="72">
 
   {% if 'museum-card' in options %}
-    {# <div class="date-overlay">
+    <div class="date-overlay">
       <div aria-hidden="true" id="result-{{id}}-month" class="month">{{month}}</div>
       <div aria-hidden="true" id="result-{{id}}-day" class="day">{{day}}</div>
     </div>
-    <div aria-hidden="true" id="result-{{id}}-type" class="type">{{type}}</div> #}
+    <div aria-hidden="true" id="result-{{id}}-type" class="type">{{type}}</div>
   {% endif %}
 
   {% if img|length %}
