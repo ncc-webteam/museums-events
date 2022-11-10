@@ -23,7 +23,7 @@
   <div class="card-body">
 
     {% if title|length %}
-    <h3 class="card-title h3"><a aria-label="{{title}} on {{date}}" id="result-{{id}}-title" class="stretched-link" href="/museums-events/public/{{link}}">{{ title }}</a></h3>
+    <h3 class="card-title h3"><a aria-label="{{title}} on {{date}}" id="result-{{id}}-title" class="stretched-link" href="{{link}}">{{ title }}</a></h3>
     {% else %}{% endif %}
 
     {% if location|length %}
